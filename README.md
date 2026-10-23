@@ -45,7 +45,7 @@ Requires Python 3.11. All solvers are open source (HiGHS through `highspy` and S
 **Linux or macOS**
 
 ```bash
-git clone <repository-url> lira-sdn
+git clone https://github.com/adeliusa486/-lira-sdn-energy.git lira-sdn
 cd lira-sdn
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -55,14 +55,13 @@ python -m pip install -r requirements.txt
 **Windows (PowerShell)**
 
 ```powershell
-git clone <repository-url> lira-sdn
+git clone https://github.com/adeliusa486/-lira-sdn-energy.git lira-sdn
 cd lira-sdn
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
 
-Replace `<repository-url>` with the URL of this repository. The versions used for the paper are pinned in `requirements.txt` and recorded in `paper/results/environment.json`.
 
 ## Quick start
 
