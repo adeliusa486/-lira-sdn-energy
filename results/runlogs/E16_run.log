@@ -1,0 +1,28 @@
+15:14:46 E16 abilene base seed 0
+15:14:54 E16 abilene base seed 1
+15:15:10 E16 abilene base seed 2
+15:15:10 E16 abilene base finished in 59s
+15:15:28 E16 abilene highload seed 0
+15:15:32 E16 abilene highload seed 1
+15:15:35 E16 abilene highload seed 2
+15:15:35 E16 abilene highload finished in 25s
+15:17:03 E16 geant base seed 0
+15:18:00 E16 geant base seed 1
+15:18:42 E16 geant base seed 2
+15:18:42 E16 geant base finished in 187s
+15:20:49 E16 geant highload seed 0
+15:22:09 E16 geant highload seed 1
+15:23:11 E16 geant highload seed 2
+15:23:11 E16 geant highload finished in 269s
+15:23:35 E16 nobel base seed 0
+15:23:44 E16 nobel base seed 1
+15:23:50 E16 nobel base seed 2
+15:23:50 E16 nobel base finished in 39s
+15:24:54 E16 nobel highload seed 0
+15:25:48 E16 nobel highload seed 1
+15:26:44 E16 nobel highload seed 2
+15:26:44 E16 nobel highload finished in 175s
+15:29:09 E16 nobel stress seed 0
+15:31:28 E16 nobel stress seed 1
+15:33:24 E16 nobel stress seed 2
+15:33:24 E16 nobel stress finished in 400s

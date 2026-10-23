@@ -1,0 +1,193 @@
+{
+  "lam_R": 0.192,
+  "lam_W": 7.680000000000001,
+  "K": 32,
+  "library_size": 32,
+  "runs": [
+    {
+      "seed": 0,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 6470,
+          "fit_s": 2.1213820000048145,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 12940,
+          "fit_s": 3.386073800000304,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 19410,
+          "fit_s": 18.12937289999536,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 25880,
+          "fit_s": 23.092939000001934,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "XGBModel"
+    },
+    {
+      "seed": 1,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 6470,
+          "fit_s": 2.8313085999980103,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 12940,
+          "fit_s": 3.001606500001799,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 19410,
+          "fit_s": 4.604828499999712,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 25880,
+          "fit_s": 16.915480299998308,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "XGBModel"
+    },
+    {
+      "seed": 2,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 6470,
+          "fit_s": 2.456241499996395,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 12940,
+          "fit_s": 4.353724100001273,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 19410,
+          "fit_s": 5.1850372000044445,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 25880,
+          "fit_s": 7.480395999999018,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "XGBModel"
+    },
+    {
+      "seed": 3,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 6470,
+          "fit_s": 1.9859213999952772,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 12940,
+          "fit_s": 5.914556200004881,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 19410,
+          "fit_s": 4.226843100004771,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 25880,
+          "fit_s": 4.532721000003221,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "XGBModel"
+    },
+    {
+      "seed": 4,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 6470,
+          "fit_s": 1.912155600002734,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 12940,
+          "fit_s": 2.9810385999953724,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 19410,
+          "fit_s": 16.400727799999004,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 25880,
+          "fit_s": 6.019208999998227,
+          "val_J": 379.02079149052645,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "XGBModel"
+    }
+  ]
+}

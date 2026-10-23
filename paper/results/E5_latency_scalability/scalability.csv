@@ -1,0 +1,6 @@
+topology,nodes,links,od_pairs,paths,traffic,ilp_median_s,ilp_status,ilp_gap,elastictree_s,safety_check_ms,links_on_after_ilp
+abilene,12,15,132,522,test-split traffic matrix,0.48322700000426266,Optimization terminated successfully. (HiGHS Status 7: Optim,0.0,0.043344199992134236,0.06657049998466391,11
+nobel,17,26,272,1088,test-split traffic matrix,0.4052259000018239,Optimization terminated successfully. (HiGHS Status 7: Optim,0.0,0.18993039999622852,0.13021049999224488,18
+geant,22,36,462,1848,test-split traffic matrix,4.070317999998224,Optimization terminated successfully. (HiGHS Status 7: Optim,0.00019095222740383766,0.5614371999981813,0.15736150002339855,24
+germany50,50,88,2450,9800,SNDlib static demands,1.6106079000019236,Optimization terminated successfully. (HiGHS Status 7: Optim,0.0,1.4463762000086717,0.22328949999064207,74
+ta2,65,108,4160,16574,SNDlib static demands,11.372670950004249,Optimization terminated successfully. (HiGHS Status 7: Optim,0.00732002348010824,7.424389399995562,0.36258749998523854,88

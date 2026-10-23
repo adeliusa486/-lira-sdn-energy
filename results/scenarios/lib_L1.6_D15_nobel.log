@@ -1,0 +1,43 @@
+[nobel] 58 unique configs from 64 clusters
+[nobel] coverage 0.9998 with 59 configs
+{
+  "topology": "nobel",
+  "M": 64,
+  "theta": 0.8,
+  "seed": 0,
+  "n_candidates": 59,
+  "coverage_trainval": 0.9998456790123457,
+  "allon_feasible_trainval": 0.9986111111111111,
+  "K": {
+    "8": {
+      "size": 8,
+      "coverage_val": 0.9976851851851852
+    },
+    "16": {
+      "size": 16,
+      "coverage_val": 0.9992283950617284
+    },
+    "32": {
+      "size": 32,
+      "coverage_val": 0.9992283950617284
+    },
+    "64": {
+      "size": 59,
+      "coverage_val": 0.9992283950617284
+    },
+    "128": {
+      "size": 59,
+      "coverage_val": 0.9992283950617284
+    }
+  }
+}
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();

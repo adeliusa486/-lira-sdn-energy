@@ -1,0 +1,16 @@
+09:50:40 E1b abilene B1 done
+10:57:18 E1b abilene B3 done
+10:57:20 E1b abilene done
+10:57:22 E5 scale abilene {'topology': 'abilene', 'nodes': 12, 'links': 15, 'od_pairs': 132, 'paths': 522, 'traffic': 'test-split traffic matrix', 'ilp_median_s': 0.544633800003794, 'ilp_status': 'Optimization terminated successfully. (HiGHS Status 7: Optim', 'ilp_gap': 0.0, 'elastictree_s': 0.040013099991483614, 'safety_check_ms': 0.10366800001065712, 'links_on_after_ilp': 11}
+10:57:42 E5 scale nobel {'topology': 'nobel', 'nodes': 17, 'links': 26, 'od_pairs': 272, 'paths': 1088, 'traffic': 'test-split traffic matrix', 'ilp_median_s': 0.941890300004161, 'ilp_status': 'Optimization terminated successfully. (HiGHS Status 7: Optim', 'ilp_gap': 0.0, 'elastictree_s': 0.31671109999297187, 'safety_check_ms': 0.28897099997266196, 'links_on_after_ilp': 18}
+10:58:44 E5 scale geant {'topology': 'geant', 'nodes': 22, 'links': 36, 'od_pairs': 462, 'paths': 1848, 'traffic': 'test-split traffic matrix', 'ilp_median_s': 3.4364269000070635, 'ilp_status': 'Optimization terminated successfully. (HiGHS Status 7: Optim', 'ilp_gap': 0.00019095222740383766, 'elastictree_s': 0.40976350000710227, 'safety_check_ms': 0.17002649998175912, 'links_on_after_ilp': 24}
+Traceback (most recent call last):
+  File "E:\Work\SDN energy aware 1\experiments\run_extra.py", line 462, in <module>
+    e5_scale(a.force)
+  File "E:\Work\SDN energy aware 1\experiments\run_extra.py", line 120, in e5_scale
+    lut = {(topo.idx[s], topo.idx[t_]): i for i, (s, t_) in enumerate(topo.od)}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Work\SDN energy aware 1\experiments\run_extra.py", line 120, in <dictcomp>
+    lut = {(topo.idx[s], topo.idx[t_]): i for i, (s, t_) in enumerate(topo.od)}
+            ~~~~~~~~^^^
+KeyError: np.int64(0)

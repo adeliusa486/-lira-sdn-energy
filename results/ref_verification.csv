@@ -1,0 +1,61 @@
+key,status,info,bib_title,source_title
+gupta2003greening,PASS,title_ratio=1.00 cr_year=2003,Greening of the Internet,Greening of the internet
+bianzino2012survey,PASS,title_ratio=1.00 cr_year=2012,A Survey of Green Networking Research,A Survey of Green Networking Research
+bolla2011energy,PASS,title_ratio=1.00 cr_year=2011,Energy Efficiency in the Future Internet: A Survey of Existing Approaches and Trends in Energy-Aware Fixed Network Infrastructures,Energy Efficiency in the Future Internet: A Survey of Existing Approaches and Trends in Energy-Aware Fixed Network Infrastructures
+heller2010elastictree,URL_OK,http=200,{ElasticTree}: Saving Energy in Data Center Networks,
+chiaraviglio2012minimizing,PASS,title_ratio=1.00 cr_year=2012,Minimizing {ISP} Network Energy Cost: Formulation and Solutions,Minimizing ISP Network Energy Cost: Formulation and Solutions
+chiaraviglio2015lifetime,PASS,title_ratio=1.00 cr_year=2015,Is Green Networking Beneficial in Terms of Device Lifetime?,Is green networking beneficial in terms of device lifetime?
+mahadevan2009power,PASS,title_ratio=1.00 cr_year=2009,A Power Benchmarking Framework for Network Devices,A Power Benchmarking Framework for Network Devices
+restrepo2009energy,PASS,title_ratio=1.00 cr_year=2009,Energy Profile Aware Routing,Energy Profile Aware Routing
+mckeown2008openflow,PASS,title_ratio=1.00 cr_year=2008,{OpenFlow}: Enabling Innovation in Campus Networks,OpenFlow
+kreutz2015sdn,PASS,title_ratio=1.00 cr_year=2015,Software-Defined Networking: A Comprehensive Survey,Software-Defined Networking: A Comprehensive Survey
+assefa2019survey,PASS,title_ratio=1.00 cr_year=2019,A Survey of Energy Efficiency in {SDN}: Software-Based Methods and Optimization Models,A survey of energy efficiency in SDN: Software-based methods and optimization models
+reitblatt2012abstractions,PASS,title_ratio=1.00 cr_year=2012,Abstractions for Network Update,Abstractions for network update
+jin2014dionysus,PASS,title_ratio=1.00 cr_year=2014,Dynamic Scheduling of Network Updates,Dynamic scheduling of network updates
+lin2013rightsizing,PASS,title_ratio=1.00 cr_year=2013,Dynamic Right-Sizing for Power-Proportional Data Centers,Dynamic Right-Sizing for Power-Proportional Data Centers
+borodin1992mts,PASS,title_ratio=1.00 cr_year=1992,An Optimal On-Line Algorithm for Metrical Task System,An optimal on-line algorithm for metrical task system
+valadarsky2017learning,PASS,title_ratio=1.00 cr_year=2017,Learning to Route,Learning to Route
+rusek2020routenet,PASS,title_ratio=1.00 cr_year=2020,{RouteNet}: Leveraging Graph Neural Networks for Network Modeling and Optimization in {SDN},RouteNet: Leveraging Graph Neural Networks for Network Modeling and Optimization in SDN
+mnih2015dqn,PASS,title_ratio=1.00 cr_year=2015,Human-Level Control through Deep Reinforcement Learning,Human-level control through deep reinforcement learning
+schulman2017ppo,PASS,title_ratio=1.00,Proximal Policy Optimization Algorithms,Proximal Policy Optimization Algorithms
+ross2011dagger,URL_OK,http=200,A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning,
+chen2016xgboost,PASS,title_ratio=1.00 cr_year=2016,{XGBoost}: A Scalable Tree Boosting System,XGBoost
+ke2017lightgbm,URL_OK,http=200,{LightGBM}: A Highly Efficient Gradient Boosting Decision Tree,
+breiman2001rf,PASS,title_ratio=1.00 cr_year=2001,Random Forests,Random Forests
+hochreiter1997lstm,PASS,title_ratio=1.00 cr_year=1997,Long Short-Term Memory,Long Short-Term Memory
+deb2002nsga2,PASS,title_ratio=1.00 cr_year=2002,A Fast and Elitist Multiobjective Genetic Algorithm: {NSGA-II},A fast and elitist multiobjective genetic algorithm: NSGA-II
+gama2014drift,PASS,title_ratio=1.00 cr_year=2014,A Survey on Concept Drift Adaptation,A survey on concept drift adaptation
+lu2019drift,PASS,title_ratio=1.00 cr_year=2018,Learning under Concept Drift: A Review,Learning under Concept Drift: A Review
+bifet2007adwin,PASS,title_ratio=1.00 cr_year=2007,Learning from Time-Changing Data with Adaptive Windowing,Learning from Time-Changing Data with Adaptive Windowing
+page1954cusum,PASS,title_ratio=1.00 cr_year=1954,Continuous Inspection Schemes,CONTINUOUS INSPECTION SCHEMES
+orlowski2010sndlib,PASS,title_ratio=1.00 cr_year=2009,{SNDlib} 1.0---Survivable Network Design Library,SNDlib 1.0—Survivable Network Design Library
+uhlig2006geant,PASS,title_ratio=1.00 cr_year=2006,Providing Public Intradomain Traffic Matrices to the Research Community,Providing public intradomain traffic matrices to the research community
+zhang2003tomogravity,PASS,title_ratio=1.00 cr_year=2003,Fast Accurate Computation of Large-Scale {IP} Traffic Matrices from Link Loads,Fast accurate computation of large-scale IP traffic matrices from link loads
+knight2011zoo,PASS,title_ratio=1.00 cr_year=2011,The Internet Topology Zoo,The Internet Topology Zoo
+lantz2010mininet,PASS,title_ratio=1.00 cr_year=2010,A Network in a Laptop: Rapid Prototyping for Software-Defined Networks,A network in a laptop
+chiaraviglio2014impact,PASS,title_ratio=1.00 cr_year=2014,Impact of Energy-Efficient Techniques on a Device Lifetime,Impact of energy-efficient techniques on a device lifetime
+wiatr2016lifetime,PASS,title_ratio=1.00 cr_year=2016,Lifetime-Aware Provisioning in Green Optical Backbone Networks,Lifetime-Aware Provisioning in Green Optical Backbone Networks
+gomezdelahiz2025noms,PASS,title_ratio=1.00 cr_year=2025,On Optimizing Energy Efficiency in {SDN} Networks Through {ML}-Driven Configuration,On Optimizing Energy Efficiency in SDN Networks Through ML-Driven Configuration
+gomezdelahiz2026tgcn,PASS,title_ratio=1.00 cr_year=2026,{AI}-Driven Scalable Framework for Energy-Efficient {SDN} Configurations,AI-Driven Scalable Framework for Energy-Efficient SDN Configurations
+bonetto2013multiperiod,PASS,title_ratio=1.00 cr_year=2013,Algorithms for the Multi-Period Power-Aware Logical Topology Design With Reconfiguration Costs,Algorithms for the Multi-Period Power-Aware Logical Topology Design With Reconfiguration Costs
+vasic2010eate,PASS,title_ratio=1.00 cr_year=2010,Energy-Aware Traffic Engineering,Energy-aware traffic engineering
+maaloul2018carrier,PASS,title_ratio=1.00 cr_year=2018,Energy-Aware Routing in Carrier-Grade {Ethernet} Using {SDN} Approach,Energy-Aware Routing in Carrier-Grade Ethernet Using SDN Approach
+assefa2018mersdn,PASS,title_ratio=1.00 cr_year=2018,{MER-SDN}: Machine Learning Framework for Traffic Aware Energy Efficient Routing in {SDN},MER-SDN: Machine Learning Framework for Traffic Aware Energy Efficient Routing in SDN
+frohlich2021rl,PASS,title_ratio=1.00 cr_year=2021,Reinforcement Learning and Energy-Aware Routing,Reinforcement Learning and Energy-Aware Routing
+xu2023teal,PASS,title_ratio=1.00 cr_year=2023,Teal: Learning-Accelerated Optimization of {WAN} Traffic Engineering,Teal: Learning-Accelerated Optimization of WAN Traffic Engineering
+perry2023dote,URL_OK,http=200,{DOTE}: Rethinking (Predictive) {WAN} Traffic Engineering,
+abuzaid2021ncflow,URL_OK,http=200,Contracting Wide-Area Network Topologies to Solve Flow Problems Quickly,
+narayanan2021pop,PASS,title_ratio=1.00 cr_year=2021,Solving Large-Scale Granular Resource Allocation Problems Efficiently with {POP},Solving Large-Scale Granular Resource Allocation Problems Efficiently with POP
+chen2018obd,PASS,title_ratio=1.00,Smoothed Online Convex Optimization in High Dimensions via Online Balanced Descent,Smoothed Online Convex Optimization in High Dimensions via Online Balanced Descent
+ryu,URL_OK,http=200,Ryu {SDN} Framework,
+gurobi,URL_OK,http=200,Gurobi Optimizer Reference Manual,
+huangfu2018highs,PASS,title_ratio=1.00 cr_year=2017,Parallelizing the Dual Revised Simplex Method,Parallelizing the dual revised simplex method
+zhang2010greente,PASS,title_ratio=1.00 cr_year=2010,{GreenTE}: Power-Aware Traffic Engineering,GreenTE: Power-aware traffic engineering
+almasan2022enero,PASS,title_ratio=1.00 cr_year=2022,{ENERO}: Efficient Real-Time {WAN} Routing Optimization with Deep Reinforcement Learning,ENERO: Efficient real-time WAN routing optimization with Deep Reinforcement Learning
+bernardez2023magnneto,PASS,title_ratio=1.00 cr_year=2023,{MAGNNETO}: A Graph Neural Network-Based Multi-Agent System for Traffic Engineering,MAGNNETO: A Graph Neural Network-Based Multi-Agent System for Traffic Engineering
+bengio2021mlco,PASS,title_ratio=1.00 cr_year=2021,Machine Learning for Combinatorial Optimization: A Methodological Tour d'Horizon,Machine learning for combinatorial optimization: A methodological tour d’horizon
+wu2021deepbsc,PASS,title_ratio=1.00 cr_year=2021,Deep Reinforcement Learning With Spatio-Temporal Traffic Forecasting for Data-Driven Base Station Sleep Control,Deep Reinforcement Learning With Spatio-Temporal Traffic Forecasting for Data-Driven Base Station Sleep Control
+vishwanath2014modeling,PASS,title_ratio=1.00 cr_year=2014,Modeling Energy Consumption in High-Capacity Routers and Switches,Modeling Energy Consumption in High-Capacity Routers and Switches
+zheng2022energysaving,PASS,title_ratio=1.00 cr_year=2022,Research on Energy-Saving Routing Technology Based on Deep Reinforcement Learning,Research on Energy-Saving Routing Technology Based on Deep Reinforcement Learning
+andresini2021insomnia,PASS,title_ratio=1.00 cr_year=2021,{INSOMNIA}: Towards Concept-Drift Robustness in Network Intrusion Detection,INSOMNIA
+azzouni2018neutm,PASS,title_ratio=1.00 cr_year=2018,{NeuTM}: A Neural Network-Based Framework for Traffic Matrix Prediction in {SDN},NeuTM: A neural network-based framework for traffic matrix prediction in SDN

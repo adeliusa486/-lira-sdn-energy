@@ -1,0 +1,8 @@
+nobel_L1.6 test: T=2160 (7.5 days), K=32, lamR=1.0, lamW=1.0
+                              method  savings_pct  config_changes_per_day  link_transitions_per_day  mlu_violation_pct  total_cost_J  retention_vs_SNAP_pct  change_reduction_vs_SNAP_pct  J_regret_vs_oracle_pct
+                        B0 always-on         0.00                    0.00                      0.00               0.19           inf                   0.00                        100.00                     inf
+        SNAP (perfect snapshot rule)        27.59                   38.80                     95.20               0.00       1690.50                 100.00                          0.00                    9.74
+         B6 hysteresis (delta=0.005)        27.59                    0.93                      3.73               0.00       1542.92                  99.99                         97.59                    0.16
+         B7 min-dwell (48 intervals)        27.21                    5.33                     13.87               0.00       1568.02                  98.61                         86.25                    1.79
+B2 rolling horizon H=12 (naive fcst)        27.58                    0.93                      1.87               0.00       1541.09                  99.94                         97.59                    0.04
+                   O* offline oracle        27.57                    0.80                      1.33               0.00       1540.46                  99.93                         97.94                    0.00

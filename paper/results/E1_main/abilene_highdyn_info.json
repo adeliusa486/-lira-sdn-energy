@@ -1,0 +1,193 @@
+{
+  "lam_R": 0.5760000000000001,
+  "lam_W": 23.040000000000003,
+  "K": 32,
+  "library_size": 32,
+  "runs": [
+    {
+      "seed": 0,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 28864,
+          "fit_s": 0.0006089000016800128,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 57728,
+          "fit_s": 0.0008802000011201017,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 86592,
+          "fit_s": 0.0010087999980896711,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 115456,
+          "fit_s": 0.0018602999989525415,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "ConstantModel"
+    },
+    {
+      "seed": 1,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 28864,
+          "fit_s": 0.0006117000011727214,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 57728,
+          "fit_s": 0.0009942000033333898,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 86592,
+          "fit_s": 0.0012936999992234632,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 115456,
+          "fit_s": 0.0022647000005235896,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "ConstantModel"
+    },
+    {
+      "seed": 2,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 28864,
+          "fit_s": 0.0004391999973449856,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 57728,
+          "fit_s": 0.0007380999959423207,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 86592,
+          "fit_s": 0.0011187999989488162,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 115456,
+          "fit_s": 0.0019090999994659796,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "ConstantModel"
+    },
+    {
+      "seed": 3,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 28864,
+          "fit_s": 0.0005579999997280538,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 57728,
+          "fit_s": 0.0007410999969579279,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 86592,
+          "fit_s": 0.001230100002430845,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 115456,
+          "fit_s": 0.00182199999835575,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "ConstantModel"
+    },
+    {
+      "seed": 4,
+      "delta": 0.0,
+      "dwell": 1,
+      "lira_best_round": 0,
+      "lira_log": [
+        {
+          "round": 0,
+          "samples": 28864,
+          "fit_s": 0.0006001000001560897,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 1,
+          "samples": 57728,
+          "fit_s": 0.0010065000024042092,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 2,
+          "samples": 86592,
+          "fit_s": 0.0014458000005106442,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        },
+        {
+          "round": 3,
+          "samples": 115456,
+          "fit_s": 0.0017797999971662648,
+          "val_J": 4345.972107232477,
+          "val_fallback": 0.0
+        }
+      ],
+      "lira_model": "ConstantModel"
+    }
+  ]
+}

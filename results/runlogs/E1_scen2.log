@@ -1,0 +1,48 @@
+23:56:11 E1 abilene_highload seed 0 done
+23:58:36 E1 abilene_highload seed 1 done
+23:59:14 E1 abilene_highload seed 2 done
+23:59:38 E1 abilene_highload seed 3 done
+00:00:08 E1 abilene_highload seed 4 done
+00:00:08 E1 abilene_highload finished in 470s
+00:01:33 E1 abilene_highdyn seed 0 done
+00:01:56 E1 abilene_highdyn seed 1 done
+00:02:21 E1 abilene_highdyn seed 2 done
+00:02:54 E1 abilene_highdyn seed 3 done
+00:03:20 E1 abilene_highdyn seed 4 done
+00:03:20 E1 abilene_highdyn finished in 192s
+00:03:20 E1 skip (library missing) abilene_stress
+00:06:01 E1 geant_highload seed 0 done
+00:07:09 E1 geant_highload seed 1 done
+00:08:24 E1 geant_highload seed 2 done
+00:09:46 E1 geant_highload seed 3 done
+00:11:07 E1 geant_highload seed 4 done
+00:11:07 E1 geant_highload finished in 467s
+00:12:55 E1 geant_highdyn seed 0 done
+00:13:52 E1 geant_highdyn seed 1 done
+00:14:50 E1 geant_highdyn seed 2 done
+00:15:53 E1 geant_highdyn seed 3 done
+00:16:48 E1 geant_highdyn seed 4 done
+00:16:48 E1 geant_highdyn finished in 341s
+00:16:48 E1 skip (library missing) geant_stress
+00:18:01 E1 nobel_highload seed 0 done
+00:18:54 E1 nobel_highload seed 1 done
+00:20:07 E1 nobel_highload seed 2 done
+00:23:26 E1 nobel_highload seed 3 done
+00:25:11 E1 nobel_highload seed 4 done
+00:25:11 E1 nobel_highload finished in 503s
+00:26:08 E1 nobel_highdyn seed 0 done
+00:26:26 E1 nobel_highdyn seed 1 done
+00:26:57 E1 nobel_highdyn seed 2 done
+00:27:15 E1 nobel_highdyn seed 3 done
+00:27:48 E1 nobel_highdyn seed 4 done
+00:27:48 E1 nobel_highdyn finished in 158s
+00:27:48 E1 skip (library missing) nobel_stress
+00:29:04 derived E3/E4/E9/E12 abilene base
+00:29:07 derived E3/E4/E9/E12 abilene highload
+00:29:09 derived E3/E4/E9/E12 abilene highdyn
+00:30:02 derived E3/E4/E9/E12 geant base
+00:30:03 derived E3/E4/E9/E12 geant highload
+00:30:03 derived E3/E4/E9/E12 geant highdyn
+00:30:28 derived E3/E4/E9/E12 nobel base
+00:30:29 derived E3/E4/E9/E12 nobel highload
+00:30:30 derived E3/E4/E9/E12 nobel highdyn

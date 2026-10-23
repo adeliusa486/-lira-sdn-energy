@@ -1,0 +1,18 @@
+01:00:00 E1 abilene_stress seed 0 done
+01:00:13 E1 abilene_stress seed 1 done
+01:00:25 E1 abilene_stress seed 2 done
+01:00:33 E1 abilene_stress seed 3 done
+01:01:07 E1 abilene_stress seed 4 done
+01:01:07 E1 abilene_stress finished in 153s
+01:01:07 E1 skip (library missing) geant_stress
+01:01:07 E1 skip (library missing) nobel_stress
+01:02:14 derived E3/E4/E9/E12 abilene base
+01:03:47 derived E3/E4/E9/E12 abilene highload
+01:04:39 derived E3/E4/E9/E12 abilene highdyn
+01:04:41 derived E3/E4/E9/E12 abilene stress
+01:05:30 derived E3/E4/E9/E12 geant base
+01:06:15 derived E3/E4/E9/E12 geant highload
+01:07:17 derived E3/E4/E9/E12 geant highdyn
+01:07:40 derived E3/E4/E9/E12 nobel base
+01:08:08 derived E3/E4/E9/E12 nobel highload
+01:08:31 derived E3/E4/E9/E12 nobel highdyn

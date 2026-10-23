@@ -1,0 +1,1505 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder  "checkdraft.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(checkdraft.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.st
+y (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoc
+ode.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmi
+cx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+))) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarybackgrounds.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryfit.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.rev
+ision.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.cod
+e.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore
+.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplots
+sysgeneric.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplot
+slibrary.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompat
+ib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompat
+ib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructure.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructureext.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsarray.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsmatrix.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgf
+plotstableshared.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsdeque.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.data.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.verb.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibr
+arypgfplots.surfshading.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibra
+rypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolormap.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolor.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstac
+kedplots.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplot
+handlers.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plothandler.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plotimage.code.tex)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.sca
+ling.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoor
+dprocessing.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.err
+orbars.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.mar
+kers.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotstick
+s.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.pat
+hs.code.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+decorations.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
+rarypgfplots.contourlua.code.tex))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryplotmarks.code.tex
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplotmarks.code.tex)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty)))
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty))) (generated/results_macros.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def) (checkdraft.aux)
+-- Lines per column: 58 (exact).
+
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg))
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+Underfull \hbox (badness 1472) in paragraph at lines 44--46
+[]\OT1/ptm/b/it/9 Abstract\OT1/ptm/b/n/9 ---Learned con-trollers for energy-awa
+re software-
+
+LaTeX Warning: Citation `gupta2003greening' on page 1 undefined on input line 5
+4.
+
+
+LaTeX Warning: Citation `bianzino2012survey' on page 1 undefined on input line 
+54.
+
+
+LaTeX Warning: Citation `bolla2011energy' on page 1 undefined on input line 54.
+
+
+
+LaTeX Warning: Citation `mckeown2008openflow' on page 1 undefined on input line
+ 54.
+
+
+LaTeX Warning: Citation `kreutz2015sdn' on page 1 undefined on input line 54.
+
+
+LaTeX Warning: Citation `chiaraviglio2012minimizing' on page 1 undefined on inp
+ut line 54.
+
+
+LaTeX Warning: Reference `sec:res-time' on page 1 undefined on input line 54.
+
+
+LaTeX Warning: Citation `gomezdelahiz2025noms' on page 1 undefined on input lin
+e 56.
+
+
+LaTeX Warning: Citation `gomezdelahiz2026tgcn' on page 1 undefined on input lin
+e 56.
+
+
+LaTeX Warning: Citation `xu2023teal' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Citation `perry2023dote' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Citation `abuzaid2021ncflow' on page 1 undefined on input line 5
+6.
+
+
+LaTeX Warning: Citation `almasan2022enero' on page 1 undefined on input line 56
+.
+
+
+LaTeX Warning: Citation `bengio2021mlco' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Citation `reitblatt2012abstractions' on page 1 undefined on inpu
+t line 58.
+
+
+LaTeX Warning: Citation `jin2014dionysus' on page 1 undefined on input line 58.
+
+
+
+LaTeX Warning: Citation `chiaraviglio2015lifetime' on page 1 undefined on input
+ line 58.
+
+
+LaTeX Warning: Citation `chiaraviglio2014impact' on page 1 undefined on input l
+ine 58.
+
+
+LaTeX Warning: Reference `sec:problem' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Reference `sec:framework' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation `ross2011dagger' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Reference `sec:framework' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Reference `sec:algorithms' on page 1 undefined on input line 64.
+
+
+
+LaTeX Warning: Reference `sec:setup' on page 1 undefined on input line 65.
+
+
+LaTeX Warning: Reference `sec:results' on page 1 undefined on input line 65.
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 65--66
+\OT1/ptm/m/n/10 minimum-dwell, rolling-horizon, integer-programming,
+
+LaTeX Warning: Reference `sec:res-emu' on page 1 undefined on input line 66.
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 66--67
+[]\OT1/ptm/m/it/10 Emulation of tran-si-tion cost. \OT1/ptm/m/n/10 A Mininet an
+d Open
+
+Underfull \hbox (badness 1661) in paragraph at lines 66--67
+\OT1/ptm/m/n/10 Nobel-Germany se-ries and mea-sures rule-installation
+[1{C:/Users/adeel/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ad
+eel/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+
+LaTeX Warning: Reference `sec:related' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:problem' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:framework' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:algorithms' on page 2 undefined on input line 71.
+
+
+
+LaTeX Warning: Reference `sec:setup' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 2 undefined on input line 71.
+
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 71.
+
+
+
+LaTeX Warning: Citation `bianzino2012survey' on page 2 undefined on input line 
+77.
+
+
+LaTeX Warning: Citation `bolla2011energy' on page 2 undefined on input line 77.
+
+
+
+LaTeX Warning: Citation `chiaraviglio2012minimizing' on page 2 undefined on inp
+ut line 77.
+
+
+LaTeX Warning: Citation `zhang2010greente' on page 2 undefined on input line 77
+.
+
+
+LaTeX Warning: Citation `heller2010elastictree' on page 2 undefined on input li
+ne 77.
+
+
+LaTeX Warning: Citation `vasic2010eate' on page 2 undefined on input line 77.
+
+
+LaTeX Warning: Citation `mahadevan2009power' on page 2 undefined on input line 
+77.
+
+
+LaTeX Warning: Citation `restrepo2009energy' on page 2 undefined on input line 
+77.
+
+
+LaTeX Warning: Citation `vishwanath2014modeling' on page 2 undefined on input l
+ine 77.
+
+
+LaTeX Warning: Citation `maaloul2018carrier' on page 2 undefined on input line 
+77.
+
+
+LaTeX Warning: Citation `assefa2019survey' on page 2 undefined on input line 77
+.
+
+
+LaTeX Warning: Citation `assefa2018mersdn' on page 2 undefined on input line 81
+.
+
+
+LaTeX Warning: Citation `frohlich2021rl' on page 2 undefined on input line 81.
+
+
+LaTeX Warning: Citation `zheng2022energysaving' on page 2 undefined on input li
+ne 81.
+
+
+LaTeX Warning: Citation `wu2021deepbsc' on page 2 undefined on input line 81.
+
+
+LaTeX Warning: Citation `gomezdelahiz2025noms' on page 2 undefined on input lin
+e 81.
+
+
+LaTeX Warning: Citation `gomezdelahiz2026tgcn' on page 2 undefined on input lin
+e 81.
+
+
+LaTeX Warning: Citation `bengio2021mlco' on page 2 undefined on input line 85.
+
+
+LaTeX Warning: Citation `xu2023teal' on page 2 undefined on input line 85.
+
+
+LaTeX Warning: Citation `perry2023dote' on page 2 undefined on input line 85.
+
+
+LaTeX Warning: Citation `abuzaid2021ncflow' on page 2 undefined on input line 8
+5.
+
+
+LaTeX Warning: Citation `narayanan2021pop' on page 2 undefined on input line 85
+.
+
+
+LaTeX Warning: Citation `valadarsky2017learning' on page 2 undefined on input l
+ine 85.
+
+
+LaTeX Warning: Citation `almasan2022enero' on page 2 undefined on input line 85
+.
+
+
+LaTeX Warning: Citation `bernardez2023magnneto' on page 2 undefined on input li
+ne 85.
+
+
+LaTeX Warning: Citation `rusek2020routenet' on page 2 undefined on input line 8
+5.
+
+
+LaTeX Warning: Citation `reitblatt2012abstractions' on page 2 undefined on inpu
+t line 89.
+
+
+LaTeX Warning: Citation `jin2014dionysus' on page 2 undefined on input line 89.
+
+
+
+LaTeX Warning: Citation `bonetto2013multiperiod' on page 2 undefined on input l
+ine 89.
+
+
+LaTeX Warning: Citation `chiaraviglio2015lifetime' on page 2 undefined on input
+ line 89.
+
+
+LaTeX Warning: Citation `chiaraviglio2014impact' on page 2 undefined on input l
+ine 89.
+
+
+LaTeX Warning: Citation `wiatr2016lifetime' on page 2 undefined on input line 8
+9.
+
+
+LaTeX Warning: Citation `borodin1992mts' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `chen2018obd' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `lin2013rightsizing' on page 2 undefined on input line 
+89.
+
+
+LaTeX Warning: Citation `ross2011dagger' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `gama2014drift' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `lu2019drift' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `bifet2007adwin' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `page1954cusum' on page 2 undefined on input line 89.
+
+
+LaTeX Warning: Citation `andresini2021insomnia' on page 2 undefined on input li
+ne 89.
+
+
+LaTeX Warning: Reference `tab:notation' on page 2 undefined on input line 93.
+
+
+LaTeX Warning: Reference `sec:library' on page 2 undefined on input line 124.
+
+[2]
+
+LaTeX Warning: Citation `restrepo2009energy' on page 3 undefined on input line 
+132.
+
+
+LaTeX Warning: Citation `mahadevan2009power' on page 3 undefined on input line 
+132.
+
+
+LaTeX Warning: Citation `vishwanath2014modeling' on page 3 undefined on input l
+ine 132.
+
+
+Overfull \hbox (13.7753pt too wide) detected at line 135
+[][][]\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c; D[]\OT1/cmr/m/n/10
+ ) = ^^A [] []\OML/cmm/m/it/10 x[][]\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 P[] \OT1/
+cmr/m/n/10 + \OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u[] \OT1/cmr
+/m/n/10 + \OML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 )[] + (1 \OMS/cmsy/m/n/10 ^^@ \OM
+L/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) 2\OML/cmm/m/it/10 P[][];
+
+LaTeX Warning: Citation `chiaraviglio2015lifetime' on page 3 undefined on input
+ line 148.
+
+
+LaTeX Warning: Reference `sec:params' on page 3 undefined on input line 156.
+
+
+LaTeX Warning: Reference `eq:mlu' on page 3 undefined on input line 164.
+
+
+LaTeX Warning: Citation `zhang2003tomogravity' on page 3 undefined on input lin
+e 168.
+
+
+LaTeX Warning: Reference `eq:snapshot' on page 3 undefined on input line 175.
+
+
+LaTeX Warning: Reference `eq:objective' on page 3 undefined on input line 175.
+
+
+LaTeX Warning: Reference `eq:wear' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Reference `sec:results' on page 3 undefined on input line 181.
+
+
+LaTeX Warning: Reference `fig:arch' on page 3 undefined on input line 185.
+
+
+LaTeX Warning: Reference `eq:mlu' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Citation `deb2002nsga2' on page 3 undefined on input line 227.
+
+[3]
+
+LaTeX Warning: Reference `eq:objective' on page 4 undefined on input line 231.
+
+
+LaTeX Warning: Reference `fig:trellis' on page 4 undefined on input line 231.
+
+
+LaTeX Warning: Reference `eq:dp' on page 4 undefined on input line 239.
+
+
+LaTeX Warning: Reference `eq:objective' on page 4 undefined on input line 239.
+
+
+LaTeX Warning: Reference `eq:wear' on page 4 undefined on input line 242.
+
+
+LaTeX Warning: Reference `eq:energy' on page 4 undefined on input line 242.
+
+
+LaTeX Warning: Reference `eq:reconf' on page 4 undefined on input line 242.
+
+
+LaTeX Warning: Reference `eq:objective' on page 4 undefined on input line 242.
+
+
+LaTeX Warning: Reference `eq:dp' on page 4 undefined on input line 242.
+
+
+LaTeX Warning: Citation `chen2016xgboost' on page 4 undefined on input line 268
+.
+
+
+LaTeX Warning: Reference `sec:res-models' on page 4 undefined on input line 268
+.
+
+
+LaTeX Warning: Citation `ke2017lightgbm' on page 4 undefined on input line 268.
+
+
+
+LaTeX Warning: Citation `breiman2001rf' on page 4 undefined on input line 268.
+
+[4]
+
+LaTeX Warning: Citation `ross2011dagger' on page 5 undefined on input line 272.
+
+
+
+LaTeX Warning: Citation `ross2011dagger' on page 5 undefined on input line 277.
+
+
+
+LaTeX Warning: Reference `eq:mlu' on page 5 undefined on input line 287.
+
+
+Overfull \hbox (17.6852pt too wide) detected at line 290
+[][][]\OML/cmm/m/it/10 c[] \OT1/cmr/m/n/10 = [] []\OML/cmm/m/it/10 E\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 c; []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^U[]R\OT1/cmr
+/m/n/10 (\OML/cmm/m/it/10 c[]; c\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^U[]W\OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 c[]; c\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 ;
+
+LaTeX Warning: Reference `eq:mlu' on page 5 undefined on input line 293.
+
+
+LaTeX Warning: Reference `eq:fallback' on page 5 undefined on input line 296.
+
+
+Overfull \hbox (19.68666pt too wide) detected at line 305
+[][][]\OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 E\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 c[]; D[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/
+m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c; D[]\OT1/cmr/m/n/10 ) + \U/msb/m/n
+/10 1\OT1/cmr/m/n/10 [[](\OML/cmm/m/it/10 c[]; D[]\OT1/cmr/m/n/10 ) \OML/cmm/m/
+it/10 > ^^R\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ;
+
+LaTeX Warning: Citation `bifet2007adwin' on page 5 undefined on input line 306.
+
+
+
+LaTeX Warning: Citation `page1954cusum' on page 5 undefined on input line 306.
+
+
+LaTeX Warning: Reference `alg:offline' on page 5 undefined on input line 310.
+
+
+LaTeX Warning: Reference `alg:online' on page 5 undefined on input line 310.
+
+
+LaTeX Warning: Reference `eq:dp' on page 5 undefined on input line 321.
+
+
+LaTeX Warning: Reference `eq:fallback' on page 5 undefined on input line 343.
+
+
+LaTeX Warning: Reference `eq:proxy' on page 5 undefined on input line 349.
+
+
+LaTeX Warning: Reference `sec:drift' on page 5 undefined on input line 351.
+
+
+LaTeX Warning: Reference `tab:data' on page 5 undefined on input line 361.
+
+
+LaTeX Warning: Citation `zhang2003tomogravity' on page 5 undefined on input lin
+e 361.
+
+
+LaTeX Warning: Citation `uhlig2006geant' on page 5 undefined on input line 361.
+
+
+
+LaTeX Warning: Citation `orlowski2010sndlib' on page 5 undefined on input line 
+361.
+
+[5] (generated/tab_data.tex)
+Overfull \hbox (35.5415pt too wide) in paragraph at lines 1--370
+ [][] 
+
+LaTeX Warning: Citation `gomezdelahiz2025noms' on page 6 undefined on input lin
+e 374.
+
+
+LaTeX Warning: Citation `gomezdelahiz2026tgcn' on page 6 undefined on input lin
+e 374.
+
+
+LaTeX Warning: Citation `huangfu2018highs' on page 6 undefined on input line 37
+4.
+
+
+LaTeX Warning: Citation `heller2010elastictree' on page 6 undefined on input li
+ne 374.
+
+
+LaTeX Warning: Reference `eq:objective' on page 6 undefined on input line 378.
+
+
+LaTeX Warning: Reference `tab:params' on page 6 undefined on input line 382.
+
+
+LaTeX Warning: Citation `vishwanath2014modeling' on page 6 undefined on input l
+ine 382.
+
+
+LaTeX Warning: Citation `mahadevan2009power' on page 6 undefined on input line 
+382.
+
+
+LaTeX Warning: Citation `chiaraviglio2015lifetime' on page 6 undefined on input
+ line 382.
+
+
+LaTeX Warning: Reference `sec:res-wear' on page 6 undefined on input line 382.
+
+
+LaTeX Warning: Reference `tab:main' on page 6 undefined on input line 413.
+
+
+LaTeX Warning: Reference `tab:scen' on page 6 undefined on input line 413.
+
+[6] (generated/tab_main.tex)
+
+LaTeX Warning: Reference `fig:gain' on page 7 undefined on input line 426.
+
+
+LaTeX Warning: Reference `tab:scen' on page 7 undefined on input line 441.
+
+(generated/tab_scen.tex)
+
+LaTeX Warning: Reference `fig:case' on page 7 undefined on input line 452.
+
+
+LaTeX Warning: Reference `fig:pareto' on page 7 undefined on input line 452.
+
+
+! LaTeX Error: Environment groupplot undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.473 \begin{groupplot}
+                       [group style={group size=2 by 1,horizontal sep=1.3cm}...
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   h
+l.473 ...ontal sep=1.3cm},width=0.52\columnwidth,h
+                                                  eight=4.3cm,xmode=log,xlab...
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.474 \nextgroupplot
+                    [title={Base},ylabel={Total cost $J$}]
+Missing character: There is no [ in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.475 \addplot
+              [only marks,mark=square*,cGreen!70!black] table[x expr=\thisro...
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no * in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ! in font nullfont!
+Missing character: There is no 7 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ! in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.475 ...e*,cGreen!70!black] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.475 ...n!70!black] table[x expr=\thisrow{config_
+                                                  changes_per_day}+0.05,y=to...
+
+! Extra }, or forgotten $.
+l.475 ...e[x expr=\thisrow{config_changes_per_day}
+                                                  +0.05,y=total_cost_J,col s...
+
+! Undefined control sequence.
+l.476 \addplot
+              [only marks,mark=triangle*,cOrange] table[x expr=\thisrow{conf...
+
+! Undefined control sequence.
+l.476 ...=triangle*,cOrange] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.477 \addplot
+              [only marks,mark=*,cBlue,mark size=2pt] table[x expr=\thisrow{...
+
+! Undefined control sequence.
+l.477 ...Blue,mark size=2pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.478 \addplot
+              [only marks,mark=x,black,mark size=3pt] table[x expr=\thisrow{...
+
+! Undefined control sequence.
+l.478 ...lack,mark size=3pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.479 \addplot
+              [only marks,mark=diamond*,cRed,mark size=3pt] table[x expr=\th...
+
+! Undefined control sequence.
+l.479 ...cRed,mark size=3pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.480 \nextgroupplot
+                    [title={High load}]
+! Undefined control sequence.
+l.481 \addplot
+              [only marks,mark=square*,cGreen!70!black] table[x expr=\thisro...
+
+! Undefined control sequence.
+l.481 ...e*,cGreen!70!black] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.482 \addlegendentry
+                     {B6 sweep}
+! Undefined control sequence.
+l.483 \addplot
+              [only marks,mark=triangle*,cOrange] table[x expr=\thisrow{conf...
+
+! Undefined control sequence.
+l.483 ...=triangle*,cOrange] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.484 \addlegendentry
+                     {B7 sweep}
+! Undefined control sequence.
+l.485 \addplot
+              [only marks,mark=*,cBlue,mark size=2pt] table[x expr=\thisrow{...
+
+! Undefined control sequence.
+l.485 ...Blue,mark size=2pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.486 \addlegendentry
+                     {LiRA}
+! Undefined control sequence.
+l.487 \addplot
+              [only marks,mark=x,black,mark size=3pt] table[x expr=\thisrow{...
+
+! Undefined control sequence.
+l.487 ...lack,mark size=3pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+! Undefined control sequence.
+l.488 \addlegendentry
+                     {O$^\star$}
+! Missing } inserted.
+<inserted text> 
+                }
+l.488 \addlegendentry{O$
+                        ^\star$}
+! Missing $ inserted.
+<inserted text> 
+                $
+l.488 \addlegendentry{O$^
+                         \star$}
+! Undefined control sequence.
+l.489 \addplot
+              [only marks,mark=diamond*,cRed,mark size=3pt] table[x expr=\th...
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no * in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+l.489 ...cRed,mark size=3pt] table[x expr=\thisrow
+                                                  {config_changes_per_day}+0...
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.489 ...k size=3pt] table[x expr=\thisrow{config_
+                                                  changes_per_day}+0.05,y=to...
+
+! Extra }, or forgotten $.
+l.489 ...e[x expr=\thisrow{config_changes_per_day}
+                                                  +0.05,y=total_cost_J,col s...
+
+! Undefined control sequence.
+l.490 \addlegendentry
+                     {B4}
+
+! LaTeX Error: \begin{tikzpicture} on input line 472 ended by \end{groupplot}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.491 \end{groupplot}
+                     
+! Missing $ inserted.
+<inserted text> 
+                $
+l.491 \end{groupplot}
+                     
+! Missing } inserted.
+<inserted text> 
+                }
+l.491 \end{groupplot}
+                     
+
+LaTeX Warning: Reference `tab:models' on page 7 undefined on input line 499.
+
+(generated/tab_models.tex)
+
+LaTeX Warning: Reference `tab:ablation' on page 7 undefined on input line 512.
+
+(generated/tab_ablation.tex)
+Overfull \hbox (11.3686pt too wide) in paragraph at lines 1--521
+ [][] 
+
+LaTeX Warning: Reference `tab:K' on page 7 undefined on input line 523.
+
+
+LaTeX Warning: Reference `tab:theta' on page 7 undefined on input line 523.
+
+[7] (generated/tab_K.tex) (generated/tab_theta.tex)
+
+LaTeX Warning: Reference `fig:wear' on page 8 undefined on input line 545.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+
+Package pgfplots Warning: Some input argument (domain restriction) explicitly r
+elies on the log basis of x (which is e). Please verify that this is intended a
+nd set 'log basis x=10' otherwise. This warning will be shown only once per doc
+ument. on input line 551.
+
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 551.
+
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 552.
+
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 553.
+
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 554.
+
+
+Package pgfplots Warning: You have an axis with empty range (in direction x). R
+eplacing it with a default range and clearing all plots. on input line 555.
+
+
+LaTeX Warning: Reference `tab:opt' on page 8 undefined on input line 563.
+
+
+LaTeX Warning: Reference `tab:scale' on page 8 undefined on input line 563.
+
+
+Underfull \vbox (badness 1152) has occurred while \output is active [8]
+(generated/tab_opt.tex) (generated/tab_scale.tex)
+Overfull \hbox (6.71193pt too wide) in paragraph at lines 1--581
+ [][] 
+
+LaTeX Warning: Reference `tab:drift' on page 9 undefined on input line 585.
+
+(generated/tab_drift.tex)
+Overfull \hbox (50.50642pt too wide) in paragraph at lines 1--594
+ [][] 
+
+LaTeX Warning: Reference `tab:folds' on page 9 undefined on input line 598.
+
+(generated/tab_folds.tex)
+(C:\Users\adeel\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd)
+
+LaTeX Warning: Reference `tab:emu' on page 9 undefined on input line 611.
+
+[9]
+
+LaTeX Warning: Reference `tab:scen' on page 10 undefined on input line 626.
+
+
+LaTeX Warning: Reference `fig:pareto' on page 10 undefined on input line 628.
+
+
+LaTeX Warning: Reference `sec:res-time' on page 10 undefined on input line 628.
+
+
+
+LaTeX Warning: Reference `prop:safety' on page 10 undefined on input line 630.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [10]
+
+LaTeX Warning: Citation `orlowski2010sndlib' on page 11 undefined on input line
+ 648.
+
+
+LaTeX Warning: Citation `uhlig2006geant' on page 11 undefined on input line 648
+.
+
+
+LaTeX Warning: Citation `zhang2003tomogravity' on page 11 undefined on input li
+ne 648.
+
+No file checkdraft.bbl.
+[11] (checkdraft.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `checkdraft.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)<C:/Users/adeel/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/adeel/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users
+/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
+C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adeel/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/adeel/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/adeel/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/adeel/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ad
+eel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/U
+sers/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy5.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Users/adeel/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adeel/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/adeel/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/adeel/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adeel/App
+Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/adeel/App
+Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/adeel/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/adeel/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on checkdraft.pdf (11 pages, 409041 bytes).
+Transcript written on checkdraft.log.
+Latexmk: Getting log file 'checkdraft.log'
+Latexmk: Examining 'checkdraft.fls'
+Latexmk: Examining 'checkdraft.log'
+Latexmk: Missing bbl file 'checkdraft.bbl' in following:
+ No file checkdraft.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'checkdraft.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'checkdraft.bbl' for 'pdflatex'
+Create bibtex checkdraft
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: Summary of warnings from last run of *latex:
+  Latex failed to resolve 74 reference(s)
+  =====Latex reported missing or unavailable character(s).
+=====See log file for details.
+  Latex failed to resolve 94 citation(s)
+Latexmk: ====Problematic refs and citations with line #s in .tex file:
+  Citation `gupta2003greening' on page 1 undefined on input line 54
+  Citation `bianzino2012survey' on page 1 undefined on input line 54
+  Citation `bolla2011energy' on page 1 undefined on input line 54
+  Citation `bolla2011energy' on page 1 undefined on input line 54
+  Citation `mckeown2008openflow' on page 1 undefined on input line 54
+  Citation `kreutz2015sdn' on page 1 undefined on input line 54
+  Citation `chiaraviglio2012minimizing' on page 1 undefined on input line 54
+ And 467 more --- see log file 'checkdraft.log'
+Latexmk: Errors, so I did not complete making targets
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'checkdraft.log' and/or above output for details
+
+Latexmk: Sometimes, the -f option can be used to get latexmk
+  to try to force complete processing.
+  But normally, you will need to correct the file(s) that caused the
+  error, and then rerun latexmk.
+  In some cases, it is best to clean out generated files before rerunning
+  latexmk after you've corrected the files.

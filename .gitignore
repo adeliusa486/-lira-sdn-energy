@@ -1,0 +1,26 @@
+# Raw SNDlib downloads (~900 MB): fetch with `python -m lira.data.download`
+data/raw/
+# Regenerable features (67 MB file): `python -m lira.data.features abilene geant nobel`
+data/processed/*/features.npz
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# LaTeX build files
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.blg
+paper/*.synctex.gz
+paper/checkdraft.*
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

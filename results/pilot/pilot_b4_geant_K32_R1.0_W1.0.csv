@@ -1,0 +1,5 @@
+method,savings_pct,config_changes_per_day,link_transitions_per_day,mlu_violation_pct,total_cost_J,retention_vs_B4_pct,change_reduction_vs_B4_pct,J_regret_vs_oracle_pct
+SNAP exact rule,29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,100.0,0.0
+B4 learned (XGBoost)+safety,29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,100.0,0.0
+B6 = B4 + hysteresis (delta=0.0),29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,100.0,0.0
+O* offline oracle,29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,100.0,0.0

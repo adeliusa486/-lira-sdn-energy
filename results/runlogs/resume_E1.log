@@ -1,0 +1,18 @@
+09:52:32 E1 geant_stress seed 0 done
+09:53:44 E1 geant_stress seed 1 done
+09:56:27 E1 geant_stress seed 2 done
+09:59:22 E1 geant_stress seed 3 done
+10:01:45 E1 geant_stress seed 4 done
+10:01:45 E1 geant_stress finished in 748s
+10:02:32 derived E3/E4/E9/E12 abilene base
+10:03:22 derived E3/E4/E9/E12 abilene highload
+10:04:19 derived E3/E4/E9/E12 abilene highdyn
+10:05:09 derived E3/E4/E9/E12 abilene stress
+10:05:53 derived E3/E4/E9/E12 geant base
+10:06:35 derived E3/E4/E9/E12 geant highload
+10:07:18 derived E3/E4/E9/E12 geant highdyn
+10:07:19 derived E3/E4/E9/E12 geant stress
+10:07:35 derived E3/E4/E9/E12 nobel base
+10:07:55 derived E3/E4/E9/E12 nobel highload
+10:08:18 derived E3/E4/E9/E12 nobel highdyn
+10:08:38 derived E3/E4/E9/E12 nobel stress

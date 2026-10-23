@@ -1,0 +1,16 @@
+22:47:38 E1 abilene_base seed 0 done
+22:47:55 E1 abilene_base seed 1 done
+22:48:14 E1 abilene_base seed 2 done
+22:48:32 E1 abilene_base seed 3 done
+22:48:49 E1 abilene_base seed 4 done
+22:48:49 E1 abilene_base finished in 130s
+22:48:49 E1 skip (library missing) abilene_stress
+22:50:31 E1 geant_base seed 0 done
+22:52:02 E1 geant_base seed 1 done
+22:53:31 E1 geant_base seed 2 done
+22:55:11 E1 geant_base seed 3 done
+22:57:04 E1 geant_base seed 4 done
+22:57:04 E1 geant_base finished in 495s
+22:57:04 E1 skip (library missing) geant_stress
+22:57:05 derived E3/E4/E9/E12 abilene base
+22:57:05 derived E3/E4/E9/E12 geant base

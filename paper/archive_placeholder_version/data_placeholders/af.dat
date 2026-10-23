@@ -1,0 +1,8 @@
+# PLACEHOLDER DATA - replace with measured values (Phase 9)
+method abilene geant nobel
+ILP 1.206 0.862 0.992
+Snapshot 1.153 0.852 0.969
+Hysteresis 0.947 0.812 0.867
+MinDwell 0.931 0.814 0.862
+LiRA 0.881 0.790 0.830
+Oracle 0.867 0.782 0.819

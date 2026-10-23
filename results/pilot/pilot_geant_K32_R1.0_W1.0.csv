@@ -1,0 +1,7 @@
+method,savings_pct,config_changes_per_day,link_transitions_per_day,mlu_violation_pct,total_cost_J,retention_vs_SNAP_pct,change_reduction_vs_SNAP_pct,J_regret_vs_oracle_pct
+B0 always-on,0.0,0.0,0.0,0.0,2705.2264069153653,0.0,,56.432806660096915
+SNAP (perfect snapshot rule),29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,,0.0
+B6 hysteresis (delta=0.0),29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,,0.0
+B7 min-dwell (1 intervals),29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,,0.0
+B2 rolling horizon H=12 (naive fcst),29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,,0.0
+O* offline oracle,29.846106267934246,0.0,0.0,0.0,1729.321658719186,100.0,,0.0

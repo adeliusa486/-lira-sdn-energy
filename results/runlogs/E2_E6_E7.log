@@ -1,0 +1,48 @@
+23:04:41 E2 abilene base price x 0.0
+23:04:52 E2 abilene base price x 0.03
+23:05:00 E2 abilene base price x 0.1
+23:05:09 E2 abilene base price x 0.3
+23:05:18 E2 abilene base price x 1
+23:05:26 E2 abilene base price x 3
+23:05:33 E2 abilene base price x 10
+23:09:45 E2 abilene base price x 30
+23:12:28 E2 abilene base price x 100
+23:14:19 E2 geant base price x 0.0
+23:15:16 E2 geant base price x 0.03
+23:16:02 E2 geant base price x 0.1
+23:16:22 E2 geant base price x 0.3
+23:16:43 E2 geant base price x 1
+23:17:04 E2 geant base price x 3
+23:17:20 E2 geant base price x 10
+23:17:37 E2 geant base price x 30
+23:17:56 E2 geant base price x 100
+23:18:04 E2 nobel base price x 0.0
+23:18:05 E2 nobel base price x 0.03
+23:18:05 E2 nobel base price x 0.1
+23:18:05 E2 nobel base price x 0.3
+23:18:06 E2 nobel base price x 1
+23:18:06 E2 nobel base price x 3
+23:18:06 E2 nobel base price x 10
+23:18:07 E2 nobel base price x 30
+23:18:07 E2 nobel base price x 100
+23:18:15 E6 abilene K 8
+23:18:26 E6 abilene K 16
+23:18:30 E6 abilene K 32
+23:18:58 E6 abilene K 64
+23:19:55 E6 abilene K 128
+23:20:37 E6 geant K 8
+23:21:29 E6 geant K 16
+23:22:26 E6 geant K 32
+23:28:34 E6 geant K 64
+23:34:33 E6 geant K 128
+23:35:03 E6 nobel K 8
+23:35:36 E6 nobel K 16
+23:36:05 E6 nobel K 32
+23:36:46 E6 nobel K 64
+23:37:33 E6 nobel K 128
+23:39:06 E7 abilene price 1.0
+23:40:39 E7 abilene price 0.1
+00:13:49 E7 geant price 1.0
+00:36:17 E7 geant price 0.1
+00:36:25 E7 nobel price 1.0
+00:36:33 E7 nobel price 0.1

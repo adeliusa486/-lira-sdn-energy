@@ -1,0 +1,31 @@
+{
+  "topology": "geant",
+  "M": 64,
+  "theta": 0.7,
+  "seed": 0,
+  "n_candidates": 52,
+  "coverage_trainval": 0.9997527200791295,
+  "allon_feasible_trainval": 0.9996290801186943,
+  "K": {
+    "8": {
+      "size": 8,
+      "coverage_val": 1.0
+    },
+    "16": {
+      "size": 16,
+      "coverage_val": 1.0
+    },
+    "32": {
+      "size": 32,
+      "coverage_val": 1.0
+    },
+    "64": {
+      "size": 52,
+      "coverage_val": 1.0
+    },
+    "128": {
+      "size": 52,
+      "coverage_val": 1.0
+    }
+  }
+}

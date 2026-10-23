@@ -1,0 +1,17 @@
+# Power and wear constants. Every number names its source.
+# status: VERIFY means the value is a placeholder within the range of the cited
+# source and must be checked against the full text before submission.
+power:
+  chassis_w:        {value: 0.0,   unit: W, source: "nodes are never slept in this study, so chassis power cancels in savings; set >0 only to report total-network percentages", status: OK}
+  port_idle_w:      {value: 30.0,  unit: W per port, source: vishwanath2014modeling; mahadevan2009power, status: VERIFY}
+  port_dyn_w:       {value: 5.0,   unit: W per port at 100% utilization, source: "load-proportional share ~20% of port power (vishwanath2014modeling); swept 0-30% in sensitivity", status: VERIFY}
+  port_sleep_w:     {value: 3.0,   unit: W per sleeping port, source: "sleep mode keeps ~10% of idle power (vishwanath2014modeling)", status: VERIFY}
+  ports_per_link: 2   # both link ends must sleep for the link to save power
+wear:
+  # Lifetime model of chiaraviglio2015lifetime / chiaraviglio2014impact:
+  # AF = (1 - tau_off) * AF_on + tau_off * AF_off + chi * f_tr
+  af_on:  {value: 1.0,  source: chiaraviglio2015lifetime, status: OK}   # reference: always-on device
+  af_off: {value: 0.5,  source: chiaraviglio2015lifetime, status: VERIFY}  # sleep lowers temperature-driven ageing
+  chi:    {value: 0.01, unit: "per (transition/day)", source: chiaraviglio2015lifetime, status: VERIFY, sweep: [0.0, 0.001, 0.003, 0.01, 0.03, 0.1]}
+mlu_theta: 0.8
+k_paths: 4

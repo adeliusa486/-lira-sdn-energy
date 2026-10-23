@@ -1,0 +1,16 @@
+{
+  "python": "3.11.9",
+  "os": "Windows-10-10.0.26220-SP0",
+  "cpu": "13th Gen Intel(R) Core(TM) i9-13900H (14 cores, 20 threads)",
+  "cores_logical": 20,
+  "ram_bytes": "47.6 GB",
+  "gpu": "not used",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "scipy": "1.17.1",
+  "sklearn": "1.8.0",
+  "xgboost": "3.2.0",
+  "lightgbm": "4.7.0",
+  "highspy": "1.15.1",
+  "emulation": "Ubuntu on WSL2 (Linux 6.18), Mininet 2.3.0, Open vSwitch 3.7.1, Python 3.14.4"
+}

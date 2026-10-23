@@ -1,0 +1,28 @@
+00:22:42 E13 abilene 1.0 xgb
+00:23:53 E13 abilene 1.0 lgbm
+00:24:02 E13 abilene 1.0 rf
+00:24:18 E13 abilene 1.0 mlp
+00:24:41 E13 abilene 0.1 xgb
+00:25:13 E13 abilene 0.1 lgbm
+00:25:38 E13 abilene 0.1 rf
+00:26:17 E13 abilene 0.1 mlp
+00:27:58 E13 geant 1.0 xgb
+00:30:58 E13 geant 1.0 lgbm
+00:34:49 E13 geant 1.0 rf
+00:35:39 E13 geant 1.0 mlp
+00:36:10 E13 geant 0.1 xgb
+00:37:03 E13 geant 0.1 lgbm
+00:39:20 E13 geant 0.1 rf
+00:40:13 E13 geant 0.1 mlp
+00:40:42 E13 nobel 1.0 xgb
+00:40:57 E13 nobel 1.0 lgbm
+00:41:08 E13 nobel 1.0 rf
+C:\Users\adeel\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\neural_network\_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (40) reached and the optimization hasn't converged yet.
+  warnings.warn(
+00:41:24 E13 nobel 1.0 mlp
+00:41:39 E13 nobel 0.1 xgb
+00:42:12 E13 nobel 0.1 lgbm
+00:42:20 E13 nobel 0.1 rf
+C:\Users\adeel\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\sklearn\neural_network\_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (40) reached and the optimization hasn't converged yet.
+  warnings.warn(
+00:42:34 E13 nobel 0.1 mlp

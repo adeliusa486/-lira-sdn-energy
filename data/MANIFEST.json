@@ -1,0 +1,38 @@
+{
+  "abilene/abilene.txt": {
+    "url": "https://sndlib.put.poznan.pl/download/sndlib-networks-native/abilene.txt",
+    "sha256": "cf951d6a6c007eb54f85518dc7b846ab15507d8b3216a26f4a4af4d465054db1",
+    "bytes": 9495,
+    "retrieved": "2026-10-18T15:33:14+00:00"
+  },
+  "abilene/directed-abilene-zhang-5min-over-6months-ALL-native.tgz": {
+    "url": "https://sndlib.put.poznan.pl/download/directed-abilene-zhang-5min-over-6months-ALL-native.tgz",
+    "sha256": "2f311130d77e40db88da1aa6db8055b6fce8d077bf4bae87398563e1b84e70ce",
+    "bytes": 49203514,
+    "retrieved": "2026-10-18T15:33:14+00:00"
+  },
+  "geant/geant.txt": {
+    "url": "https://sndlib.put.poznan.pl/download/sndlib-networks-native/geant.txt",
+    "sha256": "ff316c23220ff4485deafcb8701d49c353db0c80072152df3ed9023ed4b4f4ff",
+    "bytes": 28744,
+    "retrieved": "2026-10-18T15:33:14+00:00"
+  },
+  "geant/directed-geant-uhlig-15min-over-4months-ALL-native.tgz": {
+    "url": "https://sndlib.put.poznan.pl/download/directed-geant-uhlig-15min-over-4months-ALL-native.tgz",
+    "sha256": "92d72a808d6de9d26be66844c098d3f32d5b9bb6c69af170e82b73118faef0df",
+    "bytes": 39570674,
+    "retrieved": "2026-10-18T15:33:14+00:00"
+  },
+  "nobel/nobel-germany.txt": {
+    "url": "https://sndlib.put.poznan.pl/download/sndlib-networks-native/nobel-germany.txt",
+    "sha256": "35e58a3799d78d2ebfd2a557be2ba4a221ca17fc704cfdd13df56bb90c12a796",
+    "bytes": 25451,
+    "retrieved": "2026-10-18T15:33:42+00:00"
+  },
+  "nobel/directed-nobel-germany-DFN-aggregated-5min-over-1day-native.tgz": {
+    "url": "https://sndlib.put.poznan.pl/download/directed-nobel-germany-DFN-aggregated-5min-over-1day-native.tgz",
+    "sha256": "2c3ca706a8d5c9601eb4d144651816dfd956257c20f60111a8aceb5f07ab0100",
+    "bytes": 599252,
+    "retrieved": "2026-10-18T15:33:47+00:00"
+  }
+}

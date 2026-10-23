@@ -1,0 +1,8 @@
+abilene_L1_D15 test: T=12027 (41.8 days), K=32, lamR=1.0, lamW=1.0
+                              method  savings_pct  config_changes_per_day  link_transitions_per_day  mlu_violation_pct  total_cost_J  retention_vs_SNAP_pct  change_reduction_vs_SNAP_pct  J_regret_vs_oracle_pct
+                        B0 always-on         0.00                    0.00                      0.00                0.0      12058.62                   0.00                         100.0                   32.68
+        SNAP (perfect snapshot rule)        23.94                    0.19                      0.77                0.0       9093.28                 100.00                           0.0                    0.05
+         B6 hysteresis (delta=0.005)        23.94                    0.00                      0.00                0.0       9088.51                 100.00                         100.0                    0.00
+          B7 min-dwell (1 intervals)        23.94                    0.19                      0.77                0.0       9093.28                 100.00                           0.0                    0.05
+B2 rolling horizon H=12 (naive fcst)        23.85                    0.00                      0.00                0.0       9099.53                  99.62                         100.0                    0.12
+                   O* offline oracle        23.94                    0.00                      0.00                0.0       9088.51                 100.00                         100.0                    0.00

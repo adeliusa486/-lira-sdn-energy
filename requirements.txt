@@ -1,0 +1,18 @@
+# Versions used for every result in paper/results/ (see paper/results/environment.json).
+# Python 3.11.9 on Windows 11. Install with: python -m pip install -r requirements.txt
+numpy==2.3.5
+scipy==1.17.1
+pandas==2.3.3
+networkx==3.6.1
+scikit-learn==1.8.0
+xgboost==3.2.0
+lightgbm==4.7.0
+pymoo==0.6.2
+highspy==1.15.1
+river==0.26.1
+PyYAML==6.0.3
+matplotlib==3.10.9
+pytest==8.4.2
+# Optional: pyarrow, only for lira.baselines.runlog.save (per-interval parquet logs).
+# Emulation (E11) runs separately in Linux (WSL2 Ubuntu): Mininet 2.3.0, Open vSwitch 3.7.1, Python 3.14.
+# No deep-learning or RL package is needed: the paper has no DRL baseline.
