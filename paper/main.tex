@@ -30,12 +30,12 @@
 
 \begin{document}
 
-\title{Sequence-Aware Learning for Energy-Efficient Software-Defined Networks: An Exact Oracle and an Empirical Study of When History Matters}
+\title{Reconfiguration-Aware Link Sleeping for Green Software-Defined Networks}
 
 \author{Anonymous Authors%
 \thanks{Author names and affiliations are withheld for review.}}
 
-\markboth{IEEE Transactions on Green Communications and Networking}{Sequence-Aware Learning for Energy-Efficient SDNs}
+\markboth{IEEE Transactions on Green Communications and Networking}{Reconfiguration-Aware Link Sleeping for Green SDNs}
 
 \maketitle
 \IEEEpeerreviewmaketitle
@@ -318,10 +318,10 @@ Algorithm~\ref{alg:offline} summarizes offline training and Algorithm~\ref{alg:o
 \begin{algorithmic}[1]
 \Require training traces $D_{1:T}$, validation traces, prices $\lambda_R,\lambda_W$, rounds $N$
 \Ensure library $\mathcal{C}$, policy $\pi$
-\State $\mathcal{C}\gets$ \Call{BuildLibrary}{$D_{1:T}$} \Comment{ILP, NSGA-II, cover of training and validation}
+\State $\mathcal{C}\gets$ \Call{BuildLibrary}{$D_{1:T}$} \Comment{ILP, NSGA-II, set cover}
 \State precompute $E(c,D_t)$, feasibility, and $R$, $W$ for all pairs
 \State compute $Q_t(c',c)$ and $V_t(c)$ by recursion \eqref{eq:dp}
-\State $\mathcal{D}\gets\{(s_t,c^\star_t)\}$ along the oracle trajectory, $s_t$ built with $c^\star_{t-1}$, weights $w$
+\State $\mathcal{D}\gets\{(s_t,c^\star_t)\}$ on the oracle path ($s_t$ contains $c^\star_{t-1}$), weights $w$
 \State train $\pi$ on $\mathcal{D}$
 \For{$n=1$ to $N$}
 \State roll out $\pi$ with the safety layer and expert mixing $\beta_n$; record $(t,c_{t-1})$

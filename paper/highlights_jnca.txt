@@ -1,0 +1,6 @@
+Highlights
+- Exact dynamic-programming oracle jointly prices energy, reconfiguration and wear
+- A per-interval MILP bound shows the configuration library loses at most 0.045%
+- On real Abilene and GEANT traces the optimal configuration never changes
+- Holding one configuration removes 97.7% of snapshot flapping at no energy cost
+- One-interval-old traffic breaks the safety-layer guarantee under noisy demand

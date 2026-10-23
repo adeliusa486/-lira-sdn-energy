@@ -1,6 +1,6 @@
 # LiRA: Sequence-Aware Learning for Energy-Efficient SDN
 
-Code, data pipeline, experiments and manuscript for *Sequence-Aware Learning for Energy-Efficient Software-Defined Networks: An Exact Oracle and an Empirical Study of When History Matters*. LiRA stands for Lifetime- and Reconfiguration-Aware learning.
+Code, data pipeline, experiments and manuscript for *Reconfiguration-Aware Link Sleeping for Green Software-Defined Networks*. LiRA stands for Lifetime- and Reconfiguration-Aware learning.
 
 Energy-aware SDN controllers put idle links to sleep. Most learned controllers pick a configuration for each traffic matrix on its own and ignore what a change costs: link wake-ups, flow-rule updates and device wear. This repository formulates the choice as a sequential problem, solves it exactly, trains a policy to imitate the solution, and measures when that history-awareness helps.
 
@@ -29,7 +29,7 @@ All numbers below are measured. They come from `paper/results/`, and the paper r
 | Library restriction | A per-interval exact integer program shows the configuration library loses at most 0.045% |
 | One-interval-old traffic | Costs barely change, but up to 0.19% of Nobel-Germany intervals exceed the utilization bound |
 
-The full discussion is in `paper/main.pdf` and `paper/results/FINDINGS.md`.
+The full discussion is in `paper/main_jnca.pdf` (Elsevier JNCA submission version, built by `python paper/tools/make_jnca.py`), `paper/main.pdf` (IEEE version) and `paper/results/FINDINGS.md`.
 
 ## Method
 
