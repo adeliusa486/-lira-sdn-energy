@@ -1,0 +1,6 @@
+Highlights
+- Exact dynamic-programming oracle prices energy, reconfiguration and wear
+- A per-interval MILP bound shows the configuration library loses at most 0.045%
+- On real Abilene and GEANT traces the optimal configuration never changes
+- Flapping snapshot classifiers cost up to 32.5% more, depending on traffic noise
+- A static rule with a fallback stays within 0.4% of the learned controller's cost

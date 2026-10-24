@@ -1,0 +1,130 @@
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\emergencystretch=3em
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,backgrounds,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\input{generated/results_macros}
+
+\definecolor{cBlue}{RGB}{52,101,164}
+\definecolor{cRed}{RGB}{196,78,82}
+\definecolor{cGreen}{RGB}{85,153,96}
+\definecolor{cOrange}{RGB}{221,132,52}
+\definecolor{cPurple}{RGB}{129,114,179}
+\definecolor{cGray}{RGB}{120,120,120}
+\tikzset{box/.style={draw=#1!70!black,fill=#1!12,rounded corners=3pt,align=center,font=\footnotesize,minimum height=1.05cm,text width=2.85cm,line width=0.6pt},box/.default=cBlue,arr/.style={-{Stealth[length=2.2mm]},line width=0.6pt,draw=black!75},darr/.style={arr,dashed}}
+\pgfplotsset{every axis/.append style={font=\footnotesize,grid=major,grid style={gray!25},legend style={font=\scriptsize,draw=gray!50,fill=white,fill opacity=0.9,text opacity=1}}}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+
+\renewcommand{\thetable}{S\arabic{table}}
+\begin{document}
+\begin{center}{\Large Supplementary Material}\\[6pt]
+When Does Reconfiguration Awareness Pay Off? An Exact-Oracle Study of Learned Link Sleeping in Software-Defined Networks\\[6pt]
+Adeel Ahmad, Toqeer Ali Syed, Ali Akarma\end{center}
+
+These tables complement the results section of the article. All values are generated from the experiment files in \url{https://github.com/adeliusa486/-lira-sdn-energy} (folder \texttt{paper/results}). Section numbers refer to the article.
+
+\begin{table}[h!]
+\centering
+\caption{Choice of Model on Nobel-Germany (Base Scenario, Seed 0). Chg/d: Changes per Day}
+\label{tab:models}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_models}\end{adjustbox}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Ablation of LiRA on Nobel-Germany at the Default Price (Mean over Seeds 0 to 2)}
+\label{tab:ablation}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_ablation}\end{adjustbox}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Library Size on Nobel-Germany: Test Coverage and Total Cost $J$ of Each Method (Base Scenario, Seed 0)}
+\label{tab:K}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_K}\end{adjustbox}
+\end{table}
+
+\begin{table*}[h!]
+\centering
+\caption{Utilization Threshold $\theta$ (Base Scenario, Seed 0)}
+\label{tab:theta}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_theta}\end{adjustbox}
+\end{table*}
+
+\begin{table}[h!]
+\centering
+\caption{Per-Snapshot Optimization Baselines on a Test Subsample}
+\label{tab:opt}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_opt}\end{adjustbox}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Scalability of the Optimization Step and the Safety Check}
+\label{tab:scale}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_scale}\end{adjustbox}
+\end{table}
+
+\begin{table*}[h!]
+\centering
+\caption{Repetition of the Main Study Without a Wear Price ($\lambda_W=0$, All Methods Retrained): Configuration Changes per Day and Cost $J$ (Energy plus Reconfiguration). B4, B6, and LiRA: Mean over Five Seeds}
+\label{tab:nowear}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_nowear}\end{adjustbox}
+\end{table*}
+
+\begin{table}[h!]
+\centering
+\caption{Injected Traffic Shifts: Post-Shift Cost $J$ of LiRA Trained Once (``Once'') and with Drift-Triggered Retraining (``Retrained''). FA/1k Is the Number of False Alarms per 1000 Intervals on the Stream Without a Shift}
+\label{tab:drift}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_drift}\end{adjustbox}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Rolling-Origin Folds (Mean over Four Folds, Default Price)}
+\label{tab:folds}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_folds}\end{adjustbox}
+\end{table}
+
+\begin{table*}[h!]
+\centering
+\caption{Mininet Emulation of the Most Active Day of Nobel-Germany (B4: Three Runs; B0 and LiRA: One Run). Trans.: Configuration Changes. Loss in Windows Counts Probes Sent from 0.2\,s Before a Change Starts to 1\,s After It Ends. Link-Hours Are Computed from the Replayed Configurations}
+\label{tab:emu}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}\input{generated/tab_emu}\end{adjustbox}
+\end{table*}
+
+\end{document}

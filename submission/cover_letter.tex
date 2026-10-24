@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[hidelinks]{hyperref}
+\signature{Adeel Ahmad\\Corresponding author, on behalf of all authors}
+\address{Adeel Ahmad\\AI Center, Faculty of Computer and Information Systems\\Islamic University of Madinah\\Madinah 42351, Saudi Arabia\\\href{mailto:443057803@stu.iu.edu.sa}{443057803@stu.iu.edu.sa}}
+\date{\today}
+
+\begin{document}
+\begin{letter}{The Editor-in-Chief\\Journal of Network and Computer Applications\\Elsevier}
+\opening{Dear Editor,}
+
+We submit our manuscript \emph{``When Does Reconfiguration Awareness Pay Off? An Exact-Oracle Study of Learned Link Sleeping in Software-Defined Networks''} for consideration as a research article in the \emph{Journal of Network and Computer Applications}.
+
+Learned controllers for energy-aware SDN map each traffic matrix to a precomputed link-sleeping configuration and ignore what a configuration change costs: link wake-ups, flow-rule updates, and device wear. Recent work in this line reports large speedups over integer programming but does not measure whether these snapshot decisions waste energy or stability over time. Our manuscript answers that question with an exact reference rather than a new heuristic.
+
+The main contributions are:
+\begin{itemize}
+\item a sequential formulation that prices energy, reconfiguration, and wear, solved exactly by dynamic programming and validated against an independent mixed-integer program;
+\item a per-interval integer-programming lower bound showing that restricting decisions to a configuration library loses at most 0.045\% of the attainable cost;
+\item LiRA, a history-conditioned imitation policy with a utilization safety layer, compared against snapshot learning, hysteresis, rolling-horizon, static, integer-programming, genetic, and greedy baselines on the Abilene, G\'{E}ANT, and Nobel-Germany networks;
+\item a Mininet and Open vSwitch emulation of the measured cost of a configuration change.
+\end{itemize}
+
+The results give operators practical guidance. On real traces the optimal configuration does not change, and a snapshot classifier is already within 0.014\% of the oracle. When demands are noisy, snapshot classifiers flap, and a rule that holds its configuration, such as tuned hysteresis or a short-horizon optimizer, removes nearly all changes at no energy cost. We report these findings, including the cases where our learned controller offers no advantage, because they tell practitioners when added complexity is not needed. The paper fits the journal's scope on software-defined networking, network management, and energy-efficient networked systems.
+
+All code, configuration libraries, and result files are publicly available at \url{https://github.com/adeliusa486/-lira-sdn-energy}, and every number in the manuscript is generated from these files.
+
+We confirm that this manuscript is original, has not been published elsewhere, and is not under consideration by any other journal. All authors have approved the manuscript and agree with its submission. The authors declare no competing interests.
+
+Thank you for considering our work. We look forward to your response.
+
+\closing{Sincerely,}
+\end{letter}
+\end{document}

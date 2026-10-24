@@ -24,3 +24,13 @@ paper/checkdraft.*
 .idea/
 .DS_Store
 Thumbs.db
+
+# submission build files
+submission/*.aux
+submission/*.log
+submission/*.out
+submission/*.fls
+submission/*.fdb_latexmk
+submission/*.blg
+submission/*.spl
+submission/build.txt
