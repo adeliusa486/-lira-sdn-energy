@@ -9,28 +9,12 @@ __pycache__/
 .pytest_cache/
 .venv/
 
-# LaTeX build files
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.fls
-paper/*.fdb_latexmk
-paper/*.blg
-paper/*.synctex.gz
-paper/checkdraft.*
+# Manuscript and working notes are kept outside the repository
+submission/
+PROGRESS.md
 
 # Editors and OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
-# submission build files
-submission/*.aux
-submission/*.log
-submission/*.out
-submission/*.fls
-submission/*.fdb_latexmk
-submission/*.blg
-submission/*.spl
-submission/build.txt

@@ -1,7 +1,7 @@
 """Shared experiment infrastructure: contexts, evaluation, oracle, tuned baselines, stats.
 
 Every number in the paper's results comes from the functions in this file and the
-run_*.py scripts. Nothing is hard-coded. Outputs go to paper/results/.
+run_*.py scripts. Nothing is hard-coded. Outputs go to results/.
 """
 import json
 import pickle
@@ -27,7 +27,7 @@ from lira.models.wear import WearModel
 from lira.oracle.dp import viterbi
 from lira.policy.lira_policy import Ctx, LiRA, SnapshotML
 
-OUT = ROOT / "paper" / "results"
+OUT = ROOT / "results"
 PER_DAY = {"5min": 288, "15min": 96}
 TOPOS = ("abilene", "geant", "nobel")
 # Default prices follow the paper's definitions (units: one interval of all-on link power):

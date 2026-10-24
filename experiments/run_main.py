@@ -2,7 +2,7 @@
 E6 (library size), E7 (ablation), E9 (wear sensitivity), E12 (gap to oracle).
 
 Usage:  python experiments/run_main.py --exp E1 E2 ... [--topos abilene geant nobel] [--force]
-Outputs: paper/results/<exp>/*.csv|json|npz   (a finished experiment is skipped unless --force)
+Outputs: results/<exp>/*.csv|json|npz   (a finished experiment is skipped unless --force)
 """
 import argparse
 import time

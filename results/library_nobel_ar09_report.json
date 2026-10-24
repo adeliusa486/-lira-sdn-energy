@@ -1,0 +1,15 @@
+{
+  "topology": "nobel_ar09",
+  "M": 64,
+  "theta": 0.8,
+  "seed": 0,
+  "n_candidates": 49,
+  "coverage_trainval": 1.0,
+  "allon_feasible_trainval": 1.0,
+  "K": {
+    "32": {
+      "size": 32,
+      "coverage_val": 1.0
+    }
+  }
+}

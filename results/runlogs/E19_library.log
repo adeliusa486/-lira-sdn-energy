@@ -1,0 +1,74 @@
+[nobel_ar05] 40 unique configs from 64 clusters
+[nobel_ar05] coverage 1.0000 with 41 configs
+{
+  "topology": "nobel_ar05",
+  "M": 64,
+  "theta": 0.8,
+  "seed": 0,
+  "n_candidates": 41,
+  "coverage_trainval": 1.0,
+  "allon_feasible_trainval": 0.9998456790123457,
+  "K": {
+    "32": {
+      "size": 32,
+      "coverage_val": 1.0
+    }
+  }
+}
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+[nobel_ar09] 48 unique configs from 64 clusters
+[nobel_ar09] coverage 1.0000 with 49 configs
+{
+  "topology": "nobel_ar09",
+  "M": 64,
+  "theta": 0.8,
+  "seed": 0,
+  "n_candidates": 49,
+  "coverage_trainval": 1.0,
+  "allon_feasible_trainval": 1.0,
+  "K": {
+    "32": {
+      "size": 32,
+      "coverage_val": 1.0
+    }
+  }
+}
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+[nobel_s06] 39 unique configs from 64 clusters
+[nobel_s06] coverage 1.0000 with 40 configs
+{
+  "topology": "nobel_s06",
+  "M": 64,
+  "theta": 0.8,
+  "seed": 0,
+  "n_candidates": 40,
+  "coverage_trainval": 1.0,
+  "allon_feasible_trainval": 0.9998456790123457,
+  "K": {
+    "32": {
+      "size": 32,
+      "coverage_val": 1.0
+    }
+  }
+}
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();

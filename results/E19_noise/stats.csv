@@ -1,0 +1,13 @@
+topology,scenario,comparison,days,mean_daily_J_diff,p_raw,p_holm,lira_better_days_pct
+nobel_ar05,base,LiRA vs B4,8,-35.50740292518651,0.0078125,0.03125,100.0
+nobel_ar05,base,LiRA vs B6,8,0.0,1.0,1.0,0.0
+nobel_ar05,base,LiRA vs B2,8,-6.217248937900877e-15,1.0,1.0,62.5
+nobel_ar05,base,LiRA vs Static,8,-6.217248937900877e-15,1.0,1.0,62.5
+nobel_ar09,base,LiRA vs B4,8,-0.28215137823849545,0.125,0.5,50.0
+nobel_ar09,base,LiRA vs B6,8,0.014484150010272145,1.0,1.0,0.0
+nobel_ar09,base,LiRA vs B2,8,0.05327829677357698,1.0,1.0,50.0
+nobel_ar09,base,LiRA vs Static,8,8.881784197001252e-16,1.0,1.0,12.5
+nobel_s06,base,LiRA vs B4,8,0.0,1.0,1.0,0.0
+nobel_s06,base,LiRA vs B6,8,0.0,1.0,1.0,0.0
+nobel_s06,base,LiRA vs B2,8,-0.010470191950062713,0.0078125,0.03125,100.0
+nobel_s06,base,LiRA vs Static,8,2.6645352591003757e-15,1.0,1.0,12.5

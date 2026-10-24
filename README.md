@@ -1,109 +1,76 @@
 # LiRA: Sequence-Aware Learning for Energy-Efficient SDN
 
-Code, data pipeline, experiments and manuscript for *Reconfiguration-Aware Link Sleeping for Green Software-Defined Networks*. LiRA stands for Lifetime- and Reconfiguration-Aware learning.
+Code, data and results for a study of learned link sleeping in software-defined networks. LiRA stands for Lifetime- and Reconfiguration-Aware learning.
 
-Energy-aware SDN controllers put idle links to sleep. Most learned controllers pick a configuration for each traffic matrix on its own and ignore what a change costs: link wake-ups, flow-rule updates and device wear. This repository formulates the choice as a sequential problem, solves it exactly, trains a policy to imitate the solution, and measures when that history-awareness helps.
-
-## Contents
-
-- [What the study finds](#what-the-study-finds)
-- [Method](#method)
-- [Installation](#installation)
-- [Quick start](#quick-start)
-- [Full reproduction](#full-reproduction)
-- [Repository layout](#repository-layout)
-- [Experiments](#experiments)
-- [Testing](#testing)
-- [Limitations](#limitations)
-- [Citation](#citation)
+Energy-aware SDN controllers put idle links to sleep. Most learned controllers pick a configuration for each traffic matrix on its own and ignore what a change costs: link wake-ups, flow-rule updates and device wear. This repository solves the sequential problem exactly, trains a policy to imitate the solution, and measures when that history-awareness helps.
 
 ## What the study finds
 
-All numbers below are measured. They come from `paper/results/`, and the paper reads them through generated macros only.
+All numbers are measured and stored in `results/`.
 
 | Setting | Result |
 |---|---|
 | Abilene and GÉANT (real traces) | The optimal configuration sequence is constant. LiRA, a snapshot classifier, hysteresis and the oracle agree within 0.014%, with 24.0% and 29.8% energy savings |
-| Nobel-Germany (semi-synthetic, noisy) | A gradient-boosted snapshot classifier changes configuration 11.7 times per day. Holding a configuration removes 97.7% of the changes at no energy cost |
+| Nobel-Germany (semi-synthetic, noisy) | A gradient-boosted snapshot classifier changes configuration 11.7 times per day and costs 6.5% more than the oracle. Holding a configuration removes 97.7% of the changes at no energy cost |
 | Non-learning rules | Hysteresis, a rolling-horizon optimizer and a static configuration with LiRA's fallback match LiRA. The static rule equals LiRA in 11 of 12 settings |
+| Noise structure | With AR(1) noise (ρ = 0.5) the snapshot classifier costs 32.5% more than the oracle. With half the noise it does not flap |
 | Library restriction | A per-interval exact integer program shows the configuration library loses at most 0.045% |
 | One-interval-old traffic | Costs barely change, but up to 0.19% of Nobel-Germany intervals exceed the utilization bound |
 
-The full discussion is in `paper/main_jnca.pdf` (Elsevier JNCA submission version, built by `python paper/tools/make_jnca.py`), `paper/main.pdf` (IEEE version) and `paper/results/FINDINGS.md`.
+`results/FINDINGS.md` discusses each experiment and `results/RESULTS.md` lists every table.
 
 ## Method
 
 1. **Configuration library.** k-means on training traffic, an energy integer program per cluster, NSGA-II for diversity, and a set cover over training and validation traffic (`lira/library/`).
 2. **Exact oracle.** Energy, reconfiguration cost and wear form one objective over the library. Dynamic programming (Viterbi) solves it in O(TK²) and matches an independent MILP to 1e-14 (`lira/oracle/`).
-3. **LiRA policy.** An XGBoost classifier conditioned on traffic features, the installed configuration and its dwell time. It is trained by cost-sensitive imitation with DAgger and wrapped in a utilization safety layer (`lira/policy/`).
+3. **LiRA policy.** An XGBoost classifier conditioned on traffic features, the installed configuration and its dwell time, trained by cost-sensitive imitation with DAgger and wrapped in a utilization safety layer (`lira/policy/`).
 4. **Baselines.** Always-on, snapshot classifier, hysteresis, minimum dwell, rolling horizon, static configuration, per-snapshot ILP, NSGA-II and an ElasticTree-style greedy rule (`lira/baselines/`, `experiments/`).
 
 ## Installation
 
-Requires Python 3.11. All solvers are open source (HiGHS through `highspy` and SciPy).
-
-**Linux or macOS**
+Python 3.11. All solvers are open source (HiGHS through `highspy` and SciPy).
 
 ```bash
 git clone https://github.com/adeliusa486/-lira-sdn-energy.git lira-sdn
 cd lira-sdn
-python3.11 -m venv .venv
-source .venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
-
-**Windows (PowerShell)**
-
-```powershell
-git clone https://github.com/adeliusa486/-lira-sdn-energy.git lira-sdn
-cd lira-sdn
-py -3.11 -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
-
 
 ## Quick start
 
-The repository ships processed traffic, configuration libraries and all result files, so you can check the setup and rebuild the paper's tables without rerunning experiments.
+The repository ships the processed traffic, the configuration libraries, the oracle labels and all result files, so no experiment has to be rerun to check them.
 
 ```bash
-python -m pytest -q tests                  # 18 tests
-python paper/tools/make_paper_assets.py    # macros and tables from paper/results/
-cd paper && latexmk -pdf main.tex          # needs a LaTeX distribution
-```
-
-To rerun one experiment group, delete its output or pass `--force`:
-
-```bash
-python experiments/run_static.py --force   # static rule, a few minutes
+python -m pytest -q tests                 # unit tests
+python tools/make_paper_assets.py         # LaTeX macros, tables and plot data from results/
+python experiments/run_static.py --force  # rerun one experiment group (a few minutes)
 ```
 
 ## Full reproduction
 
-`REPRODUCE.md` lists every step. `reproduce.ps1` runs them in order on Windows, and each stage can be started on its own:
+`REPRODUCE.md` lists every step and `reproduce.ps1` runs them in order on Windows:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File reproduce.ps1                     # from the raw SNDlib downloads
-powershell -ExecutionPolicy Bypass -File reproduce.ps1 -From experiments   # reuse shipped libraries
+powershell -ExecutionPolicy Bypass -File reproduce.ps1 -From experiments   # reuse the shipped libraries
 ```
 
-Expect about 4 to 6 hours of ILP time for the libraries and 6 to 8 hours for the experiments on a 14-core laptop. The raw SNDlib files (about 900 MB) are not in the repository. `python -m lira.data.download` fetches them and checks their SHA-256 hashes against `data/MANIFEST.json`.
+Expect 4 to 6 hours of ILP time for the libraries and 6 to 8 hours for the experiments on a 14-core laptop. The raw SNDlib files (about 900 MB) are not in the repository. `python -m lira.data.download` fetches them and checks their SHA-256 hashes against `data/MANIFEST.json`.
 
 ## Repository layout
 
 | Path | Content |
 |---|---|
-| `lira/` | Package: data pipeline, network, power, wear and reconfiguration models, library builder, oracle, baselines, policies |
+| `lira/` | Data pipeline, network, power, wear and reconfiguration models, library builder, oracle, baselines, policies |
 | `experiments/` | One script per experiment group, the Mininet emulation, the report builder |
-| `tests/` | Unit tests for data, models and baselines |
-| `configs/power.yaml` | Power and wear constants with their sources |
-| `data/` | `MANIFEST.json` and processed traffic, splits and metadata |
+| `results/` | Outputs of experiments E1 to E19, library reports, DP-versus-MILP checks, run logs |
 | `artifacts/` | Configuration libraries and oracle labels per topology and scenario |
-| `paper/` | Manuscript (`main.tex`), generated assets, results of E1 to E17 |
-| `reports/` | Forensic audits of the code and of the manuscript |
-| `results/` | Library reports, DP-versus-MILP checks, run logs |
-| `tools/` | Reference verification and BibTeX helpers |
+| `data/` | `MANIFEST.json` and processed traffic, splits and metadata |
+| `configs/power.yaml` | Power and wear constants with their sources |
+| `tests/` | Unit tests for data, models, oracle and baselines |
+| `tools/` | Table generator, reference verification and BibTeX helpers |
 
 ## Experiments
 
@@ -114,17 +81,10 @@ Expect about 4 to 6 hours of ILP time for the libraries and 6 to 8 hours for the
 | `experiments/run_milp.py` | E15 per-interval lower bound |
 | `experiments/run_stale.py` | E16 decisions on the previous interval's traffic |
 | `experiments/run_static.py` | E17 static configuration with LiRA's fallback |
+| `experiments/run_variant.py` | E18 no wear price, E19 noise variants of Nobel-Germany |
 | `experiments/emulate_mininet.py` | E11 Mininet and Open vSwitch emulation (Linux or WSL2, root) |
 
-Scenarios are selected with the environment variables `LIRA_LOAD`, `LIRA_DYN` and `LIRA_THETA`. `REPRODUCE.md` lists the values.
-
-## Testing
-
-```bash
-python -m pytest -q tests
-```
-
-The tests cover the SNDlib parser and processed data, paths, power, MLU, the ILP, the reconfiguration and wear models, the DP oracle against an independent MILP, and the baselines.
+Scenarios are selected with the environment variables `LIRA_LOAD`, `LIRA_DYN` and `LIRA_THETA` (values in `REPRODUCE.md`).
 
 ## Limitations
 
@@ -136,4 +96,4 @@ The tests cover the SNDlib parser and processed data, paths, power, MLU, the ILP
 
 ## Citation
 
-The manuscript is under preparation. Until it is published, please cite this repository.
+The manuscript is under review. Until it is published, please cite this repository.

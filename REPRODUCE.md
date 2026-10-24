@@ -1,10 +1,10 @@
-# Reproducing the paper
+# Reproducing the results
 
 All commands run from the project root. `reproduce.ps1` runs them in this order. Every experiment script skips outputs that already exist, so delete a CSV to recompute it, or pass `--force`.
 
 ## 0. Environment
 
-Python 3.11.9 and the pinned versions in `requirements.txt`. The versions used for the results are recorded in `paper/results/environment.json`. HiGHS (through `highspy` and `scipy.optimize.milp`) solves every integer and linear program, so no commercial solver is needed.
+Python 3.11.9 and the pinned versions in `requirements.txt`. The versions used for the results are recorded in `results/environment.json`. HiGHS (through `highspy` and `scipy.optimize.milp`) solves every integer and linear program, so no commercial solver is needed.
 
 ## 1. Data (about 10 minutes)
 
@@ -36,13 +36,15 @@ For the four θ = 0.8 scenarios and each topology: `python -m lira.oracle.make_l
 
 ## 4. Experiments (6 to 8 hours)
 
-| Command | Experiments | Output folder in `paper/results/` |
+| Command | Experiments | Output folder in `results/` |
 |---|---|---|
 | `python experiments/run_main.py --exp E1 E2 E2b E6 E7` | main comparison (5 seeds), derived E3, E4, E9, E12, Wilcoxon-Holm tests, price sweeps, library size, ablation | `E1_main`, `E2_pareto`, `E3_case_study`, `E4_per_link_wear`, `E6_library_size`, `E7_ablation`, `E9_wear_sensitivity`, `E12_gap_to_oracle` |
 | `python experiments/run_extra.py --exp E1b E5 E8 E10 E13 E14` | per-snapshot ILP, NSGA-II, greedy, scalability (downloads Germany50 and TA2), drift, θ sweep, model choice, rolling folds | `E5_latency_scalability`, `E8_drift`, `E10_theta`, `E13_model_choice`, `E14_rolling_folds` |
 | `python experiments/run_milp.py` | E15: per-interval exact MILP lower bound | `E15_full_milp` |
 | `python experiments/run_stale.py` | E16: decisions on the previous interval's traffic matrix (3 seeds) | `E16_stale_tm` |
 | `python experiments/run_static.py` | E17: static configuration with LiRA's safety fallback | `E17_static_fallback` |
+| `python experiments/run_variant.py --exp E18` | E18: main study without a wear price (lambda_W = 0, all methods retrained) | `E18_no_wear` |
+| `python experiments/make_nobel_variants.py`, then `python -m lira.library.build_library <v> --K 32` for v in nobel_ar05 nobel_ar09 nobel_s06, then `python experiments/run_variant.py --exp E19 --topos nobel_ar05 nobel_ar09 nobel_s06` | E19: Nobel-Germany with AR(1)-correlated and weaker noise | `E19_noise` |
 
 ## 5. Emulation (E11, WSL2 Ubuntu, root)
 
@@ -52,13 +54,14 @@ wsl -u root bash experiments/run_emulation.sh          # 5 runs: B4 x3, LiRA, B0
 python experiments/emu_analyze.py                      # emulation_summary.csv, emulation_transitions.csv
 ```
 
-## 6. Report and paper
+## 6. Report and tables
 
 ```powershell
-python experiments/make_report.py                     # RESULTS.md, headline.csv, figures
-python paper/tools/make_paper_assets.py               # paper/generated/*
-cd paper; latexmk -pdf main.tex
+python experiments/make_report.py                     # results/RESULTS.md, headline.csv, figures
+python tools/make_paper_assets.py                     # macros, tables and plot data -> submission/generated/
 ```
+
+The manuscript is kept outside this repository. It reads every number from `submission/generated/`.
 
 ## Determinism
 

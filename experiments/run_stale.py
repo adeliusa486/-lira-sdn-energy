@@ -11,7 +11,7 @@ B6/B7 thresholds are tuned on validation under the protocol being evaluated; tun
 1e3 per violated interval to J (the selection cost LiRA uses), because J itself has no penalty.
 "-m" variants run the safety check against theta - MARGIN on D_{t-1}.
 
-Output: paper/results/E16_stale_tm/<topo>_<scenario>_stale.csv
+Output: results/E16_stale_tm/<topo>_<scenario>_stale.csv
 Usage:  python experiments/run_stale.py [--force]
 """
 import argparse

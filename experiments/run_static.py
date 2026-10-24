@@ -8,7 +8,7 @@ replaced by a constant, so it shows how much of LiRA's behaviour comes from lear
 Both information protocols of E16 are evaluated: "current" (decide with D_t) and "stale"
 (decide with D_{t-1}), with and without the safety margin.
 
-Output: paper/results/E17_static_fallback/static_fallback.csv
+Output: results/E17_static_fallback/static_fallback.csv
 Usage:  python experiments/run_static.py [--force]
 """
 import argparse

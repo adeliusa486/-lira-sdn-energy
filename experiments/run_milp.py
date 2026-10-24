@@ -8,7 +8,7 @@ without a library, including the optimum of the full multi-period mixed-integer 
 library oracle is close to this bound, the library restriction costs at most the difference.
 Intervals in which no configuration meets theta are bounded with the capacity constraint
 dropped (connectivity only), which keeps the bound valid for controllers that violate theta.
-Output: paper/results/E15_full_milp/<topo>_<scenario>_bound.csv (one row per test interval)
+Output: results/E15_full_milp/<topo>_<scenario>_bound.csv (one row per test interval)
 
 Mode "window": the same MILP over windows of T > 1 intervals with the switching terms, solved
 under a time limit (HiGHS rarely closes the gap for T = 24 within minutes; kept for completeness).
@@ -24,7 +24,7 @@ a feasible MILP point. Hence the MILP dual bound LB satisfies
   LB <= min over ALL sequences of J  <=  J(O*),
 and (J(O*) - LB) / J(O*) bounds from above what the library restriction can cost in a window.
 The best MILP solution found is also scored with the EXACT cost J (an upper bound on the
-non-library optimum). Output: paper/results/E15_full_milp/<topo>_full_milp.csv
+non-library optimum). Output: results/E15_full_milp/<topo>_full_milp.csv
 
 Usage: python experiments/run_milp.py [--topos ...] [--T 24] [--windows 4] [--force]
 """

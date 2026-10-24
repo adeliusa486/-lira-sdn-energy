@@ -1,0 +1,72 @@
+00:28:19 nobel base w_mult 0.0 seed 0
+00:28:21 nobel base w_mult 0.0 seed 1
+00:28:23 nobel base w_mult 0.0 seed 2
+00:28:25 nobel base w_mult 0.0 seed 3
+00:28:27 nobel base w_mult 0.0 seed 4
+00:28:27 E18 nobel_base finished in 15s
+00:29:09 nobel highload w_mult 0.0 seed 0
+00:29:48 nobel highload w_mult 0.0 seed 1
+00:30:29 nobel highload w_mult 0.0 seed 2
+00:31:18 nobel highload w_mult 0.0 seed 3
+00:32:03 nobel highload w_mult 0.0 seed 4
+00:32:03 E18 nobel_highload finished in 216s
+00:32:10 nobel highdyn w_mult 0.0 seed 0
+00:32:13 nobel highdyn w_mult 0.0 seed 1
+00:32:15 nobel highdyn w_mult 0.0 seed 2
+00:32:18 nobel highdyn w_mult 0.0 seed 3
+00:32:21 nobel highdyn w_mult 0.0 seed 4
+00:32:21 E18 nobel_highdyn finished in 18s
+00:34:46 nobel stress w_mult 0.0 seed 0
+00:37:37 nobel stress w_mult 0.0 seed 1
+00:40:47 nobel stress w_mult 0.0 seed 2
+00:44:36 nobel stress w_mult 0.0 seed 3
+00:48:08 nobel stress w_mult 0.0 seed 4
+00:48:08 E18 nobel_stress finished in 948s
+00:48:35 abilene base w_mult 0.0 seed 0
+00:48:44 abilene base w_mult 0.0 seed 1
+00:48:54 abilene base w_mult 0.0 seed 2
+00:49:02 abilene base w_mult 0.0 seed 3
+00:49:10 abilene base w_mult 0.0 seed 4
+00:49:10 E18 abilene_base finished in 61s
+00:49:38 abilene highload w_mult 0.0 seed 0
+00:49:48 abilene highload w_mult 0.0 seed 1
+00:49:57 abilene highload w_mult 0.0 seed 2
+00:50:06 abilene highload w_mult 0.0 seed 3
+00:50:15 abilene highload w_mult 0.0 seed 4
+00:50:15 E18 abilene_highload finished in 66s
+00:50:43 abilene highdyn w_mult 0.0 seed 0
+00:50:53 abilene highdyn w_mult 0.0 seed 1
+00:51:03 abilene highdyn w_mult 0.0 seed 2
+00:51:11 abilene highdyn w_mult 0.0 seed 3
+00:51:19 abilene highdyn w_mult 0.0 seed 4
+00:51:19 E18 abilene_highdyn finished in 64s
+00:52:16 abilene stress w_mult 0.0 seed 0
+00:52:36 abilene stress w_mult 0.0 seed 1
+00:52:47 abilene stress w_mult 0.0 seed 2
+00:52:57 abilene stress w_mult 0.0 seed 3
+00:53:16 abilene stress w_mult 0.0 seed 4
+00:53:16 E18 abilene_stress finished in 117s
+00:54:40 geant base w_mult 0.0 seed 0
+00:55:34 geant base w_mult 0.0 seed 1
+00:56:13 geant base w_mult 0.0 seed 2
+00:56:56 geant base w_mult 0.0 seed 3
+00:57:18 geant base w_mult 0.0 seed 4
+00:57:18 E18 geant_base finished in 241s
+00:58:06 geant highload w_mult 0.0 seed 0
+00:58:49 geant highload w_mult 0.0 seed 1
+00:59:21 geant highload w_mult 0.0 seed 2
+01:00:12 geant highload w_mult 0.0 seed 3
+01:00:58 geant highload w_mult 0.0 seed 4
+01:00:58 E18 geant_highload finished in 220s
+01:01:42 geant highdyn w_mult 0.0 seed 0
+01:02:26 geant highdyn w_mult 0.0 seed 1
+01:02:57 geant highdyn w_mult 0.0 seed 2
+01:03:28 geant highdyn w_mult 0.0 seed 3
+01:04:12 geant highdyn w_mult 0.0 seed 4
+01:04:12 E18 geant_highdyn finished in 194s
+01:05:08 geant stress w_mult 0.0 seed 0
+01:06:08 geant stress w_mult 0.0 seed 1
+01:07:06 geant stress w_mult 0.0 seed 2
+01:07:50 geant stress w_mult 0.0 seed 3
+01:08:34 geant stress w_mult 0.0 seed 4
+01:08:34 E18 geant_stress finished in 262s

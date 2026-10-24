@@ -1,7 +1,7 @@
-"""Build paper/results/RESULTS.md and figures from the saved CSV files only.
+"""Build results/RESULTS.md and figures from the saved CSV files only.
 
-No number is typed by hand: every table cell is read from paper/results/*/*.csv|json.
-Findings text is written separately (paper/results/FINDINGS.md) after reading the tables.
+No number is typed by hand: every table cell is read from results/*/*.csv|json.
+Findings text is written separately (results/FINDINGS.md) after reading the tables.
 """
 import json
 import sys
@@ -16,7 +16,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 ROOT = Path(__file__).resolve().parent.parent
-R = ROOT / "paper" / "results"
+R = ROOT / "results"
 FIG = R / "figures"
 FIG.mkdir(exist_ok=True)
 TOPOS = ("abilene", "geant", "nobel")
