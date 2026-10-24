@@ -1,4 +1,4 @@
-\documentclass[preprint,12pt]{elsarticle}
+\documentclass[5p,times]{elsarticle}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -47,14 +47,6 @@
 Learned controllers for energy-aware software-defined networks (SDNs) map each traffic matrix to a precomputed link-sleeping configuration and ignore the cost of changing configuration. We ask when that cost matters and how much of any gain needs learning. We formulate configuration over a finite library as a sequential problem that prices energy, reconfiguration, and wear, solve it exactly by dynamic programming, bound the library's loss with a per-interval integer program (at most \boundMaxLoss\%), and train LiRA, a history-conditioned imitation policy with a safety layer, as a strong learned controller. On the Abilene and G\'{E}ANT traces the optimal sequence is a single configuration, and snapshot learning, hysteresis, and LiRA reach the oracle cost to within \realSpread\%. On a semi-synthetic Nobel-Germany series, a gradient-boosted snapshot classifier flaps (\nobBFourchg\ changes per day) and costs \nzMainExcess\% more than the oracle. Holding a configuration removes \nobY\% of the changes at no energy loss, but tuned hysteresis, a rolling-horizon optimizer, and a static configuration with LiRA's fallback do the same: the static rule equals LiRA in \staticSame\ of \staticTotal\ settings, and no difference survives a correction over all settings. The conclusions hold without the wear price and across noise variants, where the snapshot excess ranges from \nzhalfExcess\% to \nzarAExcess\% with the noise's time correlation and scale. With the previous interval's traffic, costs barely change but the utilization bound is violated in up to \staleNobViolMax\% of the intervals. Reconfiguration awareness pays off only against flapping classifiers, and a rule that holds its configuration captures that benefit.
 \end{abstract}
 
-\begin{highlights}
-\item Exact dynamic-programming oracle prices energy, reconfiguration and wear
-\item A per-interval MILP bound shows the configuration library loses at most 0.045\%
-\item On real Abilene and GEANT traces the optimal configuration never changes
-\item Flapping snapshot classifiers cost up to 32.5\% more, depending on traffic noise
-\item A static rule with a fallback stays within 0.4\% of the learned controller's cost
-\end{highlights}
-
 \begin{keyword}
 Software-defined networking\sep energy efficiency\sep link sleeping\sep imitation learning\sep dynamic programming\sep reconfiguration cost\sep device lifetime
 \end{keyword}
@@ -62,7 +54,7 @@ Software-defined networking\sep energy efficiency\sep link sleeping\sep imitatio
 
 \section{Introduction}
 
-Backbone and data-center links are provisioned for peak demand, yet their average utilization is far lower, so a large share of the power drawn by line cards and transceivers is spent carrying little or no traffic. Putting idle links to sleep was proposed more than two decades ago~\cite{gupta2003greening} and has since grown into a broad research area~\cite{bianzino2012survey,bolla2011energy}. Software-defined networking (SDN) makes the idea practical, because a logically centralized controller can observe the traffic matrix and switch link power states and forwarding rules network-wide~\cite{mckeown2008openflow,kreutz2015sdn}. The underlying optimization is a mixed-integer problem that is NP-hard in general~\cite{chiaraviglio2012minimizing}, and an exact solver needs up to \ilpTA\,s per traffic matrix on the topologies we study (Section~\ref{sec:res-time}), a time that grows with the network and limits how often a controller can decide.
+Backbone and data-center links are provisioned for peak demand, yet their average utilization is far lower, so a large share of the power drawn by line cards and transceivers is spent carrying little or no traffic. Putting idle links to sleep was proposed more than two decades ago~\cite{gupta2003greening} and has since grown into a broad research area~\cite{bianzino2012survey,bolla2011energy}. Software-defined networking (SDN) makes the idea practical, because a logically centralized controller can observe the traffic matrix and switch link power states and forwarding rules network-wide~\cite{mckeown2008openflow,kreutz2015sdn}. The underlying optimization is a mixed-integer problem that is NP-hard in general~\cite{chiaraviglio2012minimizing}, and an exact solver needs up to \ilpTA\,s per traffic matrix on the topologies we study (Section~S8), a time that grows with the network and limits how often a controller can decide.
 
 Recent work closes this speed gap with machine learning. A model is trained offline to map each incoming traffic matrix to one of a set of precomputed, energy-efficient configurations, which replaces the integer program at run time~\cite{gomezdelahiz2025noms,gomezdelahiz2026tgcn}. The same pattern of replacing a solver with a learned mapping appears in traffic engineering~\cite{xu2023teal,perry2023dote,abuzaid2021ncflow,almasan2022enero} and in combinatorial optimization more broadly~\cite{bengio2021mlco}.
 
@@ -72,63 +64,25 @@ This paper tests that hypothesis rather than assuming it. Its question is not wh
 
 \begin{itemize}
 \item \emph{Formulation and exact oracle.} We formulate energy-aware configuration as a sequential problem that jointly prices energy, reconfiguration, and wear. Over a finite library, the problem is a shortest path on a trellis, which dynamic programming solves exactly in $O(TK^2)$ time. We validate the solver against an independent mixed-integer program to $\dpMilpDiff$ and prove that snapshot decisions can have regret that grows linearly with the horizon (Sections~\ref{sec:problem} and~\ref{sec:framework}). A per-interval integer program bounds what the library restriction can cost (Section~\ref{sec:res-bound}).
-\item \emph{A representative sequence-aware learner.} LiRA (Lifetime- and Reconfiguration-Aware learning) imitates the oracle with cost-sensitive weights and dataset aggregation (DAgger)~\cite{ross2011dagger}, conditions on the installed configuration and its dwell time, and wraps the policy in a feasibility safety layer (Sections~\ref{sec:framework} and~\ref{sec:algorithms}). It serves as the strongest learned controller we could build from the oracle, so that a null result cannot be blamed on a weak learner. Drift detectors are described for completeness, and Section~\ref{sec:res-drift} reports that our drift study does not validate them.
+\item \emph{A representative sequence-aware learner.} LiRA (Lifetime- and Reconfiguration-Aware learning) imitates the oracle with cost-sensitive weights and dataset aggregation (DAgger)~\cite{ross2011dagger}, conditions on the installed configuration and its dwell time, and wraps the policy in a feasibility safety layer (Sections~\ref{sec:framework} and~S2). It serves as the strongest learned controller we could build from the oracle, so that a null result cannot be blamed on a weak learner. Drift detectors are described for completeness, and Section~S10 reports that our drift study does not validate them.
 \item \emph{An empirical answer to the question.} We evaluate on Abilene, G\'{E}ANT, and a semi-synthetic Nobel-Germany series under four load and power scenarios, against snapshot learning, hysteresis, minimum-dwell, rolling-horizon, static-configuration, integer-programming, genetic-algorithm, and greedy baselines. We separate the effect of the wear model by repeating the study without a wear price, and the effect of the synthetic noise by repeating it with temporally correlated and weaker noise. Ablations, decisions on one-interval-old traffic, a drift study, and rolling-origin folds complete the study (Sections~\ref{sec:setup} and~\ref{sec:results}).
-\item \emph{Emulation of configuration changes.} A Mininet and Open vSwitch emulation replays the most active day of the Nobel-Germany series and measures rule-installation time, the duration of a configuration change, probe loss, and delay for each method (Section~\ref{sec:res-emu}).
+\item \emph{Emulation of configuration changes.} A Mininet and Open vSwitch emulation replays the most active day of the Nobel-Germany series and measures rule-installation time, the duration of a configuration change, probe loss, and delay for each method (Section~S12).
 \end{itemize}
 
 Our answer is a qualified one. On the two real traces, the energy-optimal configuration changes rarely: the exact oracle uses one configuration for the whole test period, snapshot classifiers change configuration at most \abiBFourchg\ times per day, and LiRA, hysteresis, and the snapshot classifier reach the same energy savings (\abiSav\% on Abilene and \geaSav\% on G\'{E}ANT) at costs within \realSpread\% of each other. LiRA therefore offers no measurable advantage there. On the Nobel-Germany series, whose demands are noisy, the snapshot classifier flaps (\nobBFourchg\ changes per day), and \gainTenthShare\% of its changes save less than 0.1\% of the interval energy. LiRA removes \nobY\% of the changes, but in this scenario its trained policy is a constant classifier, and three rules without learning remove them as well: hysteresis tuned on validation data, a rolling-horizon optimizer with a persistence forecast, and a static configuration with LiRA's fallback. LiRA's learned component lowers the cost below that of the static rule in one scenario only, combined high load and high dynamic power. There its advantage over hysteresis is \nobstGainPct\% and not significant, and the rolling-horizon optimizer is cheaper still. The same holds without the wear price and on three further noise variants of the Nobel-Germany series, in which the excess cost of the snapshot classifier ranges from \nzhalfExcess\% to \nzarAExcess\%. The benefit of reconfiguration awareness therefore depends on the traffic and on the classifier, and in our data it comes from holding a configuration rather than from learning when to switch.
 
-The remainder of the paper reviews related work (Section~\ref{sec:related}), formulates the problem (Section~\ref{sec:problem}), presents LiRA (Sections~\ref{sec:framework} and~\ref{sec:algorithms}), describes the setup (Section~\ref{sec:setup}), reports results (Section~\ref{sec:results}), and discusses implications, limitations, and conclusions (Sections~\ref{sec:discussion}--\ref{sec:conclusion}).
+The remainder of the paper reviews related work (Section~\ref{sec:related}), formulates the problem (Section~\ref{sec:problem}), presents LiRA (Sections~\ref{sec:framework} and~S2), describes the setup (Section~\ref{sec:setup}), reports results (Section~\ref{sec:results}), and discusses implications, limitations, and conclusions (Sections~\ref{sec:discussion}--\ref{sec:conclusion}).
 
 \section{Related Work}\label{sec:related}
 
-\subsection{Energy-Aware Networking and Sleep Modes}
+Energy-aware networking puts idle links and devices to sleep~\cite{bianzino2012survey,bolla2011energy}. Integer programs and heuristics choose the links to sleep under capacity and connectivity constraints~\cite{chiaraviglio2012minimizing,zhang2010greente,heller2010elastictree}, and a recent study of operational ISP networks shows that the opportunity persists outside research backbones~\cite{rollin2024sleep}. Learned controllers replace the optimizer: reinforcement learning has been used to put data-center links to sleep~\cite{wang2022dcndrl} and to trade delay against energy in SDN~\cite{frohlich2021rl}, and the works closest to ours map each traffic matrix to a precomputed configuration and report large speedups~\cite{gomezdelahiz2025noms,gomezdelahiz2026tgcn}. We reimplement this snapshot principle as baseline B4 because we did not have access to the original code. Learned traffic engineering~\cite{xu2023teal,perry2023dote,almasan2022enero} also decides without pricing the change between configurations. FlexDATE~\cite{ye2023flexdate} limits the disturbance of rerouting but does not put links to sleep.
 
-Surveys of green networking classify techniques into adaptive link rate, sleeping, and energy-aware routing~\cite{bianzino2012survey,bolla2011energy}. Chiaraviglio \emph{et al.} formulated ISP energy minimization as an integer program and proposed heuristics that switch off nodes and links subject to capacity and connectivity constraints~\cite{chiaraviglio2012minimizing}. GreenTE maximizes the number of links that can sleep under utilization and delay constraints~\cite{zhang2010greente}, ElasticTree applies the same principle to data-center networks~\cite{heller2010elastictree}, and EATe spreads traffic online so that lightly loaded links can sleep~\cite{vasic2010eate}. Power models for such studies rely on measured device profiles~\cite{mahadevan2009power,restrepo2009energy,vishwanath2014modeling}. In SDN, energy-aware routing has been formulated as integer programs with heuristics for carrier-grade Ethernet~\cite{maaloul2018carrier}, and a survey of SDN-specific methods is given in~\cite{assefa2019survey}.
-
-\subsection{Learning for Energy-Efficient Networking}
-
-MER-SDN uses machine learning to predict the parameters of an energy-aware routing heuristic~\cite{assefa2018mersdn}. Reinforcement learning has been applied in an SDN controller to trade packet delay against energy~\cite{frohlich2021rl} and to compute energy-saving routes in data-center networks~\cite{zheng2022energysaving}. In cellular networks, deep reinforcement learning combined with traffic forecasting controls base-station sleep modes~\cite{wu2021deepbsc}, a problem that shares the on-off structure of link sleeping. Deep reinforcement learning has also been used to put switches and links of data-center networks to sleep~\cite{wang2022dcndrl} and to route traffic in SDN~\cite{pei2024drlte}, and energy-aware traffic engineering has been adapted to hybrid SDN deployments~\cite{maity2022ethos}. A recent study of two European ISP networks shows that more than a third of the links could sleep without congestion~\cite{rollin2024sleep}, which confirms that the opportunity measured on research backbones exists in operational networks. The closest works to ours replace the optimizer with a learned mapping from traffic matrices to precomputed configurations and report large speedups~\cite{gomezdelahiz2025noms,gomezdelahiz2026tgcn}. We reimplement this snapshot approach as baseline B4 with our own library, features, and classifier, because we did not have access to the original code. The comparison therefore concerns the snapshot principle and not the exact published systems.
-
-\subsection{Learning to Optimize and Learned Traffic Engineering}
-
-Machine learning for combinatorial optimization treats problem instances as data and learns to imitate expert decisions or to replace parts of a solver~\cite{bengio2021mlco}. In traffic engineering, learning-accelerated and decomposition-based solvers~\cite{xu2023teal,perry2023dote,abuzaid2021ncflow,narayanan2021pop}, learned routing~\cite{valadarsky2017learning}, deep reinforcement learning with graph neural networks~\cite{almasan2022enero,bernardez2023magnneto}, and neural models of network performance~\cite{rusek2020routenet} have shown that learned components can approach solver quality at much lower latency. Most of these methods do not price the change from one configuration to the next. FlexDATE is an exception: it limits the disturbance of rerouting in reinforcement-learning traffic engineering~\cite{ye2023flexdate}, but it does not put links to sleep. LiRA instead imitates an oracle that is exact for the sequential objective, which the finite library makes tractable offline.
-
-\subsection{Reconfiguration Cost, Device Lifetime, and Switching Costs}
-
-Consistent-update abstractions~\cite{reitblatt2012abstractions} and update scheduling~\cite{jin2014dionysus} show that changing forwarding state is neither free nor instantaneous. Bonetto \emph{et al.} included reconfiguration costs in multi-period power-aware logical topology design~\cite{bonetto2013multiperiod}. Chiaraviglio \emph{et al.} modeled how sleep modes affect device lifetime through temperature and power-state transitions~\cite{chiaraviglio2015lifetime,chiaraviglio2014impact}, and lifetime-aware provisioning has been studied for optical backbones~\cite{wiatr2016lifetime}. Online problems with switching costs are studied as metrical task systems~\cite{borodin1992mts} and smoothed online convex optimization~\cite{chen2018obd}, with dynamic right-sizing of data centers as a well-known application~\cite{lin2013rightsizing}. Our setting is a metrical task system with a finite state space whose offline optimum is computable, which makes imitation learning natural~\cite{ross2011dagger}. Learning-augmented online algorithms combine a learned predictor with a robust online rule, with guarantees for caching~\cite{lykouris2021caching}, general metrical task systems~\cite{antoniadis2023mts,christianson2023dart}, and smoothed online optimization~\cite{rutten2023smoothed}. They show that following a predictor blindly can be costly, which is the flapping we measure, and that a rule which holds its state is the natural robust fallback. Our hysteresis and static baselines are simple instances of such rules. Concept-drift adaptation~\cite{gama2014drift,lu2019drift} with detectors such as ADWIN~\cite{bifet2007adwin} and cumulative-sum tests~\cite{page1954cusum} provides the tools for deciding when to retrain, and drift is known to degrade learned models in network security~\cite{andresini2021insomnia}.
+Changing forwarding state is neither free nor instantaneous~\cite{reitblatt2012abstractions,jin2014dionysus}, and power-state transitions affect device lifetime~\cite{chiaraviglio2015lifetime}. Online decisions with switching costs form metrical task systems~\cite{borodin1992mts}. Learning-augmented algorithms for them show that following a predictor blindly can be costly and that holding the current state is a robust fallback~\cite{antoniadis2023mts,christianson2023dart}. Our setting is a metrical task system with a finite state space whose offline optimum is computable, which makes imitation learning with DAgger~\cite{ross2011dagger} natural, and our hysteresis and static baselines are simple state-holding rules. Section~S1 of the Supplementary Material gives a full review.
 
 \section{Problem Formulation}\label{sec:problem}
 
-Table~\ref{tab:notation} summarizes the notation.
+Table~S14 summarizes the notation.
 
-\begin{table}[t]
-\centering
-\caption{Main Notation}
-\label{tab:notation}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{1.85cm}p{6.5cm}@{}}
-\toprule
-Symbol & Meaning \\
-\midrule
-$G=(V,E)$ & Network graph; $E$ is the set of undirected links \\
-$\kappa_e$ & Capacity of link $e$ in each direction \\
-$\Delta$, $n_d$ & Control interval; number of intervals per day \\
-$D_t$, $\hat D_t$ & Traffic matrix of interval $t$; its estimate \\
-$c=(x,r)$ & Configuration: link states $x\in\{0,1\}^{|E|}$, routing $r$ \\
-$\mathcal{C}$, $K$ & Configuration library and its size \\
-$u_e$, $\theta$ & Utilization of link $e$; utilization threshold \\
-$E(c,D)$ & Energy of $c$ under traffic $D$ in one interval \\
-$R(c',c)$ & Reconfiguration cost of moving from $c'$ to $c$ \\
-$\mathrm{AF}_e$, $\alpha$, $\chi$ & Acceleration factor; sleep factor; cycling weight \\
-$W(c',c)$ & Per-step wear cost \\
-$\lambda_R,\lambda_W$ & Prices of reconfiguration and wear \\
-$J$, $V_t$, $Q_t$ & Total cost; cost-to-go; action value \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \subsection{Configuration Model}
 
@@ -165,7 +119,7 @@ where $\alpha<1$ is the relative failure rate while asleep and $\chi$ weighs one
 \begin{equation}\label{eq:wear}
 W(c',c)=\sum_{e\in E}\Big[\chi\,|x_e-x'_e|-\frac{1-\alpha}{n_d}(1-x_e)\Big].
 \end{equation}
-This decomposition is exact and makes wear additive over time. The parameters $\alpha$ and $\chi$ are assumed, representative values (Section~\ref{sec:params}), and we study the sensitivity of the results to them.
+This decomposition is exact and makes wear additive over time. The parameters $\alpha$ and $\chi$ are assumed, representative values (Section~S14), and we study the sensitivity of the results to them.
 
 \subsection{Sequential Objective}
 
@@ -178,19 +132,6 @@ subject to \eqref{eq:mlu} in every interval, where $\lambda_R,\lambda_W\ge0$ set
 c^{\mathrm{snap}}_t=\arg\min_{c\in\mathcal{C}:\,\mathrm{MLU}(c,D_t)\le\theta}E(c,D_t),
 \end{equation}
 which ignores the installed configuration. Online, the controller needs an estimate of $D_t$ from flow counters or link loads~\cite{zhang2003tomogravity}, and Section~\ref{sec:protocol} states what our evaluation assumes about it.
-
-\subsection{Cost of Ignoring the Sequence}
-
-For two configurations $c_a$ and $c_b$, let $s_{ab}=\lambda_R R(c_a,c_b)+\lambda_W\chi\|x_a-x_b\|_1$ be the non-energy cost of switching between them.
-
-\begin{proposition}\label{prop:snapshot}
-Let $c_a,c_b\in\mathcal{C}$ be feasible in every interval and have the same number of sleeping links, and let the traffic alternate so that $E(c_a,D_t)-E(c_b,D_t)=(-1)^t\epsilon$ with $\epsilon>0$, while every other library member is dominated in every interval. Then the snapshot rule \eqref{eq:snapshot} incurs a regret of at least $(T-1)s_{ab}-\lceil T/2\rceil\epsilon$ with respect to the optimum of \eqref{eq:objective}, which grows linearly in $T$ whenever $s_{ab}>\epsilon/2$.
-\end{proposition}
-\begin{proof}
-The snapshot rule selects $c_b$ in even and $c_a$ in odd intervals, so it pays the lower energy in each interval and switches $T-1$ times. The sleep terms of \eqref{eq:wear} are identical for $c_a$ and $c_b$, so the two sequences differ only in energy and in switching cost. Staying at $c_a$ throughout pays at most $\lceil T/2\rceil\epsilon$ more energy and never switches. Its cost is an upper bound on the optimum, which proves the claim.
-\end{proof}
-
-The proposition shows that flapping can be costly in principle. Whether it is costly in practice depends on whether real traffic produces such near-ties, which is the empirical question of Section~\ref{sec:results}.
 
 \section{LiRA: Framework and Analysis}\label{sec:framework}
 
@@ -277,7 +218,7 @@ By \eqref{eq:wear}, the wear contribution is a sum of terms that each depend on 
 
 \subsection{History-Conditioned Policy}
 
-The policy maps the input $s_t$ to a library index. The input contains the principal components (95\% variance, fitted on training data) of the log-scaled origin--destination vector, the total volume, the shares of the ten largest demands, time of day and day of week, the changes of the principal components and the volume over the last $1$, $3$, and $6$ intervals, the one-hot encoding of the installed configuration $c_{t-1}$, and its dwell time $\ell_{t-1}$ in intervals, capped at one day. The default model is a gradient-boosted tree classifier (XGBoost~\cite{chen2016xgboost}), and Section~\ref{sec:res-models} compares LightGBM~\cite{ke2017lightgbm}, random forests~\cite{breiman2001rf}, and a multilayer perceptron.
+The policy maps the input $s_t$ to a library index. The input contains the principal components (95\% variance, fitted on training data) of the log-scaled origin--destination vector, the total volume, the shares of the ten largest demands, time of day and day of week, the changes of the principal components and the volume over the last $1$, $3$, and $6$ intervals, the one-hot encoding of the installed configuration $c_{t-1}$, and its dwell time $\ell_{t-1}$ in intervals, capped at one day. The default model is a gradient-boosted tree classifier (XGBoost~\cite{chen2016xgboost}), and Section~S5 compares LightGBM~\cite{ke2017lightgbm}, random forests~\cite{breiman2001rf}, and a multilayer perceptron.
 
 \textbf{Cost-sensitive imitation.} Plain classification treats all mistakes as equal, although choosing an action that is almost as cheap as the optimum is harmless. For each training state $(t,c')$ we compute the oracle action $a^\star=\arg\min_c Q_t(c',c)$ and the cost gap $g_t(c')=\min_{c\neq a^\star}Q_t(c',c)-Q_t(c',a^\star)$ to the second-best action. The classifier is trained with the sample weight $w=\mathrm{clip}(g/\bar g,0.2,5)$, where $\bar g$ is the mean gap, so that decisions with a large cost difference matter more. This weighted cross-entropy loss is a practical surrogate for a cost-sensitive classifier.
 
@@ -299,84 +240,18 @@ If the all-on configuration satisfies $\mathrm{MLU}\le\theta$ for $\hat D_t$, th
 \begin{proof}
 The all-on configuration belongs to $\mathcal{C}$ by construction, so the feasible set in \eqref{eq:fallback} is non-empty whenever the policy's choice is infeasible.
 \end{proof}
-The guarantee holds for the estimate $\hat D_t$, not for the traffic that then arrives. Section~\ref{sec:protocol} states which estimate our evaluation uses, and Section~\ref{sec:res-stale} measures the violations when the estimate is one interval old.
-
-\subsection{Drift Detection and Retraining}\label{sec:drift}
-
-The oracle cannot be computed online, but a myopic regret proxy can. After each decision, the controller computes
-\begin{equation}\label{eq:proxy}
-\begin{split}\rho_t=&E(c_t,D_t)-\min_{c\in\mathcal{C}:\,\mathrm{MLU}(c,D_t)\le\theta}E(c,D_t)\\
-&+\mathbb{1}[\mathrm{MLU}(c_t,D_t)>\theta],\end{split}
-\end{equation}
-the energy lost against the best feasible configuration plus a violation indicator. ADWIN~\cite{bifet2007adwin} monitors $\rho_t$, and a Page--Hinkley test~\cite{page1954cusum} monitors the deseasonalized log of the total traffic volume, that is, the log volume minus its training mean for the same time of week. When a detector fires, the policy is retrained on the last seven days with oracle labels computed on that window. Because the window just after a change still contains mostly old data, retraining is repeated one and three days later. A library refresh, which adds integer-program solutions for eight clusters of the recent window, is available as an option.
-
-\section{Algorithms}\label{sec:algorithms}
-
-Algorithm~\ref{alg:offline} summarizes offline training and Algorithm~\ref{alg:online} the online loop. In the emulation (Section~\ref{sec:res-emu}), reconfigurations follow a make-before-break order: links that the new configuration needs are woken first, new rules are installed, and only then are unused links put to sleep. The flow-level simulation charges each change through $R$ and $W$ and does not model the transient.
-
-\begin{algorithm}[t]
-\caption{LiRA Offline Training}
-\label{alg:offline}
-\footnotesize
-\begin{algorithmic}[1]
-\Require training traces $D_{1:T}$, validation traces, prices $\lambda_R,\lambda_W$, rounds $N$
-\Ensure library $\mathcal{C}$, policy $\pi$
-\State $\mathcal{C}\gets$ \Call{BuildLibrary}{$D_{1:T}$} \Comment{ILP, NSGA-II, set cover}
-\State precompute $E(c,D_t)$, feasibility, and $R$, $W$ for all pairs
-\State compute $Q_t(c',c)$ and $V_t(c)$ by recursion \eqref{eq:dp}
-\State $\mathcal{D}\gets\{(s_t,c^\star_t)\}$ on the oracle path ($s_t$ contains $c^\star_{t-1}$), weights $w$
-\State train $\pi$ on $\mathcal{D}$
-\For{$n=1$ to $N$}
-\State roll out $\pi$ with the safety layer and expert mixing $\beta_n$; record $(t,c_{t-1})$
-\State relabel the visited pairs from $Q_t(c_{t-1},\cdot)$ and add them to $\mathcal{D}$
-\State retrain $\pi$ on $\mathcal{D}$
-\EndFor
-\State \Return $\mathcal{C}$ and the policy with the lowest validation cost
-\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}[t]
-\caption{LiRA Online Control Loop}
-\label{alg:online}
-\footnotesize
-\begin{algorithmic}[1]
-\Require $\mathcal{C}$, $\pi$, threshold $\theta$, initial $c_0$
-\For{each interval $t=1,2,\dots$}
-\State build $s_t$ from the traffic estimate, $c_{t-1}$, and its dwell time
-\State $c\gets\pi(s_t)$
-\If{$\mathrm{MLU}(c,\hat D_t)>\theta$}
-\State $c\gets$ fallback rule \eqref{eq:fallback}
-\EndIf
-\If{$c\neq c_{t-1}$}
-\State wake links in $x\setminus x_{t-1}$; install new rules
-\State sleep links in $x_{t-1}\setminus x$
-\EndIf
-\State $c_t\gets c$; observe $D_t$; update detectors with $\rho_t$ from \eqref{eq:proxy}
-\If{a detector fires}
-\State schedule retraining on the last seven days (Section~\ref{sec:drift})
-\EndIf
-\EndFor
-\end{algorithmic}
-\end{algorithm}
+The guarantee holds for the estimate $\hat D_t$, not for the traffic that then arrives. Section~\ref{sec:protocol} states which estimate our evaluation uses, and Section~S16 measures the violations when the estimate is one interval old.
 
 \section{Experimental Setup}\label{sec:setup}
 
 \subsection{Datasets and Scenarios}
 
-Table~\ref{tab:data} lists the data. Abilene (Zhang \emph{et al.}~\cite{zhang2003tomogravity}) and G\'{E}ANT (Uhlig \emph{et al.}~\cite{uhlig2006geant}) topologies and traffic matrices come from SNDlib~\cite{orlowski2010sndlib}. SNDlib offers only one day of five-minute matrices for Nobel-Germany, while day-of-week features and a chronological split need several weeks. We therefore generate a 30-day semi-synthetic series: a gravity model fitted to the SNDlib day is modulated by the weekly profile of Abilene and multiplied by independent log-normal noise per origin--destination pair and interval, whose scale ($\sigma=1.23$) is fitted to the residuals of Abilene. This noise has no temporal correlation and is therefore harsher than the noise of a real trace.
+Table~S15 lists the data. Abilene (Zhang \emph{et al.}~\cite{zhang2003tomogravity}) and G\'{E}ANT (Uhlig \emph{et al.}~\cite{uhlig2006geant}) topologies and traffic matrices come from SNDlib~\cite{orlowski2010sndlib}. SNDlib offers only one day of five-minute matrices for Nobel-Germany, while day-of-week features and a chronological split need several weeks. We therefore generate a 30-day semi-synthetic series: a gravity model fitted to the SNDlib day is modulated by the weekly profile of Abilene and multiplied by independent log-normal noise per origin--destination pair and interval, whose scale ($\sigma=1.23$) is fitted to the residuals of Abilene. This noise has no temporal correlation and is therefore harsher than the noise of a real trace.
 
 We removed unfilled gaps and all-zero measurement outages, interpolated gaps of up to three intervals, removed eleven G\'{E}ANT intervals whose total volume exceeds ten times its one-day rolling median, and split each series chronologically into 60\% training, 15\% validation, and 25\% test. Sequences never cross an unfilled gap. Traffic is scaled so that the 99.9th percentile of the all-on maximum link utilization on the training split is $0.5$, which makes the scenario ``base''.
 
 We add three scenarios to probe regimes in which sequence decisions could matter more: \emph{high load} (demands $\times1.6$, a training peak of $0.8$), \emph{high dynamic power} (the load-proportional port power tripled to $15$\,W), and \emph{stress} (both). The library is rebuilt for each scenario.
 
-\begin{table*}[t]
-\centering
-\caption{Topologies and Traffic Data}
-\label{tab:data}
-\footnotesize
-\setlength{\tabcolsep}{2.5pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_data}\end{adjustbox}
-\end{table*}
 
 \subsection{Baselines}
 
@@ -384,42 +259,13 @@ B0 keeps all links on and routes each demand on its shortest path. B4 is our rei
 
 \subsection{Information Available to the Controller}\label{sec:protocol}
 
-Unless stated otherwise, every online method chooses the configuration of interval $t$ with the realized matrix $D_t$: its features are computed from $D_t$, and its safety check uses $\mathrm{MLU}(c,D_t)$. This idealizes the estimate $\hat D_t$ of Algorithm~\ref{alg:online}, and it gives the safety layer the information that the oracle has. Section~\ref{sec:res-stale} repeats the comparison when every online method decides with $D_{t-1}$, the last completed measurement, with and without a safety margin of $0.05$ on $\theta$.
+Unless stated otherwise, every online method chooses the configuration of interval $t$ with the realized matrix $D_t$: its features are computed from $D_t$, and its safety check uses $\mathrm{MLU}(c,D_t)$. This idealizes the estimate $\hat D_t$ of Algorithm~S2, and it gives the safety layer the information that the oracle has. Section~S16 repeats the comparison when every online method decides with $D_{t-1}$, the last completed measurement, with and without a safety margin of $0.05$ on $\theta$.
 
 \subsection{Metrics and Prices}
 
 Energy savings $S$ are measured relative to B0. We report configuration changes and link power-state transitions per day, flow-modification messages, the share of intervals with a violation of $\theta$, the sequence cost $J$ of \eqref{eq:objective}, the mean and maximum acceleration factor, and the decision latency measured with batch size one. The retention $X=S_{\mathrm{LiRA}}/S_{\mathrm{B4}}$ and the reductions $Y=1-N^{\mathrm{ch}}_{\mathrm{LiRA}}/N^{\mathrm{ch}}_{\mathrm{B4}}$ and $Z=1-N^{\mathrm{tr}}_{\mathrm{LiRA}}/N^{\mathrm{tr}}_{\mathrm{B4}}$ are defined only when B4 changes configuration. The reported cost $J$ is \eqref{eq:objective} without the constraint: an interval that violates $\theta$ adds no penalty and is counted in the violation share instead, and the first test interval and the first interval after a measurement gap carry no switching cost. $J$ also includes the modeled wear credit of sleeping links, so it is not an energy figure: absolute values of $J$ are lower than the energy of the always-on network, and only differences between methods are meaningful. With the default prices a sleeping link earns a wear credit of \wearCredit\ per interval, while sleeping it saves \sleepSaveabi, \sleepSavenob, and \sleepSavegea\ of the normalized energy on Abilene, Nobel-Germany, and G\'{E}ANT, so the wear model rewards sleeping about as much as the energy model does.
 
 The prices are set from operating considerations. One typical large change costs $0.2\%$ of the daily energy of the all-on network, so $\lambda_R=0.002\,n_d$, and one link transition costs $0.08\%$ of it, so $\lambda_W=0.0008\,n_d/\chi$, where $n_d$ is the number of intervals per day. For stochastic components (classifier seeds and DAgger rollouts) we use five seeds and report means with 95\% confidence intervals. Where a policy is constant, all seeds give the same result and the confidence interval has zero width. We compare the per-day sequence costs of LiRA with those of B4, B6, and B7 with the Wilcoxon signed-rank test and correct the three comparisons per setting with the Holm method. Because twelve settings are tested, we also apply the Holm correction to all \globalTests\ comparisons at once and report the result. Confidence intervals that round to zero, which occur when every seed gives the same sequence, are not printed.
-
-\subsection{Implementation and Parameters}\label{sec:params}
-
-The flow-level simulator is written in Python with NumPy and sparse path--link matrices. Integer and linear programs are solved with HiGHS (highspy 1.15.1). Experiments ran on an Intel Core i9-13900H laptop (14 cores, 20 threads, 48\,GB RAM, no GPU) under Windows, and the emulation ran in Ubuntu on WSL2 with Mininet 2.3.0 and Open vSwitch 3.7.1. Table~\ref{tab:params} lists the parameters. The port power values are representative assumptions within the ranges reported in~\cite{vishwanath2014modeling,mahadevan2009power}, not measurements of a specific device, and the wear parameters are assumed values for the model of~\cite{chiaraviglio2015lifetime}. We therefore study the sensitivity to both (Section~\ref{sec:res-wear}).
-
-\begin{table}[t]
-\centering
-\caption{Model and Training Parameters}
-\label{tab:params}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{3.9cm}p{4.6cm}@{}}
-\toprule
-Parameter & Value \\
-\midrule
-Threshold $\theta$; paths $k$; library $K$ & 0.8; 4; 32 (default) \\
-Port power $P^{\mathrm{idle}}$/$P^{\mathrm{dyn}}$/$P^{\mathrm{sl}}$ & 30/5/3\,W \\
-Wear $\alpha$; $\chi$ & 0.5; 0.01 per transition per day \\
-Prices $\lambda_R$; $\lambda_W$ & $0.002\,n_d$; $0.0008\,n_d/\chi$ \\
-Interval $\Delta$; $n_d$ & 5\,min, 288 (G\'{E}ANT: 15\,min, 96) \\
-XGBoost & depth 6, rate 0.1, 150 rounds max, early stop 15 \\
-Features & PCA 95\% variance, lags 1/3/6 \\
-DAgger rounds; $\beta_1$; weight clip & 3; 0.5; $[0.2,5]$ \\
-ADWIN confidence; Page--Hinkley tolerance, forgetting & 0.002; 0.005, 0.9999 \\
-Retraining window; schedule & 7 days; at detection, $+1$ and $+3$ days \\
-Seeds; folds & 5; 4 rolling origins \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \section{Results}\label{sec:results}
 
@@ -435,27 +281,17 @@ Table~\ref{tab:main} gives the main comparison in the base scenario. On Abilene 
 \label{tab:main}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_main}\end{adjustbox}
+\begin{adjustbox}{max width=\linewidth}\input{generated/tab_main}\end{adjustbox}
 \end{table*}
 
-The Nobel-Germany series behaves differently. B4 changes configuration \nobBFourchg\ times per day and makes \nobBFourtrans\ link transitions per day, whereas the exact snapshot rule \eqref{eq:snapshot} would change \nobSnapChg\ times per day. LiRA makes \nobLiRAchg\ changes per day, a reduction of $Y=\nobY\%$ and $Z=\nobZ\%$ at an energy retention of $X=\nobX\%$, and the mean acceleration factor drops from \nobAFfour\ for B4 to \nobAFlira. The reduction does not come from learning. The policy is constant in this scenario and holds one configuration in \liraHold\ of the \nobTestIntervals\ test intervals, and the static rule gives the same result. Hysteresis (B6) and the rolling-horizon B2 both make \nobBsixChg\ changes per day at a cost of \nobJBsixbase, slightly below LiRA's \nobJLiRAbase, so LiRA is not better than either. The paired test gives an adjusted $p=\nobPbsix$ against B6, with a mean daily cost difference (LiRA minus B6) of \effBsixbase\ and LiRA cheaper on \effBsixDaysbase\% of the days, and $p=\nobPbfour$ against B4. These reductions are relative to a gradient-boosted B4 that flaps heavily. A random-forest B4 changes configuration only \modRfChg\ times per day (Section~\ref{sec:res-models}), so the size of $Y$ and $Z$ depends on the classifier that we reimplemented. The test uses eight daily samples, the last of them a half day, so the smallest attainable two-sided $p$-value is $0.0078$. With the Holm correction over all \globalTests\ comparisons of Table~\ref{tab:scen}, \globalSig\ remain significant (smallest adjusted $p=\globalMinP$), including the comparison with B4. The cost differences we report are therefore descriptive. Their consistency across seeds, folds (Section~\ref{sec:res-folds}), and noise variants (Section~\ref{sec:res-noise}) carries more weight than any single test.
+The Nobel-Germany series behaves differently. B4 changes configuration \nobBFourchg\ times per day and makes \nobBFourtrans\ link transitions per day, whereas the exact snapshot rule \eqref{eq:snapshot} would change \nobSnapChg\ times per day. LiRA makes \nobLiRAchg\ changes per day, a reduction of $Y=\nobY\%$ and $Z=\nobZ\%$ at an energy retention of $X=\nobX\%$, and the mean acceleration factor drops from \nobAFfour\ for B4 to \nobAFlira. The reduction does not come from learning. The policy is constant in this scenario and holds one configuration in \liraHold\ of the \nobTestIntervals\ test intervals, and the static rule gives the same result. Hysteresis (B6) and the rolling-horizon B2 both make \nobBsixChg\ changes per day at a cost of \nobJBsixbase, slightly below LiRA's \nobJLiRAbase, so LiRA is not better than either. The paired test gives an adjusted $p=\nobPbsix$ against B6, with a mean daily cost difference (LiRA minus B6) of \effBsixbase\ and LiRA cheaper on \effBsixDaysbase\% of the days, and $p=\nobPbfour$ against B4. These reductions are relative to a gradient-boosted B4 that flaps heavily. A random-forest B4 changes configuration only \modRfChg\ times per day (Section~S5), so the size of $Y$ and $Z$ depends on the classifier that we reimplemented. The test uses eight daily samples, the last of them a half day, so the smallest attainable two-sided $p$-value is $0.0078$. With the Holm correction over all \globalTests\ comparisons of Table~\ref{tab:scen}, \globalSig\ remain significant (smallest adjusted $p=\globalMinP$), including the comparison with B4. The cost differences we report are therefore descriptive. Their consistency across seeds, folds (Section~S11), and noise variants (Section~S15) carries more weight than any single test.
 
-Fig.~\ref{fig:gain} shows that the flapping is harmless to remove. Among the \gainChanges\ configuration changes of B4 (seed 0) in the test period, none saves more than \gainMax\% of the interval energy, \gainTenthShare\% save less than 0.1\%, and the median saving is below \gainMedianBelow\%. Such changes are expected when demand hovers near the boundary between two nearly equivalent configurations, and avoiding them costs essentially no energy.
+Fig.~S4 shows that the flapping is harmless to remove. Among the \gainChanges\ configuration changes of B4 (seed 0) in the test period, none saves more than \gainMax\% of the interval energy, \gainTenthShare\% save less than 0.1\%, and the median saving is below \gainMedianBelow\%. Such changes are expected when demand hovers near the boundary between two nearly equivalent configurations, and avoiding them costs essentially no energy.
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{axis}[width=\columnwidth,height=4.0cm,ybar,bar width=14pt,ymin=0,ymax=110,ylabel={Share of changes (\%)},xlabel={Energy saved by a change (\% of interval energy)},xtick=data,xticklabels={$<0.1$,0.1--0.5,0.5--1,1--2,$>2$},nodes near coords={\pgfmathprintnumber[fixed,precision=0]{\pgfplotspointmeta}},nodes near coords style={font=\scriptsize},enlarge x limits=0.15]
-\addplot[fill=cRed!55,draw=cRed] table[x=bin,y=share,col sep=space]{generated/gain_hist.dat};
-\end{axis}
-\end{tikzpicture}
-\caption{Energy gained by each configuration change of the snapshot classifier B4 (seed 0) on the Nobel-Germany test period (\gainChanges\ changes). \gainTenthShare\% of the changes save less than 0.1\% of the interval energy.}
-\label{fig:gain}
-\end{figure}
 
 \subsection{Other Scenarios and Where the Differences Come From}
 
-Table~\ref{tab:scen} summarizes all topologies and scenarios. Higher load and higher dynamic power change nothing on Abilene and G\'{E}ANT: the oracle remains a single configuration. On Nobel-Germany, higher load makes the optimal sequence non-constant (\nobhlOchg\ changes per day). B4 then makes \nobhlBFourchg\ changes per day, B6 makes \nobhlBsixChg, and LiRA makes \nobhlLiRAchg. LiRA's sequence equals the oracle's in every test interval and every seed (\hlLiraOracleDiff\ differing intervals), at a cost of \nobJLiRAhl\ against \nobJBtwohl\ for B2, \nobJBsixhl\ for B6, and \nobhlJBFour\ for B4. The match has a simple cause. The expert is nearly constant, LiRA predicts the default configuration, and its safety layer, which sees the realized matrix, switches in exactly the intervals in which the default becomes infeasible, as the oracle does. The static rule reaches the same cost (\staticJhl), and so does every ablation that keeps the safety layer (Section~\ref{sec:res-ablation}). Over \nobTestDays\ days of test data the difference to B6 is not significant ($p=\nobhlPbsix$, LiRA cheaper on \effBsixDayshl\% of the days). Under stress, the only setting in which LiRA differs from the static rule, LiRA (\nobJLiRAst) is cheaper in total than B6 (\nobJBsixst) and the static rule (\staticJst), but B2 (\nobJBtwost) comes closer to the oracle (\nobJOst). The difference to B6 is \nobstGainPct\% of the cost, LiRA is cheaper on only \nobstBsixDays\% of the days, and the test gives $p=\nobstPbsix$.
+Table~\ref{tab:scen} summarizes all topologies and scenarios. Higher load and higher dynamic power change nothing on Abilene and G\'{E}ANT: the oracle remains a single configuration. On Nobel-Germany, higher load makes the optimal sequence non-constant (\nobhlOchg\ changes per day). B4 then makes \nobhlBFourchg\ changes per day, B6 makes \nobhlBsixChg, and LiRA makes \nobhlLiRAchg. LiRA's sequence equals the oracle's in every test interval and every seed (\hlLiraOracleDiff\ differing intervals), at a cost of \nobJLiRAhl\ against \nobJBtwohl\ for B2, \nobJBsixhl\ for B6, and \nobhlJBFour\ for B4. The match has a simple cause. The expert is nearly constant, LiRA predicts the default configuration, and its safety layer, which sees the realized matrix, switches in exactly the intervals in which the default becomes infeasible, as the oracle does. The static rule reaches the same cost (\staticJhl), and so does every ablation that keeps the safety layer (Section~S6). Over \nobTestDays\ days of test data the difference to B6 is not significant ($p=\nobhlPbsix$, LiRA cheaper on \effBsixDayshl\% of the days). Under stress, the only setting in which LiRA differs from the static rule, LiRA (\nobJLiRAst) is cheaper in total than B6 (\nobJBsixst) and the static rule (\staticJst), but B2 (\nobJBtwost) comes closer to the oracle (\nobJOst). The difference to B6 is \nobstGainPct\% of the cost, LiRA is cheaper on only \nobstBsixDays\% of the days, and the test gives $p=\nobstPbsix$.
 
 \begin{table*}[t]
 \centering
@@ -463,89 +299,10 @@ Table~\ref{tab:scen} summarizes all topologies and scenarios. Higher load and hi
 \label{tab:scen}
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_scen}\end{adjustbox}
+\begin{adjustbox}{max width=\linewidth}\input{generated/tab_scen}\end{adjustbox}
 \end{table*}
 
-Fig.~\ref{fig:case} shows the busiest test week of the Nobel-Germany series. B4 changes configuration \caseBFourchg\ times during the week, whereas LiRA makes only \caseLiRAchg\ changes. Fig.~\ref{fig:pareto} plots total cost against configuration changes for the hysteresis and dwell-time sweeps and for the price sweep of LiRA and the oracle. LiRA and the oracle lie at the low-cost, low-change end of the plotted points, and a tuned hysteresis threshold reaches nearly the same point.
-
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{axis}[width=\columnwidth,height=4.2cm,xlabel={Day of the busiest test week},ylabel={Configuration index},ymin=-0.3,ymax=3.4,legend pos=north east,legend columns=3,mark size=0.8pt]
-\addplot[const plot,cRed,thick] table[x=day,y expr=\thisrow{B4}+0.0,col sep=space]{generated/case_week.dat};
-\addlegendentry{B4}
-\addplot[const plot,cGreen!70!black,thick] table[x=day,y expr=\thisrow{B6}+0.12,col sep=space]{generated/case_week.dat};
-\addlegendentry{B6 (+0.12)}
-\addplot[const plot,cBlue,thick,dashed] table[x=day,y expr=\thisrow{LiRA}+0.24,col sep=space]{generated/case_week.dat};
-\addlegendentry{LiRA (+0.24)}
-\end{axis}
-\end{tikzpicture}
-\caption{Installed configuration index over the busiest test week of the Nobel-Germany series. Offsets separate the lines. B4 switches repeatedly between two configurations, whereas B6 and LiRA hold a configuration.}
-\label{fig:case}
-\end{figure}
-
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.3cm},width=0.46\columnwidth,height=4.3cm,xmode=log,xlabel={Changes/day $+0.05$},scaled y ticks=false]
-\nextgroupplot[title={Base},ylabel={Total cost $J$}]
-\addplot[only marks,mark=square*,cGreen!70!black] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_base_B6.dat};
-\addplot[only marks,mark=triangle*,cOrange] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_base_B7.dat};
-\addplot[only marks,mark=*,cBlue,mark size=2pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_base_LiRA.dat};
-\addplot[only marks,mark=x,black,mark size=3pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_base_Ostar.dat};
-\addplot[only marks,mark=diamond*,cRed,mark size=3pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_base_B4.dat};
-\nextgroupplot[title={High load}]
-\addplot[only marks,mark=square*,cGreen!70!black] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_highload_B6.dat};
-\addlegendentry{B6 sweep}
-\addplot[only marks,mark=triangle*,cOrange] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_highload_B7.dat};
-\addlegendentry{B7 sweep}
-\addplot[only marks,mark=*,cBlue,mark size=2pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_highload_LiRA.dat};
-\addlegendentry{LiRA}
-\addplot[only marks,mark=x,black,mark size=3pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_highload_Ostar.dat};
-\addlegendentry{O$^\star$}
-\addplot[only marks,mark=diamond*,cRed,mark size=3pt] table[x expr=\thisrow{config_changes_per_day}+0.05,y=total_cost_J,col sep=space]{generated/pareto_highload_B4.dat};
-\addlegendentry{B4}
-\end{groupplot}
-\end{tikzpicture}
-\caption{Total cost versus configuration changes on Nobel-Germany. Hysteresis thresholds and dwell times are swept for B6 and B7 and the reconfiguration price is swept for LiRA and the oracle. Each marker is one setting on the test split. The horizontal axis is logarithmic, and 0.05 is added to the change rate so that methods without changes can be shown.}
-\label{fig:pareto}
-\end{figure}
-
-\subsection{Dependence on the Snapshot Classifier}\label{sec:res-models}
-
-The amount of flapping depends strongly on the classifier. On Nobel-Germany in the base scenario, B4 with XGBoost changes configuration \modXgbChg\ times per day, LightGBM \modLgbmChg, a random forest \modRfChg, and a multilayer perceptron \modMlpChg\ (Table~S1 (Supplementary Material)). The random forest is nearly as stable as LiRA. Averaging over trees is a plausible reason, which we did not test. The perceptron flaps so much that its cost (\modMlpJ) is far above that of LiRA (\nobJlira). LiRA reaches the same cost with every backend, because its policy is constant in this scenario. A sequence-aware method is therefore most useful when the snapshot classifier is the kind that flaps, and it is least useful when a smoother classifier or a hysteresis guard is available.
-
-
-\subsection{Ablation, Library Size, and Threshold}\label{sec:res-ablation}
-
-Table~S2 (Supplementary Material) removes one component of LiRA at a time on Nobel-Germany at the default price. It uses seeds 0 to 2, so the full policy's stress cost differs from the five-seed value in Table~\ref{tab:scen}. In the high-load scenario the expert is nearly constant, so all variants that keep the safety layer reach the oracle cost. In the stress scenario the full policy costs \ablStressFull\ against \ablStressO\ for the oracle. Removing the previous-configuration input raises the cost to \ablStressNoPrev, removing the cost-sensitive weights to \ablStressNoCS, and removing DAgger to \ablStressNoDagger. Removing the lag features lowers it to \ablStressNoLag. The differences are small and of mixed sign, and we did not test them for significance. Removing the safety layer lowers the cost to \ablStressNoSafe\ because the policy then ignores the bound, and it causes \ablStressNoSafeViol\% of the intervals to violate $\theta$. Because $J$ carries no penalty for violations, this cost is not comparable, and the layer is needed. On Abilene and G\'{E}ANT all variants coincide with the oracle because the expert is constant.
-
-
-Table~S3 (Supplementary Material) shows the effect of the library size on Nobel-Germany. Requested sizes above \KactualMax\ yield the same library, because the candidate pool contains only \nobCand\ configurations. Every library size covers all test matrices. A larger library lowers the cost of B4 (from \KBFouratEight\ at $K=8$ to \KBFouratSixFour\ at the largest size), but hysteresis and LiRA stay within 0.2\% of the oracle cost at every size. Table~S4 (Supplementary Material) varies the utilization threshold. At $\theta=0.6$ B4 changes configuration \thSixBFourchg\ times per day and LiRA \thSixLiRAchg\ times. For $\theta\ge0.7$, each method gives the same result at every threshold on Nobel-Germany, because the same configurations are optimal and feasible. Table~S4 (Supplementary Material) uses seed 0, so its B4 change rate differs from the five-seed mean of Table~\ref{tab:main}. On Abilene and G\'{E}ANT, the threshold has no effect between 0.6 and 0.9. LiRA never violates the bound when the library covers the traffic.
-
-
-
-\subsection{Wear and Lifetime}\label{sec:res-wear}
-
-Fig.~\ref{fig:wear} shows the mean acceleration factor of the decision sequences on Nobel-Germany for $\alpha=0.5$ and varying cycling weight $\chi$ (the sequences are fixed, and only the model changes). Every method stays below the always-on value of one for $\alpha=0.5$ and all $\chi$ up to $0.1$, but B4 degrades fastest: at $\chi=0.1$ its mean factor is \wearBigChiBFour, against \wearBigChiLiRA\ for LiRA. At the default parameters (seed 0) the most-cycled link of B4 has a factor of \maxAFfour, whereas the most-cycled link of LiRA has \maxAFlira\ and those of B6, B7, and the oracle \maxAFothers. When sleeping brings no benefit ($\alpha=1$), every transition lowers lifetime, and every method that switches exceeds the always-on factor, B4 by the largest margin. Absolute lifetime figures depend on assumed parameters and should be read as relative comparisons.
-
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{axis}[width=\columnwidth,height=4.2cm,xmode=log,xlabel={Cycling weight $\chi$ (per transition per day)},ylabel={Mean $\mathrm{AF}$},legend pos=north west,legend columns=2,ymin=0.8,ymax=1.05]
-\addplot[cRed,thick,mark=*,mark size=1.5pt] table[x=chi,y=B4,col sep=space]{generated/wear_chi.dat};\addlegendentry{B4}
-\addplot[cGreen!70!black,thick,mark=square*,mark size=1.5pt] table[x=chi,y=B6,col sep=space]{generated/wear_chi.dat};\addlegendentry{B6}
-\addplot[cBlue,thick,dashed,mark=triangle*,mark size=1.5pt] table[x=chi,y=LiRA,col sep=space]{generated/wear_chi.dat};\addlegendentry{LiRA}
-\addplot[black,dotted,thick] table[x=chi,y=B0,col sep=space]{generated/wear_chi.dat};\addlegendentry{Always on}
-\end{axis}
-\end{tikzpicture}
-\caption{Mean acceleration factor of the decision sequences on Nobel-Germany for $\alpha=0.5$. The factor of the always-on network is one.}
-\label{fig:wear}
-\end{figure}
-
-\subsection{Decision Time and Scalability}\label{sec:res-time}
-
-The library-based decisions are fast. The median decision time of B4 is \abiLatBFour\,ms on Abilene, \nobLatBFour\,ms on Nobel-Germany, and \geaLatBFour\,ms on G\'{E}ANT. LiRA needs less than 0.01\,ms where its policy is constant and \geaLatLiRA\,ms where a tree model is evaluated. The safety check takes at most \safetyTA\,ms even on a 65-node topology. Solving the integer program per traffic matrix (B1) takes a median of \nobIlpMs\,ms on Nobel-Germany and \geaIlpS\,s on G\'{E}ANT, NSGA-II (B3) takes \nobGaS\,s and \geaGaS\,s, and the greedy heuristic is faster but gives away part of the savings (Table~S5 (Supplementary Material)). On the subsample, the per-snapshot integer program reaches the same savings as the library snapshot optimum to within \boneGapPP\ percentage points. On larger SNDlib topologies the integer program takes \ilpGermany\,s for Germany50 and \ilpTA\,s for TA2 (Table~S6 (Supplementary Material)). These times fit five-minute intervals on the topologies we study, so speed alone does not require a learned controller here. The dynamic-programming oracle needs \dpRunAbi\,s for all \abiIntervals\ Abilene intervals with $K=32$, so prices can be explored offline.
+Fig.~S2 shows the busiest test week of the Nobel-Germany series. B4 changes configuration \caseBFourchg\ times during the week, whereas LiRA makes only \caseLiRAchg\ changes. Fig.~S3 plots total cost against configuration changes for the hysteresis and dwell-time sweeps and for the price sweep of LiRA and the oracle. LiRA and the oracle lie at the low-cost, low-change end of the plotted points, and a tuned hysteresis threshold reaches nearly the same point.
 
 
 
@@ -559,79 +316,28 @@ Because the switching terms of \eqref{eq:objective} are non-negative, the sum ov
 \label{tab:bound}
 \scriptsize
 \setlength{\tabcolsep}{2pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_bound}\end{adjustbox}
+\begin{adjustbox}{max width=\linewidth}\input{generated/tab_bound}\end{adjustbox}
 \end{table}
 
-\subsection{Without the Wear Price}\label{sec:res-nowear}
+\subsection{Robustness to Noise Structure and Stale Traffic}\label{sec:res-robust}
 
-With the default prices, a sleeping link earns a wear credit about as large as its energy saving (Section~\ref{sec:setup}), so $J$ is well below the energy of the network. To check that this assumed credit does not drive the comparison, we repeat the main study with $\lambda_W=0$: oracle labels, tuning of B6 and B7, training of B4 and LiRA, and the reported cost then contain energy and reconfiguration only. Table~S7 (Supplementary Material) shows the result for all \nwSettings\ settings. The oracle holds a single configuration in \nwOconst\ of them. On Nobel-Germany B4 is again the most expensive online method (\nwBfourExcessbase\% above the oracle in the base scenario), while B6, B2, the static rule, and LiRA lie within \nwHoldMaxGap\% of the oracle in every setting. LiRA is cheaper than every other online method in \nwLiraBest\ settings and costs the same as the static rule in \nwStaticSame. Under high load it is slightly more expensive than the static rule (\nwJLiRAhl\ against \nwJStatichl, which equals the oracle). The ranking of the methods therefore does not depend on the wear model.
-
-
-\subsection{Noise Structure of the Semi-Synthetic Series}\label{sec:res-noise}
-
-The only series with flapping is semi-synthetic, and its noise is independent across intervals. To see how the findings depend on this choice, we generate three further 30-day series with the same gravity model, weekly profile, split, and scaling. Two use log-normal noise with the same marginal scale but AR(1) correlation in time ($\rho=0.5$ and $\rho=0.9$), and one uses independent noise with half the scale. Each variant gets its own library, and every method is retrained (base scenario, five seeds). Table~\ref{tab:noise} shows that the amount of flapping depends strongly on the noise. With $\rho=0.5$ the snapshot classifier changes configuration \nzarABfourChg\ times per day and costs \nzarAExcess\% more than the oracle, because demands now stay near a decision boundary for several intervals and cross it repeatedly. With $\rho=0.9$ the oracle itself switches (\nzarBOChg\ changes per day) and B4 is only \nzarBExcess\% above it, and with half the noise B4 does not flap at all. In every variant, B6, B2, the static rule, and LiRA are at most \nzarBLiRAgap\% above the oracle, and LiRA costs the same as the static rule. The value of reconfiguration awareness thus ranges from nothing to a third of the cost, depending on the traffic, and in none of the variants does it require learning.
-
-\begin{table*}[t]
-\centering
-\caption{Nobel-Germany Series with Different Noise (Base Scenario): Configuration Changes per Day, Total Cost $J$, and the Excess Cost of B4 over the Oracle. B4, B6, and LiRA: Mean over Five Seeds}
-\label{tab:noise}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_noise}\end{adjustbox}
-\end{table*}
-
-\subsection{Traffic Drift}\label{sec:res-drift}
-
-We inject three shifts into the test period of each topology: a ramp that raises all demands by up to 50\% over ten days, a fourfold increase of three large demands, and a six-hour shift of the daily pattern. Table~S8 (Supplementary Material) compares a LiRA policy trained once with drift-triggered retraining. On Abilene and G\'{E}ANT the shifts did not change which configuration this policy uses, because the library stays feasible. On Nobel-Germany the hotspot raised its configuration changes from \driftNobSwNone\ to \driftNobSwHot\ per day. The cost changed by at most \driftMaxCostPct\% relative to the unshifted stream. The detectors were also not informative: without any shift, they raised \driftFaAbi, \driftFaGea, and \driftFaNob\ false alarms per 1000 intervals on Abilene, G\'{E}ANT, and Nobel-Germany, and the Page--Hinkley threshold calibrated on validation data was at the maximum of the search grid (\driftThrAbi) on the two real traces. We therefore cannot attribute detections to the injected shifts, and retraining did not lower the cost of LiRA. The injected shifts did not change the optimal configuration, so this experiment does not validate the detectors.
-
-
-\subsection{Decisions on the Previous Interval's Traffic}\label{sec:res-stale}
-
-All results so far let the controller see $D_t$ when it configures interval $t$ (Section~\ref{sec:protocol}). Table~\ref{tab:info} repeats the Nobel-Germany comparison when every online method decides with $D_{t-1}$: the features, the safety check, the hysteresis and dwell decisions, and the forecast of B2 all use the last completed interval, while costs and violations are measured on $D_t$ (the same trained models, seeds 0 to 2). The decisions barely change, and costs move by at most \staleNobMaxDJ\% on Nobel-Germany and by \staleRealDJtext\% on Abilene and G\'{E}ANT. The utilization guarantee does not survive. On Nobel-Germany, B2, B4, and B6 violate $\theta$ in \staleBzerobase\%, \staleBzerohl\%, and \staleBzerost\% of the intervals in the base, high-load, and stress scenarios, the same shares as the always-on network with shortest-path routing, and LiRA in \staleLiRAViolbase\%, \staleLiRAViolhl\%, and \staleLiRAViolst\%. Every violated interval of the static rule is one in which the always-on network also violates $\theta$, and in each of them the utilization of the installed configuration rises by \staleJumpMin\ to \staleJumpMax\ within one interval. Such peaks come from the independent per-interval noise of the series and cannot be predicted from $D_{t-1}$. A margin of $0.05$ on $\theta$ therefore does not remove them, and it raises the cost (LiRA under high load: \marginLiRAhlJ\ against \nobJLiRAhl). On Abilene and G\'{E}ANT at most \staleRealMaxViol\% of the intervals violate $\theta$. LiRA's exact match with the oracle under high load thus depends on knowing the traffic of the interval it configures.
-
-\begin{table}[t]
-\centering
-\caption{Nobel-Germany: Total Cost $J$ and Share of Intervals Violating $\theta$ When Every Online Method Knows $D_t$ or Decides with $D_{t-1}$, Without and With a Safety Margin of 0.05 (B4, B6, and LiRA: Mean over Seeds 0 to 2)}
-\label{tab:info}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{adjustbox}{max width=\textwidth}\input{generated/tab_info}\end{adjustbox}
-\end{table}
-
-\subsection{Rolling-Origin Folds}\label{sec:res-folds}
-
-Table~S9 (Supplementary Material) repeats the comparison for four rolling origins, retraining B4, B6, and LiRA on all data before each origin. In every fold B4 costs more than B6 and LiRA, and B6 and LiRA stay within \foldMaxGap\% of the oracle. On Abilene and G\'{E}ANT, all methods coincide in every fold. On Nobel-Germany, the mean cost over the folds is \foldNobBFour\ for B4, \foldNobBSix\ for B6, \foldNobBSeven\ for B7, \foldNobLiRA\ for LiRA, and \foldNobO\ for the oracle.
-
-
-\subsection{Emulation of Configuration Changes}\label{sec:res-emu}
-
-We emulate the most active day of the Nobel-Germany series in Mininet 2.3.0 with Open vSwitch 3.7.1 (17 switches, one host per switch, 26 links). Each configuration installs, for every origin--destination pair, the path that carries the largest share of its demand as OpenFlow rules with \texttt{ovs-ofctl}. A day is replayed with two seconds per interval. A configuration change wakes the links that the new configuration needs, waits one second of modeled wake-up time (Mininet does not model line-card physics), replaces the flow tables of the switches that change one after another, and then puts unused links to sleep. Eight UDP probe flows at 100 packets per second on the largest origin--destination pairs measure loss and one-way delay. B4 makes \emuTrans\ configuration changes on this day, each toggling two links, whereas the sequences of B6, LiRA, and the oracle make none. Each change of B4 takes \emuTransS\,s in total, which is the modeled wake-up time of 1\,s plus \emuRuleMs\,ms of measured rule installation and the time to put links to sleep. Table~S10 (Supplementary Material) reports the probe loss. Each run sends \emuProbePkts\ probe packets. B4 loses \emuLostPerTrans\ packets per configuration change on average, all of them inside the windows around a change: \emuLossWin\% of the probes in those windows and \emuLossAll\% over the whole day. The always-on control and LiRA lose no probe packets, and LiRA keeps the same link-hours as B4, computed from the replayed configurations, which are \emuLinkSave\% fewer than those of the always-on network. This emulation measures the cost of a single configuration change, not the energy of the network, and it ignores line-card boot time beyond the modeled delay.
-
+Two further experiments, given in full in Sections~S15 and~S16 of the Supplementary Material, test the assumptions behind these results. First, we regenerate the Nobel-Germany series with time-correlated noise (AR(1), $\rho=0.5$ and $\rho=0.9$) and with half the noise scale, and retrain every method. With $\rho=0.5$ the snapshot classifier changes configuration \nzarABfourChg\ times per day and costs \nzarAExcess\% more than the oracle, with $\rho=0.9$ only \nzarBExcess\%, and with half the noise it does not flap. In every variant B6, B2, the static rule, and LiRA stay within \nzarBLiRAgap\% of the oracle, and LiRA costs the same as the static rule. Second, when every online method decides with the previous interval's traffic $D_{t-1}$, costs move by at most \staleNobMaxDJ\%, but the safety layer no longer guarantees $\theta$: up to \staleBzerohl\% of the Nobel-Germany intervals violate it, at single-interval traffic peaks that a margin of 0.05 does not remove. LiRA's exact match with the oracle under high load therefore depends on knowing the traffic of the interval it configures.
 
 \section{Discussion}\label{sec:discussion}
 
-\textbf{When does sequence awareness matter?} In our data, it matters when the snapshot decision flaps. This happens with noisy demands whose fluctuations persist for a few intervals (Section~\ref{sec:res-noise}) and with some classifiers (XGBoost, LightGBM, and the perceptron, but not the random forest), and it does not happen on smooth real traces. The wear model does not change this (Section~\ref{sec:res-nowear}). Where flapping occurs, holding a configuration removes nearly all changes without losing energy, and no learning is needed to do so: tuned hysteresis, a rolling-horizon optimizer with a persistence forecast, and a static configuration with a fallback all match LiRA.
+\textbf{When does sequence awareness matter?} In our data, it matters when the snapshot decision flaps. This happens with noisy demands whose fluctuations persist for a few intervals (Section~S15) and with some classifiers (XGBoost, LightGBM, and the perceptron, but not the random forest), and it does not happen on smooth real traces. The wear model does not change this (Section~S9). Where flapping occurs, holding a configuration removes nearly all changes without losing energy, and no learning is needed to do so: tuned hysteresis, a rolling-horizon optimizer with a persistence forecast, and a static configuration with a fallback all match LiRA.
 
 \textbf{What the oracle and LiRA add.} The oracle makes the cost of any controller measurable on a trace. Together with the per-interval bound, it shows that the library loses at most \boundMaxLoss\% and that the real traces are nearly constant. LiRA's learned component changes the outcome in one setting, the stress scenario, where its total cost is \nobstGainPct\% below that of hysteresis ($p=\nobstPbsix$) and above that of the rolling-horizon optimizer. Its exact match with the oracle under high load comes from the safety layer and from knowing the current traffic. With one-interval-old traffic LiRA keeps the oracle's cost but violates the utilization bound in \staleLiRAViolhl\% of the intervals.
 
 \textbf{Relation to learning-augmented algorithms.} Our results match a lesson of online algorithms with predictions~\cite{lykouris2021caching,antoniadis2023mts}: a controller that follows a predictor blindly can pay far more than the optimum, and combining the predictor with a rule that holds its state recovers nearly all of the loss. In our setting the holding rule alone already suffices, because the oracle itself rarely switches.
 
-\textbf{Choosing the prices.} The prices $\lambda_R$ and $\lambda_W$ are operator policy. The Pareto plots (Fig.~\ref{fig:pareto}) show how much cost a setting gives up, and because the oracle runs in seconds (Section~\ref{sec:res-time}), an operator can explore prices offline before deploying a policy.
+\textbf{Choosing the prices.} The prices $\lambda_R$ and $\lambda_W$ are operator policy. The Pareto plots (Fig.~S3) show how much cost a setting gives up, and because the oracle runs in seconds (Section~S8), an operator can explore prices offline before deploying a policy.
 
-\textbf{Deployment.} The safety layer and the all-on fallback are independent of the model, so a mispredicting model degrades to higher energy use and not to congestion, as long as the all-on configuration is feasible and the traffic estimate is accurate (Proposition~\ref{prop:safety}). With one-interval-old estimates the layer no longer prevents violations on noisy traffic (Section~\ref{sec:res-stale}), and a fixed margin does not help against single-interval peaks. A deployment therefore needs either a traffic forecast or capacity headroom sized to the peaks, which we did not evaluate. The fallback rate is also a monitoring signal for a stale library.
+\textbf{Deployment.} The safety layer and the all-on fallback are independent of the model, so a mispredicting model degrades to higher energy use and not to congestion, as long as the all-on configuration is feasible and the traffic estimate is accurate (Proposition~\ref{prop:safety}). With one-interval-old estimates the layer no longer prevents violations on noisy traffic (Section~S16), and a fixed margin does not help against single-interval peaks. A deployment therefore needs either a traffic forecast or capacity headroom sized to the peaks, which we did not evaluate. The fallback rate is also a monitoring signal for a stale library.
 
-\section{Limitations and Threats to Validity}\label{sec:limitations}
+\section{Limitations}\label{sec:limitations}
 
-\begin{itemize}
-\item \emph{Traffic.} The only series with strong flapping is semi-synthetic. We vary its noise structure (Section~\ref{sec:res-noise}), but no real trace with such fluctuations was available to us. The evaluation on real traffic covers two research and education backbones, Abilene (2004) and G\'{E}ANT (2005), and both traces are old. The Nobel-Germany test split covers only \nobTestDays\ days, so tests on per-day costs have little power.
-\item \emph{Power and wear.} The port power values and the wear parameters are assumed and not measured. The conclusion that the optimal configuration is stable depends on idle port power dominating dynamic power. A router with stronger load-proportional power, such as the high-dynamic-power scenario scaled further, may change this.
-\item \emph{Baselines.} B4 is our reimplementation of the snapshot principle, not the published systems. B2 is restricted to the library. We did not solve the full multi-period mixed-integer program, but the per-interval bound limits what it can gain over the oracle (Section~\ref{sec:res-bound}). B1, B3, and B5 were evaluated on subsamples. We did not train a deep reinforcement learning baseline.
-\item \emph{Information.} The main results let every online method see the traffic of the interval it configures. With the previous interval's traffic, costs are unchanged but the safety layer admits violations on Nobel-Germany (Section~\ref{sec:res-stale}). We did not evaluate traffic forecasts or estimation error from link loads.
-\item \emph{Drift.} The injected shifts did not change the optimal configuration, and the detectors fired independently of them, so the drift study is inconclusive. Link failures and large library refreshes were not evaluated.
-\item \emph{Emulation.} The emulation is small (17 switches, one day, compressed time), uses a modeled wake-up delay, single-path routing per demand, and no real line cards, and it reports a single run for LiRA.
-\item \emph{Statistics.} Seeds vary only the learner. The traffic traces are fixed and the per-day tests use few days, so no comparison survives a correction over all settings.
-\item \emph{Learned component.} In \liraConstRuns\ of \liraTotalRuns\ LiRA runs the trained policy is constant, in \daggerRoundZero\ of them the selected policy predates DAgger, and the static rule equals LiRA in \staticSame\ of \staticTotal\ settings. A learned policy that does more than hold a configuration is therefore evaluated only in the Nobel-Germany stress scenario (\nobJLiRAst\ against \nobJOst\ for the oracle, five seeds). On G\'{E}ANT the classifier is not constant as a model, but its output is constant on the test split.
-\end{itemize}
+The flapping series is semi-synthetic, the two real traces are old research backbones, and the Nobel-Germany test split covers \nobTestDays\ days, so per-day tests have little power and no comparison survives a correction over all settings. Port power and wear parameters are assumed, B4 reimplements the snapshot principle rather than a published system, and no deep reinforcement learning baseline was trained. The main results let each method see the traffic it configures, and the drift study did not validate the detectors. The learned component matters in one scenario only: the trained policy is constant in \liraConstRuns\ of \liraTotalRuns\ runs, and the static rule equals LiRA in \staticSame\ of \staticTotal\ settings. Section~S3 of the Supplementary Material lists all threats to validity.
 
 \section{Conclusion}\label{sec:conclusion}
 

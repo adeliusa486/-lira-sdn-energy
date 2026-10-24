@@ -1,0 +1,349 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{bianzino2012survey}
+A.~P. Bianzino, C.~Chaudet, D.~Rossi, J.-L. Rougier, A survey of green
+  networking research, IEEE Communications Surveys \& Tutorials 14~(1) (2012)
+  3--20.
+\newblock \href {https://doi.org/10.1109/SURV.2011.113010.00106}
+  {\path{doi:10.1109/SURV.2011.113010.00106}}.
+
+\bibitem{bolla2011energy}
+R.~Bolla, R.~Bruschi, F.~Davoli, F.~Cucchietti, Energy efficiency in the future
+  internet: A survey of existing approaches and trends in energy-aware fixed
+  network infrastructures, IEEE Communications Surveys \& Tutorials 13~(2)
+  (2011) 223--244.
+\newblock \href {https://doi.org/10.1109/SURV.2011.071410.00073}
+  {\path{doi:10.1109/SURV.2011.071410.00073}}.
+
+\bibitem{chiaraviglio2012minimizing}
+L.~Chiaraviglio, M.~Mellia, F.~Neri, Minimizing {ISP} network energy cost:
+  Formulation and solutions, IEEE/ACM Transactions on Networking 20~(2) (2012)
+  463--476.
+\newblock \href {https://doi.org/10.1109/TNET.2011.2161487}
+  {\path{doi:10.1109/TNET.2011.2161487}}.
+
+\bibitem{zhang2010greente}
+M.~Zhang, C.~Yi, B.~Liu, B.~Zhang, {GreenTE}: Power-aware traffic engineering,
+  in: Proc. IEEE Int. Conf. Network Protocols (ICNP), 2010, pp. 21--30.
+\newblock \href {https://doi.org/10.1109/ICNP.2010.5762751}
+  {\path{doi:10.1109/ICNP.2010.5762751}}.
+
+\bibitem{heller2010elastictree}
+B.~Heller, S.~Seetharaman, P.~Mahadevan, Y.~Yiakoumis, P.~Sharma, S.~Banerjee,
+  N.~McKeown,
+  \href{https://www.usenix.org/conference/nsdi10-0/elastictree-saving-energy-data-center-networks}{{ElasticTree}:
+  Saving energy in data center networks}, in: Proc. USENIX NSDI, 2010.
+\newline\urlprefix\url{https://www.usenix.org/conference/nsdi10-0/elastictree-saving-energy-data-center-networks}
+
+\bibitem{vasic2010eate}
+N.~Vasi{\'c}, D.~Kosti{\'c}, Energy-aware traffic engineering, in: Proc. ACM
+  e-Energy, 2010.
+\newblock \href {https://doi.org/10.1145/1791314.1791341}
+  {\path{doi:10.1145/1791314.1791341}}.
+
+\bibitem{mahadevan2009power}
+P.~Mahadevan, P.~Sharma, S.~Banerjee, P.~Ranganathan, A power benchmarking
+  framework for network devices, in: Proc. IFIP Networking, Vol. 5550 of LNCS,
+  2009, pp. 795--808.
+\newblock \href {https://doi.org/10.1007/978-3-642-01399-7_62}
+  {\path{doi:10.1007/978-3-642-01399-7_62}}.
+
+\bibitem{restrepo2009energy}
+J.~C.~C. Restrepo, C.~G. Gruber, C.~M. Machuca, Energy profile aware routing,
+  in: Proc. IEEE ICC Workshops, 2009.
+\newblock \href {https://doi.org/10.1109/ICCW.2009.5208041}
+  {\path{doi:10.1109/ICCW.2009.5208041}}.
+
+\bibitem{vishwanath2014modeling}
+A.~Vishwanath, K.~Hinton, R.~W.~A. Ayre, R.~S. Tucker, Modeling energy
+  consumption in high-capacity routers and switches, IEEE Journal on Selected
+  Areas in Communications 32~(8) (2014) 1524--1532.
+\newblock \href {https://doi.org/10.1109/JSAC.2014.2335312}
+  {\path{doi:10.1109/JSAC.2014.2335312}}.
+
+\bibitem{maaloul2018carrier}
+R.~Maaloul, R.~Taktak, L.~Chaari, B.~Cousin, Energy-aware routing in
+  carrier-grade {Ethernet} using {SDN} approach, IEEE Transactions on Green
+  Communications and Networking 2~(3) (2018) 844--858.
+\newblock \href {https://doi.org/10.1109/TGCN.2018.2832658}
+  {\path{doi:10.1109/TGCN.2018.2832658}}.
+
+\bibitem{assefa2019survey}
+B.~G. Assefa, {\"O}.~{\"O}zkasap, A survey of energy efficiency in {SDN}:
+  Software-based methods and optimization models, Journal of Network and
+  Computer Applications 137 (2019) 127--143.
+\newblock \href {https://doi.org/10.1016/j.jnca.2019.04.001}
+  {\path{doi:10.1016/j.jnca.2019.04.001}}.
+
+\bibitem{assefa2018mersdn}
+B.~G. Assefa, {\"O}.~{\"O}zkasap, {MER-SDN}: Machine learning framework for
+  traffic aware energy efficient routing in {SDN}, in: Proc. IEEE
+  DASC/PiCom/DataCom/CyberSciTech, 2018.
+\newblock \href
+  {https://doi.org/10.1109/DASC/PiCom/DataCom/CyberSciTec.2018.000-1}
+  {\path{doi:10.1109/DASC/PiCom/DataCom/CyberSciTec.2018.000-1}}.
+
+\bibitem{frohlich2021rl}
+P.~Fr{\"o}hlich, E.~Gelenbe, M.~P. Nowak, Reinforcement learning and
+  energy-aware routing, in: Proc. ACM FlexNets Workshop, 2021.
+\newblock \href {https://doi.org/10.1145/3472735.3473390}
+  {\path{doi:10.1145/3472735.3473390}}.
+
+\bibitem{zheng2022energysaving}
+X.~Zheng, W.~Huang, S.~Wang, J.~Zhang, H.~Zhang, Research on energy-saving
+  routing technology based on deep reinforcement learning, Electronics 11~(13)
+  (2022) 2035.
+\newblock \href {https://doi.org/10.3390/electronics11132035}
+  {\path{doi:10.3390/electronics11132035}}.
+
+\bibitem{wu2021deepbsc}
+Q.~Wu, X.~Chen, Z.~Zhou, L.~Chen, J.~Zhang, Deep reinforcement learning with
+  spatio-temporal traffic forecasting for data-driven base station sleep
+  control, IEEE/ACM Transactions on Networking 29~(2) (2021) 935--948.
+\newblock \href {https://doi.org/10.1109/TNET.2021.3053771}
+  {\path{doi:10.1109/TNET.2021.3053771}}.
+
+\bibitem{wang2022dcndrl}
+Y.~Wang, Y.~Li, T.~Wang, G.~Liu, Towards an energy-efficient data center
+  network based on deep reinforcement learning, Computer Networks 210 (2022)
+  108939.
+\newblock \href {https://doi.org/10.1016/j.comnet.2022.108939}
+  {\path{doi:10.1016/j.comnet.2022.108939}}.
+
+\bibitem{pei2024drlte}
+X.~Pei, P.~Sun, Y.~Hu, D.~Li, B.~Chen, L.~Tian, Enabling efficient routing for
+  traffic engineering in {SDN} with deep reinforcement learning, Computer
+  Networks 241 (2024) 110220.
+\newblock \href {https://doi.org/10.1016/j.comnet.2024.110220}
+  {\path{doi:10.1016/j.comnet.2024.110220}}.
+
+\bibitem{maity2022ethos}
+I.~Maity, S.~Misra, C.~Mandal, {ETHoS}: Energy-aware traffic engineering for
+  sustainable hybrid {SDN}, IEEE Transactions on Sustainable Computing 7~(4)
+  (2022) 875--886.
+\newblock \href {https://doi.org/10.1109/TSUSC.2022.3164571}
+  {\path{doi:10.1109/TSUSC.2022.3164571}}.
+
+\bibitem{rollin2024sleep}
+L.~R{\"o}llin, R.~Jacob, L.~Vanbever, A sleep study for {ISP} networks:
+  Evaluating link sleeping on real world data, ACM SIGEnergy Energy Informatics
+  Review 4 (2024) 51--58.
+\newblock \href {https://doi.org/10.1145/3727200.3727209}
+  {\path{doi:10.1145/3727200.3727209}}.
+
+\bibitem{gomezdelahiz2025noms}
+J.~G{\'o}mez-delaHiz, M.~Jim{\'e}nez-L{\'a}zaro, J.~L. Herrera, M.~F. Zhani,
+  J.~Gal{\'a}n-Jim{\'e}nez, On optimizing energy efficiency in {SDN} networks
+  through {ML}-driven configuration, in: Proc. IEEE/IFIP Network Operations and
+  Management Symposium (NOMS), 2025.
+\newblock \href {https://doi.org/10.1109/NOMS57970.2025.11073657}
+  {\path{doi:10.1109/NOMS57970.2025.11073657}}.
+
+\bibitem{gomezdelahiz2026tgcn}
+J.~G{\'o}mez-delaHiz, M.~Jim{\'e}nez-L{\'a}zaro, J.~L. Herrera, M.~F. Zhani,
+  J.~Gal{\'a}n-Jim{\'e}nez, {AI}-driven scalable framework for energy-efficient
+  {SDN} configurations, IEEE Transactions on Green Communications and
+  Networking (2026).
+\newblock \href {https://doi.org/10.1109/TGCN.2026.3724271}
+  {\path{doi:10.1109/TGCN.2026.3724271}}.
+
+\bibitem{bengio2021mlco}
+Y.~Bengio, A.~Lodi, A.~Prouvost, Machine learning for combinatorial
+  optimization: A methodological tour d'horizon, European Journal of
+  Operational Research 290~(2) (2021) 405--421.
+\newblock \href {https://doi.org/10.1016/j.ejor.2020.07.063}
+  {\path{doi:10.1016/j.ejor.2020.07.063}}.
+
+\bibitem{xu2023teal}
+Z.~Xu, F.~Y. Yan, R.~Singh, J.~T. Chiu, A.~M. Rush, M.~Yu, Teal:
+  Learning-accelerated optimization of {WAN} traffic engineering, in: Proc. ACM
+  SIGCOMM, 2023.
+\newblock \href {https://doi.org/10.1145/3603269.3604857}
+  {\path{doi:10.1145/3603269.3604857}}.
+
+\bibitem{perry2023dote}
+Y.~Perry, F.~V. Frujeri, C.~Hoch, S.~Kandula, I.~Menache, M.~Schapira,
+  A.~Tamar,
+  \href{https://www.usenix.org/conference/nsdi23/presentation/perry}{{DOTE}:
+  Rethinking (predictive) {WAN} traffic engineering}, in: Proc. USENIX NSDI,
+  2023.
+\newline\urlprefix\url{https://www.usenix.org/conference/nsdi23/presentation/perry}
+
+\bibitem{abuzaid2021ncflow}
+F.~Abuzaid, S.~Kandula, B.~Arzani, I.~Menache, M.~Zaharia, P.~Bailis,
+  \href{https://www.usenix.org/conference/nsdi21/presentation/abuzaid}{Contracting
+  wide-area network topologies to solve flow problems quickly}, in: Proc.
+  USENIX NSDI, 2021.
+\newline\urlprefix\url{https://www.usenix.org/conference/nsdi21/presentation/abuzaid}
+
+\bibitem{narayanan2021pop}
+D.~Narayanan, F.~Kazhamiaka, F.~Abuzaid, P.~Kraft, A.~Agrawal, S.~Kandula,
+  S.~Boyd, M.~Zaharia, Solving large-scale granular resource allocation
+  problems efficiently with {POP}, in: Proc. ACM SOSP, 2021, pp. 521--537.
+\newblock \href {https://doi.org/10.1145/3477132.3483588}
+  {\path{doi:10.1145/3477132.3483588}}.
+
+\bibitem{valadarsky2017learning}
+A.~Valadarsky, M.~Schapira, D.~Shahaf, A.~Tamar, Learning to route, in: Proc.
+  ACM HotNets, 2017, pp. 185--191.
+\newblock \href {https://doi.org/10.1145/3152434.3152441}
+  {\path{doi:10.1145/3152434.3152441}}.
+
+\bibitem{almasan2022enero}
+P.~Almasan, S.~Xiao, X.~Cheng, X.~Shi, P.~Barlet-Ros, A.~Cabellos-Aparicio,
+  {ENERO}: Efficient real-time {WAN} routing optimization with deep
+  reinforcement learning, Computer Networks 214 (2022) 109166.
+\newblock \href {https://doi.org/10.1016/j.comnet.2022.109166}
+  {\path{doi:10.1016/j.comnet.2022.109166}}.
+
+\bibitem{bernardez2023magnneto}
+G.~Bern{\'a}rdez, J.~Su{\'a}rez-Varela, A.~L{\'o}pez, X.~Shi, S.~Xiao,
+  X.~Cheng, P.~Barlet-Ros, A.~Cabellos-Aparicio, {MAGNNETO}: A graph neural
+  network-based multi-agent system for traffic engineering, IEEE Transactions
+  on Cognitive Communications and Networking 9~(2) (2023) 494--506.
+\newblock \href {https://doi.org/10.1109/TCCN.2023.3235719}
+  {\path{doi:10.1109/TCCN.2023.3235719}}.
+
+\bibitem{rusek2020routenet}
+K.~Rusek, J.~Su{\'a}rez-Varela, P.~Almasan, P.~Barlet-Ros,
+  A.~Cabellos-Aparicio, {RouteNet}: Leveraging graph neural networks for
+  network modeling and optimization in {SDN}, IEEE Journal on Selected Areas in
+  Communications 38~(10) (2020) 2260--2270.
+\newblock \href {https://doi.org/10.1109/JSAC.2020.3000405}
+  {\path{doi:10.1109/JSAC.2020.3000405}}.
+
+\bibitem{ye2023flexdate}
+M.~Ye, J.~Zhang, Z.~Guo, H.~J. Chao, {FlexDATE}: Flexible and disturbance-aware
+  traffic engineering with reinforcement learning in software-defined networks,
+  IEEE/ACM Transactions on Networking 31~(4) (2023) 1433--1448.
+\newblock \href {https://doi.org/10.1109/TNET.2022.3217083}
+  {\path{doi:10.1109/TNET.2022.3217083}}.
+
+\bibitem{reitblatt2012abstractions}
+M.~Reitblatt, N.~Foster, J.~Rexford, C.~Schlesinger, D.~Walker, Abstractions
+  for network update, in: Proc. ACM SIGCOMM, 2012, pp. 323--334.
+\newblock \href {https://doi.org/10.1145/2342356.2342427}
+  {\path{doi:10.1145/2342356.2342427}}.
+
+\bibitem{jin2014dionysus}
+X.~Jin, H.~H. Liu, R.~Gandhi, S.~Kandula, R.~Mahajan, M.~Zhang, J.~Rexford,
+  R.~Wattenhofer, Dynamic scheduling of network updates, in: Proc. ACM SIGCOMM,
+  2014, pp. 539--550.
+\newblock \href {https://doi.org/10.1145/2619239.2626307}
+  {\path{doi:10.1145/2619239.2626307}}.
+
+\bibitem{bonetto2013multiperiod}
+E.~Bonetto, L.~Chiaraviglio, F.~Idzikowski, E.~Le~Rouzic, Algorithms for the
+  multi-period power-aware logical topology design with reconfiguration costs,
+  Journal of Optical Communications and Networking 5~(5) (2013) 394--410.
+\newblock \href {https://doi.org/10.1364/JOCN.5.000394}
+  {\path{doi:10.1364/JOCN.5.000394}}.
+
+\bibitem{chiaraviglio2015lifetime}
+L.~Chiaraviglio, P.~Wiatr, P.~Monti, J.~Chen, J.~Lorincz, F.~Idzikowski,
+  M.~Listanti, L.~Wosinska, Is green networking beneficial in terms of device
+  lifetime?, IEEE Communications Magazine 53~(5) (2015) 232--240.
+\newblock \href {https://doi.org/10.1109/MCOM.2015.7105670}
+  {\path{doi:10.1109/MCOM.2015.7105670}}.
+
+\bibitem{chiaraviglio2014impact}
+L.~Chiaraviglio, et~al., Impact of energy-efficient techniques on a device
+  lifetime, in: Proc. IEEE Online Conference on Green Communications
+  (OnlineGreenComm), 2014.
+\newblock \href {https://doi.org/10.1109/OnlineGreenCom.2014.7114426}
+  {\path{doi:10.1109/OnlineGreenCom.2014.7114426}}.
+
+\bibitem{wiatr2016lifetime}
+P.~Wiatr, et~al., Lifetime-aware provisioning in green optical backbone
+  networks, in: Proc. Optical Fiber Communication Conference (OFC), 2016.
+\newblock \href {https://doi.org/10.1364/OFC.2016.M3K.1}
+  {\path{doi:10.1364/OFC.2016.M3K.1}}.
+
+\bibitem{borodin1992mts}
+A.~Borodin, N.~Linial, M.~E. Saks, An optimal on-line algorithm for metrical
+  task system, Journal of the ACM 39~(4) (1992) 745--763.
+\newblock \href {https://doi.org/10.1145/146585.146588}
+  {\path{doi:10.1145/146585.146588}}.
+
+\bibitem{chen2018obd}
+N.~Chen, G.~Goel, A.~Wierman, \href{https://arxiv.org/abs/1803.10366}{Smoothed
+  online convex optimization in high dimensions via online balanced descent}
+  (2018).
+\newblock \href {http://arxiv.org/abs/1803.10366} {\path{arXiv:1803.10366}}.
+\newline\urlprefix\url{https://arxiv.org/abs/1803.10366}
+
+\bibitem{lin2013rightsizing}
+M.~Lin, A.~Wierman, L.~L.~H. Andrew, E.~Thereska, Dynamic right-sizing for
+  power-proportional data centers, IEEE/ACM Transactions on Networking 21~(5)
+  (2013) 1378--1391.
+\newblock \href {https://doi.org/10.1109/TNET.2012.2226216}
+  {\path{doi:10.1109/TNET.2012.2226216}}.
+
+\bibitem{ross2011dagger}
+S.~Ross, G.~J. Gordon, J.~A. Bagnell,
+  \href{https://proceedings.mlr.press/v15/ross11a.html}{A reduction of
+  imitation learning and structured prediction to no-regret online learning},
+  in: Proc. AISTATS, 2011, pp. 627--635.
+\newline\urlprefix\url{https://proceedings.mlr.press/v15/ross11a.html}
+
+\bibitem{lykouris2021caching}
+T.~Lykouris, S.~Vassilvitskii, Competitive caching with machine learned advice,
+  Journal of the ACM 68~(4) (2021) 24:1--24:25.
+\newblock \href {https://doi.org/10.1145/3447579} {\path{doi:10.1145/3447579}}.
+
+\bibitem{antoniadis2023mts}
+A.~Antoniadis, C.~Coester, M.~Eli{\'a}{\v{s}}, A.~Polak, B.~Simon, Online
+  metric algorithms with untrusted predictions, ACM Transactions on Algorithms
+  19~(2) (2023) 19:1--19:34.
+\newblock \href {https://doi.org/10.1145/3582689} {\path{doi:10.1145/3582689}}.
+
+\bibitem{christianson2023dart}
+N.~Christianson, J.~Shen, A.~Wierman, Optimal robustness-consistency tradeoffs
+  for learning-augmented metrical task systems, in: Proc. 26th Int. Conf.
+  Artificial Intelligence and Statistics (AISTATS), Vol. 206 of PMLR, 2023, pp.
+  9377--9399.
+
+\bibitem{rutten2023smoothed}
+D.~Rutten, N.~Christianson, D.~Mukherjee, A.~Wierman, Smoothed online
+  optimization with unreliable predictions, Proc. ACM Meas. Anal. Comput. Syst.
+  7~(1) (2023) 12:1--12:36.
+\newblock \href {https://doi.org/10.1145/3579442} {\path{doi:10.1145/3579442}}.
+
+\bibitem{gama2014drift}
+J.~Gama, I.~{\v{Z}}liobait{\.e}, A.~Bifet, M.~Pechenizkiy, A.~Bouchachia, A
+  survey on concept drift adaptation, ACM Computing Surveys 46~(4) (2014)
+  44:1--44:37.
+\newblock \href {https://doi.org/10.1145/2523813} {\path{doi:10.1145/2523813}}.
+
+\bibitem{lu2019drift}
+J.~Lu, A.~Liu, F.~Dong, F.~Gu, J.~Gama, G.~Zhang, Learning under concept drift:
+  A review, IEEE Transactions on Knowledge and Data Engineering 31~(12) (2019)
+  2346--2363.
+\newblock \href {https://doi.org/10.1109/TKDE.2018.2876857}
+  {\path{doi:10.1109/TKDE.2018.2876857}}.
+
+\bibitem{bifet2007adwin}
+A.~Bifet, R.~Gavald{\`a}, Learning from time-changing data with adaptive
+  windowing, in: Proc. SIAM Int. Conf. Data Mining (SDM), 2007, pp. 443--448.
+\newblock \href {https://doi.org/10.1137/1.9781611972771.42}
+  {\path{doi:10.1137/1.9781611972771.42}}.
+
+\bibitem{page1954cusum}
+E.~S. Page, Continuous inspection schemes, Biometrika 41~(1/2) (1954) 100--115.
+\newblock \href {https://doi.org/10.1093/biomet/41.1-2.100}
+  {\path{doi:10.1093/biomet/41.1-2.100}}.
+
+\bibitem{andresini2021insomnia}
+G.~Andresini, F.~Pendlebury, F.~Pierazzi, C.~Loglisci, A.~Appice, L.~Cavallaro,
+  {INSOMNIA}: Towards concept-drift robustness in network intrusion detection,
+  in: Proc. ACM Workshop on Artificial Intelligence and Security (AISec), 2021,
+  pp. 111--122.
+\newblock \href {https://doi.org/10.1145/3474369.3486864}
+  {\path{doi:10.1145/3474369.3486864}}.
+
+\end{thebibliography}
