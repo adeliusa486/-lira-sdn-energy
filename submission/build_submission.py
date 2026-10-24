@@ -32,6 +32,11 @@ s = s[:a] + AUTHORS + "\n" + s[b:]
 s = s.replace("as the strongest learned controller we could build", "as a strong learned controller", 1)
 s = s.replace(BS + "sep metrical task systems", "", 1)
 
+# ---- highlights inside the front matter, as in elsarticle-template-num.tex
+hl = [l[2:].strip() for l in (ROOT / "paper" / "highlights_jnca.txt").read_text(encoding="utf-8").splitlines() if l.startswith("- ")]
+s = s.replace(BS + "begin{keyword}", BS + "begin{highlights}\n" + "".join(BS + "item " + h.replace("%", BS + "%") + "\n" for h in hl)
+              + BS + "end{highlights}\n\n" + BS + "begin{keyword}", 1)
+
 # ---- declarations: CRediT, funding, competing interests. No AI-use statement (author decision).
 a = s.index(BS + "section*{CRediT authorship contribution statement}")
 b = s.index(BS + "bibliographystyle{elsarticle-num}")

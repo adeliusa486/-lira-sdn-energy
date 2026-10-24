@@ -47,6 +47,14 @@
 Learned controllers for energy-aware software-defined networks (SDNs) map each traffic matrix to a precomputed link-sleeping configuration and ignore the cost of changing configuration. We ask when that cost matters and how much of any gain needs learning. We formulate configuration over a finite library as a sequential problem that prices energy, reconfiguration, and wear, solve it exactly by dynamic programming, bound the library's loss with a per-interval integer program (at most \boundMaxLoss\%), and train LiRA, a history-conditioned imitation policy with a safety layer, as a strong learned controller. On the Abilene and G\'{E}ANT traces the optimal sequence is a single configuration, and snapshot learning, hysteresis, and LiRA reach the oracle cost to within \realSpread\%. On a semi-synthetic Nobel-Germany series, a gradient-boosted snapshot classifier flaps (\nobBFourchg\ changes per day) and costs \nzMainExcess\% more than the oracle. Holding a configuration removes \nobY\% of the changes at no energy loss, but tuned hysteresis, a rolling-horizon optimizer, and a static configuration with LiRA's fallback do the same: the static rule equals LiRA in \staticSame\ of \staticTotal\ settings, and no difference survives a correction over all settings. The conclusions hold without the wear price and across noise variants, where the snapshot excess ranges from \nzhalfExcess\% to \nzarAExcess\% with the noise's time correlation and scale. With the previous interval's traffic, costs barely change but the utilization bound is violated in up to \staleNobViolMax\% of the intervals. Reconfiguration awareness pays off only against flapping classifiers, and a rule that holds its configuration captures that benefit.
 \end{abstract}
 
+\begin{highlights}
+\item Exact dynamic-programming oracle prices energy, reconfiguration and wear
+\item A per-interval MILP bound shows the configuration library loses at most 0.045\%
+\item On real Abilene and GEANT traces the optimal configuration never changes
+\item Flapping snapshot classifiers cost up to 32.5\% more, depending on traffic noise
+\item A static rule with a fallback stays within 0.4\% of the learned controller's cost
+\end{highlights}
+
 \begin{keyword}
 Software-defined networking\sep energy efficiency\sep link sleeping\sep imitation learning\sep dynamic programming\sep reconfiguration cost\sep device lifetime
 \end{keyword}
