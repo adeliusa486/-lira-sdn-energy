@@ -8,6 +8,8 @@ Python 3.11.9 and the pinned versions in `requirements.txt`. The versions used f
 
 ## 1. Data (about 10 minutes)
 
+The repository already contains the processed traffic of step 1 except the feature matrices. To start from the shipped data, run only the `lira.data.features` line below, for `abilene geant nobel nobel_ar05 nobel_ar09 nobel_s06`, and continue with step 4.
+
 ```powershell
 python -m lira.data.download                 # SNDlib topologies and dynamic traffic, hashes in data/MANIFEST.json
 python -m lira.data.preprocess abilene geant  # cleaning, splits, scaling
@@ -44,7 +46,7 @@ For the four θ = 0.8 scenarios and each topology: `python -m lira.oracle.make_l
 | `python experiments/run_stale.py` | E16: decisions on the previous interval's traffic matrix (3 seeds) | `E16_stale_tm` |
 | `python experiments/run_static.py` | E17: static configuration with LiRA's safety fallback | `E17_static_fallback` |
 | `python experiments/run_variant.py --exp E18` | E18: main study without a wear price (lambda_W = 0, all methods retrained) | `E18_no_wear` |
-| `python experiments/make_nobel_variants.py`, then `python -m lira.library.build_library <v> --K 32` for v in nobel_ar05 nobel_ar09 nobel_s06, then `python experiments/run_variant.py --exp E19 --topos nobel_ar05 nobel_ar09 nobel_s06` | E19: Nobel-Germany with AR(1)-correlated and weaker noise | `E19_noise` |
+| `python experiments/make_nobel_variants.py` and `python -m lira.data.features nobel_ar05 nobel_ar09 nobel_s06`, then `python -m lira.library.build_library <v> --K 32` for v in nobel_ar05 nobel_ar09 nobel_s06, then `python experiments/run_variant.py --exp E19 --topos nobel_ar05 nobel_ar09 nobel_s06` | E19: Nobel-Germany with AR(1)-correlated and weaker noise | `E19_noise` |
 
 ## 5. Emulation (E11, WSL2 Ubuntu, root)
 

@@ -40,13 +40,16 @@ python -m pip install -r requirements.txt
 
 ## Quick start
 
-The repository ships the processed traffic, the configuration libraries, the oracle labels and all result files, so no experiment has to be rerun to check them.
+The repository ships the processed traffic, the configuration libraries, the oracle labels and all result files. Only the feature matrices are left out because of their size. Build them first (about two minutes):
 
 ```bash
-python -m pytest -q tests                 # unit tests
+python -m lira.data.features abilene geant nobel nobel_ar05 nobel_ar09 nobel_s06
+python -m pytest -q tests                 # 18 unit tests
 python tools/make_paper_assets.py         # LaTeX macros, tables and plot data from results/
-python experiments/run_static.py --force  # rerun one experiment group (a few minutes)
+python experiments/run_static.py --force  # rerun one experiment group (about 5 minutes)
 ```
+
+A rerun overwrites the CSV files in `results/`, so `git diff results/` shows whether you reproduced the shipped numbers.
 
 ## Full reproduction
 

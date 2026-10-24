@@ -40,6 +40,7 @@ if ($start -le 2) {
 }
 Scenario "1" "" "0.8"
 if ($start -le 3) {
+    if ($start -gt 0) { Run "python -m lira.data.features abilene geant nobel" }   # feature matrices are not shipped
     Run "python experiments/run_main.py --exp E1 E2 E2b E6 E7"
     Run "python experiments/run_extra.py --exp E1b E5 E8 E10 E13 E14"
     Run "python experiments/run_milp.py"                   # E15 lower bound
@@ -47,6 +48,7 @@ if ($start -le 3) {
     Run "python experiments/run_static.py"                 # E17 static configuration + fallback
     Run "python experiments/run_variant.py --exp E18"     # E18 no wear price
     Run "python experiments/make_nobel_variants.py"       # E19 data
+    Run "python -m lira.data.features nobel_ar05 nobel_ar09 nobel_s06"
     foreach ($v in "nobel_ar05","nobel_ar09","nobel_s06") { Run "python -m lira.library.build_library $v --K 32" }
     Run "python experiments/run_variant.py --exp E19 --topos nobel_ar05 nobel_ar09 nobel_s06"
     Write-Host "E11 (Mininet) runs in WSL as root:"
